@@ -14,17 +14,14 @@ const totalMrpElement = document.getElementById('totalMrp');
 const totalDiscountElement = document.getElementById('totalDiscount');
 const convenienceFeeElement = document.getElementById('convenienceFee');
 
-// Google Apps Script Web App URL (replace with your deployed web app URL)
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxJypM8SROGCOBFNJCmiCn0EwkiPrudF9WZcaKvO4CTxAOIAizRLfa5ce7hiLOLVFC8/exec";
+const GOOGLE_SCRIPT_URL = "";
 
-// Initialize the app
 document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
     updateCartUI();
     initHeroSlider();
 });
 
-// Setup event listeners
 function setupEventListeners() {
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('add-to-bag-btn')) {
@@ -64,7 +61,6 @@ function setupEventListeners() {
     });
 }
 
-// Get product data from HTML
 function getProductData(productId) {
     const productCard = document.querySelector(`.product-card[data-id="${productId}"]`);
     if (!productCard) return null;
@@ -77,7 +73,6 @@ function getProductData(productId) {
     return { id: productId, brand, name, price, image, quantity: 0 };
 }
 
-// Cart functions
 function addToCart(productId) {
     const productData = getProductData(productId);
     if (!productData) return;
@@ -208,8 +203,6 @@ function closeCartSidebar() {
     overlay.classList.remove('active');
     document.body.style.overflow = 'auto';
 }
-
-// Order Processing Functions
 function processOrder() {
     showCustomerForm();
 }
@@ -302,7 +295,7 @@ function showCustomerForm() {
                             </div>
                             <div class="breakdown-row">
                                 <span>Convenience Fee:</span>
-                                <span>₹99</span>
+                                <span>₹25</span>
                             </div>
                             <div class="breakdown-row total">
                                 <strong>Total Amount:</strong>
@@ -374,7 +367,6 @@ function validateCustomerForm(form) {
     return true;
 }
 
-// Permanent Google Apps Script submission
 function submitOrderToGoogleSheets(form) {
   const formData = new FormData(form);
   const orderData = {
@@ -521,3 +513,4 @@ function startSlideshow() {
 function pauseSlideshow() {
     clearInterval(slideInterval);
 }
+
