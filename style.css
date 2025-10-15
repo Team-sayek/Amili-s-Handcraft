@@ -17,7 +17,6 @@ body {
     padding: 0 20px;
 }
 
-/* ===== HEADER ===== */
 .header {
     background-color: #ffffff;
     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
@@ -218,14 +217,12 @@ body {
     display: none;
 }
 
-/* ===== PRODUCTS GRID ===== */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
-/* ===== PRODUCT CARD ===== */
 .product-card {
     background-color: #ffffff;
     border-radius: 4px;
@@ -356,7 +353,6 @@ body {
     background-color: #24a887;
 }
 
-/* ===== CART SIDEBAR ===== */
 .cart-sidebar {
     position: fixed;
     top: 0;
@@ -556,7 +552,6 @@ body {
     background: #e6395f;
 }
 
-/* ===== OVERLAY ===== */
 .overlay {
     position: fixed;
     top: 0;
@@ -572,7 +567,6 @@ body {
     display: block;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1024px) {
     .products-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -728,7 +722,6 @@ body {
     background-color: #e6395f;
 }
 
-/* Slide Navigation */
 .slide-nav {
     position: absolute;
     top: 50%;
@@ -769,7 +762,6 @@ body {
     transform: translateY(-50%) scale(1.1);
 }
 
-/* Slide Indicators */
 .slide-indicators {
     position: absolute;
     bottom: 20px;
@@ -795,7 +787,6 @@ body {
     transform: scale(1.2);
 }
 
-/* Responsive Design for Hero Slider */
 @media (max-width: 1024px) {
     .hero-slider {
         height: 400px;
@@ -874,7 +865,6 @@ body {
     }
 }
 
-/* ===== FOOTER ===== */
 .footer {
     background-color: #2a2a2a;
     color: #ffffff;
@@ -898,7 +888,6 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* Company Info Section */
 .footer-logo {
     margin-bottom: 15px;
 }
@@ -938,7 +927,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* Footer Links */
 .footer-links {
     list-style: none;
 }
@@ -958,7 +946,6 @@ body {
     color: #ff3f6c;
 }
 
-/* Contact Info */
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -978,55 +965,6 @@ body {
     color: #ff3f6c;
     margin-top: 2px;
     min-width: 16px;
-}
-
-/* Newsletter */
-.newsletter-text {
-    font-size: 14px;
-    color: #b0b0b0;
-    margin-bottom: 15px;
-    line-height: 1.5;
-}
-
-.newsletter-form {
-    margin-bottom: 25px;
-}
-
-.input-group {
-    display: flex;
-    background: #404040;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.input-group input {
-    flex: 1;
-    padding: 12px 15px;
-    background: transparent;
-    border: none;
-    color: #ffffff;
-    font-size: 14px;
-}
-
-.input-group input::placeholder {
-    color: #888;
-}
-
-.input-group input:focus {
-    outline: none;
-}
-
-.input-group button {
-    padding: 0 15px;
-    background: #ff3f6c;
-    border: none;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.input-group button:hover {
-    background: #e6395f;
 }
 
 .payment-methods h4 {
@@ -1051,7 +989,6 @@ body {
     color: #ff3f6c;
 }
 
-/* Footer Bottom */
 .footer-bottom {
     border-top: 1px solid #404040;
     padding-top: 20px;
@@ -1086,7 +1023,6 @@ body {
     color: #ff3f6c;
 }
 
-/* Responsive Design for Footer */
 @media (min-width: 768px) {
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
@@ -1134,7 +1070,6 @@ body {
     }
 }
 
-/* ===== ENHANCED ORDER FORM STYLES ===== */
 .order-modal {
     display: none;
     position: fixed;
@@ -1373,7 +1308,6 @@ body {
     cursor: not-allowed;
 }
 
-/* Order Success Modal */
 .order-success-modal {
     position: fixed;
     top: 0;
@@ -1462,7 +1396,6 @@ body {
     to { opacity: 1; }
 }
 
-/* Responsive Design for Forms */
 @media (max-width: 768px) {
     .order-modal-content {
         width: 95%;
@@ -1508,4 +1441,5 @@ body {
         padding: 16px;
         margin: 20px 0;
     }
+
 }
