@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTSY | Handicrafts Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="./images/SmallSquareLogoJpg.jpg" alt="ARTSY" class="logo-image">
+                </div>
+                
+                <nav class="main-nav">
+                    <a href="#" class="nav-link">POTTERY</a>
+                    <a href="#" class="nav-link">TEXTILES</a>
+                    <a href="#" class="nav-link">JEWELRY</a>
+                    <a href="#" class="nav-link">WOODWORK</a>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search for handicrafts and more">
+                    </div>
+                    <div class="action-item">
+                        <i class="far fa-heart"></i>
+                        <span>Wishlist</span>
+                    </div>
+                    <div class="action-item cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>Bag</span>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <!-- Hero Banner with Slides -->
+        <section class="hero-slider">
+            <div class="hero-slides">
+                <div class="hero-slide active">
+                    <img src="https://images.unsplash.com/photo-1562565659-3c38d1c23231?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Premium Handicrafts Collection" class="slide-image">
+                    <div class="slide-content">
+                        <h2>Premium Handicrafts</h2>
+                        <p>Discover the finest artisanal creations</p>
+                        <button class="shop-now-btn">SHOP NOW</button>
+                    </div>
+                </div>
+                <div class="hero-slide">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Traditional Textiles" class="slide-image">
+                    <div class="slide-content">
+                        <h2>Traditional Textiles</h2>
+                        <p>Handwoven with generations of expertise</p>
+                        <button class="shop-now-btn">EXPLORE TEXTILES</button>
+                    </div>
+                </div>
+                <div class="hero-slide">
+                    <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Artisan Pottery" class="slide-image">
+                    <div class="slide-content">
+                        <h2>Artisan Pottery</h2>
+                        <p>Each piece tells a unique story</p>
+                        <button class="shop-now-btn">BROWSE POTTERY</button>
+                    </div>
+                </div>
+                <div class="hero-slide">
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Handmade Jewelry" class="slide-image">
+                    <div class="slide-content">
+                        <h2>Handmade Jewelry</h2>
+                        <p>Elegant pieces crafted with precision</p>
+                        <button class="shop-now-btn">VIEW JEWELRY</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide Navigation 
+            <button class="slide-nav slide-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slide-nav slide-next">
+                <i class="fas fa-chevron-right"></i>
+            </button> -->
+            
+            <!-- Slide Indicators -->
+            <div class="slide-indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+                <span class="indicator" data-slide="3"></span>
+            </div>
+        </section>
+
+    <!-- Category Strip -->
+    <section class="category-strip">
+        <div class="container">
+            <div class="category-items">
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG90dGVyeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=200&q=60" alt="Pottery">
+                    <span>Pottery</span>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dGV4dGlsZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=200&q=60" alt="Textiles">
+                    <span>Textiles</span>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFuZG1hZGUlMjBqZXdlbHJ5fGVufDB8fDB8fHww&auto=format&fit=crop&w=200&q=60" alt="Jewelry">
+                    <span>Jewelry</span>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d29vZHdvcmt8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=200&q=60" alt="Woodwork">
+                    <span>Woodwork</span>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvbWUlMjBkZWNvcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=200&q=60" alt="Home Decor">
+                    <span>Home Decor</span>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1578321272177-44c5295c4c5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFuZGljcmFmdCUyMGFydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=200&q=60" alt="Art">
+                    <span>Art</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deals of the Day -->
+    <section class="deals-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">DEALS OF THE DAY</h2>
+                <a href="#" class="view-all">VIEW ALL</a>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-id="1" data-price="2499" data-name="Hand-Painted Ceramic Vase" data-brand="ClayCraft">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG90dGVyeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="Hand-Painted Ceramic Vase">
+                        <div class="wishlist-icon">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">ClayCraft</div>
+                        <div class="product-name">Hand-Painted Ceramic Vase</div>
+                        <div class="product-price">
+                            <span class="current-price">₹2,499</span>
+                            <span class="original-price">₹2,999</span>
+                            <span class="discount">(17% OFF)</span>
+                        </div>
+                        <button class="add-to-bag-btn" data-id="1">ADD TO BAG</button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-id="2" data-price="1899" data-name="Traditional Handwoven Shawl" data-brand="WeaveMagic">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dGV4dGlsZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60" alt="Traditional Handwoven Shawl">
+                        <div class="wishlist-icon">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">WeaveMagic</div>
+                        <div class="product-name">Traditional Handwoven Shawl</div>
+                        <div class="product-price">
+                            <span class="current-price">₹1,899</span>
+                            <span class="original-price">₹2,299</span>
+                            <span class="discount">(17% OFF)</span>
+                        </div>
+                        <button class="add-to-bag-btn" data-id="2">ADD TO BAG</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-id="3" data-price="3299" data-name="Carved Wooden Jewelry Box" data-brand="WoodArt">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d29vZHdvcmt8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60" alt="Carved Wooden Jewelry Box">
+                        <div class="wishlist-icon">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">WoodArt</div>
+                        <div class="product-name">Carved Wooden Jewelry Box</div>
+                        <div class="product-price">
+                            <span class="current-price">₹3,299</span>
+                            <span class="original-price">₹3,999</span>
+                            <span class="discount">(18% OFF)</span>
+                        </div>
+                        <button class="add-to-bag-btn" data-id="3">ADD TO BAG</button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-id="4" data-price="1599" data-name="Set of 4 Handmade Mugs" data-brand="PotteryHub">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG90dGVyeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="Set of 4 Handmade Mugs">
+                        <div class="wishlist-icon">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">PotteryHub</div>
+                        <div class="product-name">Set of 4 Handmade Mugs</div>
+                        <div class="product-price">
+                            <span class="current-price">₹1,599</span>
+                            <span class="original-price">₹1,999</span>
+                            <span class="discount">(20% OFF)</span>
+                        </div>
+                        <button class="add-to-bag-btn" data-id="4">ADD TO BAG</button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card" data-id="5" data-price="1299" data-name="Artisan Silver Earrings" data-brand="SilverCraft">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFuZG1hZGUlMjBqZXdlbHJ5fGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60" alt="Artisan Silver Earrings">
+                        <div class="wishlist-icon">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">SilverCraft</div>
+                        <div class="product-name">Artisan Silver Earrings</div>
+                        <div class="product-price">
+                            <span class="current-price">₹1,299</span>
+                            <span class="original-price">₹1,599</span>
+                            <span class="discount">(19% OFF)</span>
+                        </div>
+                        <button class="add-to-bag-btn" data-id="5">ADD TO BAG</button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card" data-id="6" data-price="899" data-name="Handwoven Bamboo Basket" data-brand="BambooWorks">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvbWUlMjBkZWNvcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="Handwoven Bamboo Basket">
+                        <div class="wishlist-icon">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">BambooWorks</div>
+                        <div class="product-name">Handwoven Bamboo Basket</div>
+                        <div class="product-price">
+                            <span class="current-price">₹899</span>
+                            <span class="original-price">₹1,199</span>
+                            <span class="discount">(25% OFF)</span>
+                        </div>
+                        <button class="add-to-bag-btn" data-id="6">ADD TO BAG</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Picks -->
+    <section class="top-picks">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">TOP PICKS</h2>
+                <a href="#" class="view-all">VIEW ALL</a>
+            </div>
+            <div class="products-grid">
+                <!-- Product 7 -->
+                <div class="product-card" data-id="7" data-price="699" data-name="Embroidered Cushion Cover" data-brand="TextileTales">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dGV4dGlsZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60" alt="Embroidered Cushion Cover">
+                        <div class="wishlist-icon">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">TextileTales</div>
+                        <div class="product-name">Embroidered Cushion Cover</div>
+                        <div class="product-price">
+                            <span class="current-price">₹699</span>
+                            <span class="original-price">₹899</span>
+                            <span class="discount">(22% OFF)</span>
+                        </div>
+                        <button class="add-to-bag-btn" data-id="7">ADD TO BAG</button>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card" data-id="8" data-price="1199" data-name="Terracotta Plant Pot Set" data-brand="ClayCraft">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG90dGVyeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="Terracotta Plant Pot Set">
+                        <div class="wishlist-icon">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">ClayCraft</div>
+                        <div class="product-name">Terracotta Plant Pot Set</div>
+                        <div class="product-price">
+                            <span class="current-price">₹1,199</span>
+                            <span class="original-price">₹1,499</span>
+                            <span class="discount">(20% OFF)</span>
+                        </div>
+                        <button class="add-to-bag-btn" data-id="8">ADD TO BAG</button>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="product-card" data-id="9" data-price="1499" data-name="Handwoven Table Runner" data-brand="ArtisanWeave">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dGV4dGlsZXN8ZW58MHx8MHx8fDA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="Handwoven Table Runner">
+                        <div class="wishlist-icon">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">ArtisanWeave</div>
+                        <div class="product-name">Handwoven Table Runner</div>
+                        <div class="product-price">
+                            <span class="current-price">₹1,499</span>
+                            <span class="original-price">₹1,799</span>
+                            <span class="discount">(17% OFF)</span>
+                        </div>
+                        <button class="add-to-bag-btn" data-id="9">ADD TO BAG</button>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="product-card" data-id="10" data-price="2199" data-name="Hand-Carved Wooden Bowl" data-brand="WoodCraft">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d29vZHdvcmt8ZW58MHx8MHx8fDA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="Hand-Carved Wooden Bowl">
+                        <div class="wishlist-icon">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">WoodCraft</div>
+                        <div class="product-name">Hand-Carved Wooden Bowl</div>
+                        <div class="product-price">
+                            <span class="current-price">₹2,199</span>
+                            <span class="original-price">₹2,599</span>
+                            <span class="discount">(15% OFF)</span>
+                        </div>
+                        <button class="add-to-bag-btn" data-id="10">ADD TO BAG</button>
+                    </div>
+                </div>
+
+                <!-- Product 11 -->
+                <div class="product-card" data-id="11" data-price="2899" data-name="Ceramic Tea Set" data-brand="ClayArt">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG90dGVyeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="Ceramic Tea Set">
+                        <div class="wishlist-icon">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">ClayArt</div>
+                        <div class="product-name">Ceramic Tea Set</div>
+                        <div class="product-price">
+                            <span class="current-price">₹2,899</span>
+                            <span class="original-price">₹3,499</span>
+                            <span class="discount">(17% OFF)</span>
+                        </div>
+                        <button class="add-to-bag-btn" data-id="11">ADD TO BAG</button>
+                    </div>
+                </div>
+
+                <!-- Product 12 -->
+                <div class="product-card" data-id="12" data-price="999" data-name="Handmade Beaded Necklace" data-brand="BeadMagic">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFuZG1hZGUlMjBqZXdlbHJ5fGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60" alt="Handmade Beaded Necklace">
+                        <div class="wishlist-icon">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">BeadMagic</div>
+                        <div class="product-name">Handmade Beaded Necklace</div>
+                        <div class="product-price">
+                            <span class="current-price">₹999</span>
+                            <span class="original-price">₹1,299</span>
+                            <span class="discount">(23% OFF)</span>
+                        </div>
+                        <button class="add-to-bag-btn" data-id="12">ADD TO BAG</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer -->
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="./images/SmallSquareLogoJpg.jpg" alt="Artsy Handicrafts" class="logo-image">
+                    </div>
+                    <p class="footer-description">
+                        Bringing you the finest handcrafted products from skilled artisans across India. 
+                        Each piece tells a story of tradition and craftsmanship.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Visit our Facebook page">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Visit our Instagram page">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3 class="footer-title">QUICK LINKS</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Artisans</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Care -->
+                <div class="footer-section">
+                    <h3 class="footer-title">CUSTOMER CARE</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return & Exchange</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h3 class="footer-title">CONTACT INFO</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Artisan Street, Craft District<br>Mumbai, Maharashtra 400001</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 98765 43210</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@artsyhandicrafts.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Sat: 10:00 AM - 7:00 PM<br>Sunday: Closed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-section">
+                    <div class="payment-methods">
+                        <h4>We Accept</h4>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Artsy Handicrafts. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>SHOPPING BAG</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your bag is empty</p>
+                <span>Start shopping to add items to your bag</span>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="price-details">
+                <div class="price-row">
+                    <span>Total MRP</span>
+                    <span>₹<span id="totalMrp">0</span></span>
+                </div>
+                <div class="price-row">
+                    <span>Discount on MRP</span>
+                    <span class="discount-text">-₹<span id="totalDiscount">0</span></span>
+                </div>
+                <div class="price-row">
+                    <span>Convenience Fee</span>
+                    <span>₹<span id="convenienceFee">99</span></span>
+                </div>
+                <div class="price-row total">
+                    <span>Total Amount</span>
+                    <span>₹<span id="cartTotal">99</span></span>
+                </div>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">
+                <span>PLACE ORDER</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
