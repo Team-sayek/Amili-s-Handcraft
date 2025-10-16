@@ -15,7 +15,7 @@ const totalDiscountElement = document.getElementById('totalDiscount');
 const convenienceFeeElement = document.getElementById('convenienceFee');
 
 // Google Apps Script Web App URL (replace with your deployed web app URL)
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxJypM8SROGCOBFNJCmiCn0EwkiPrudF9WZcaKvO4CTxAOIAizRLfa5ce7hiLOLVFC8/exec";
+const GOOGLE_SCRIPT_URL = "././././././././././";
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', function() {
@@ -522,3 +522,4 @@ function startSlideshow() {
 function pauseSlideshow() {
     clearInterval(slideInterval);
 }
+
