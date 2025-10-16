@@ -14,7 +14,7 @@ const totalMrpElement = document.getElementById('totalMrp');
 const totalDiscountElement = document.getElementById('totalDiscount');
 const convenienceFeeElement = document.getElementById('convenienceFee');
 
-const GOOGLE_SCRIPT_URL = "";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzGdhu6ZueqAtRXI8p89LBu0dz2q7XGNokNX-r0_bEl4m4QSPRYuCYSvGKtxStoOhTQ/exec";
 
 document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
@@ -513,4 +513,5 @@ function startSlideshow() {
 function pauseSlideshow() {
     clearInterval(slideInterval);
 }
+
 
