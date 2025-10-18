@@ -35,157 +35,12 @@ const overlay = document.getElementById('overlay');
 const cartItems = document.getElementById('cartItems');
 const cartTotal = document.getElementById('cartTotal');
 const checkoutBtn = document.getElementById('checkoutBtn');
-const customerModal = document.getElementById('customerModal');
-const closeCustomerModal = document.getElementById('closeCustomerModal');
-const customerForm = document.getElementById('customerForm');
-const backToCart = document.getElementById('backToCart');
-const productModal = document.getElementById('productModal');
-const closeProductModal = document.getElementById('closeProductModal');
-const successModal = document.getElementById('successModal');
-const continueShopping = document.getElementById('continueShopping');
-const addToCartModal = document.getElementById('addToCartModal');
+const totalMrpElement = document.getElementById('totalMrp');
+const totalDiscountElement = document.getElementById('totalDiscount');
+const convenienceFeeElement = document.getElementById('convenienceFee');
 
-// Product details data
-const productDetails = {
-    1: {
-        id: 1,
-        name: "Hand-Painted Ceramic Vase",
-        brand: "ClayCraft",
-        price: 2499,
-        originalPrice: 2999,
-        image: "IMAGE_URL_HERE",
-        description: "Beautiful hand-painted ceramic vase with traditional motifs. Each piece is uniquely crafted by skilled artisans using centuries-old techniques.",
-        features: [
-            "Handcrafted by skilled artisans",
-            "Traditional painting techniques",
-            "Food-safe ceramic glaze",
-            "Unique design - no two pieces are identical",
-            "Perfect for home decoration"
-        ],
-        specifications: {
-            "Material": "Premium Ceramic",
-            "Height": "12 inches",
-            "Width": "6 inches",
-            "Weight": "1.2 kg",
-            "Care": "Hand wash only"
-        }
-    },
-    2: {
-        id: 2,
-        name: "Traditional Handwoven Shawl",
-        brand: "WeaveMagic",
-        price: 1899,
-        originalPrice: 2299,
-        image: "IMAGE_URL_HERE",
-        description: "Luxurious handwoven shawl made from premium natural fibers. Features intricate traditional patterns woven by master weavers.",
-        features: [
-            "100% natural cotton fibers",
-            "Handwoven on traditional looms",
-            "Intricate traditional patterns",
-            "Soft and lightweight",
-            "Perfect for all seasons"
-        ],
-        specifications: {
-            "Material": "100% Natural Cotton",
-            "Dimensions": "72 x 36 inches",
-            "Weight": "450 grams",
-            "Care": "Dry clean recommended",
-            "Origin": "Varanasi, India"
-        }
-    },
-    3: {
-        id: 3,
-        name: "Carved Wooden Jewelry Box",
-        brand: "WoodArt",
-        price: 3299,
-        originalPrice: 3999,
-        image: "IMAGE_URL_HERE",
-        description: "Exquisitely carved wooden jewelry box with multiple compartments. Handcrafted from sustainable sheesham wood.",
-        features: [
-            "Hand-carved traditional motifs",
-            "Sustainable sheesham wood",
-            "Multiple compartments",
-            "Soft-closing hinge",
-            "Natural wood finish"
-        ],
-        specifications: {
-            "Material": "Sheesham Wood",
-            "Dimensions": "8 x 6 x 4 inches",
-            "Compartments": "3 main + 2 small",
-            "Finish": "Natural wood polish",
-            "Weight": "800 grams"
-        }
-    },
-    4: {
-        id: 4,
-        name: "Set of 4 Handmade Mugs",
-        brand: "PotteryHub",
-        price: 1599,
-        originalPrice: 1999,
-        image: "IMAGE_URL_HERE",
-        description: "Beautiful set of 4 handmade ceramic mugs, each with unique glazing and perfect for your morning coffee or tea.",
-        features: [
-            "Set of 4 unique mugs",
-            "Microwave and dishwasher safe",
-            "Food-safe ceramic glaze",
-            "Comfortable grip handle",
-            "Perfect for daily use"
-        ],
-        specifications: {
-            "Material": "Stoneware Ceramic",
-            "Capacity": "350ml each",
-            "Set Includes": "4 mugs",
-            "Care": "Dishwasher safe",
-            "Weight": "2.5 kg total"
-        }
-    },
-    5: {
-        id: 5,
-        name: "Artisan Silver Earrings",
-        brand: "SilverCraft",
-        price: 1299,
-        originalPrice: 1599,
-        image: "IMAGE_URL_HERE",
-        description: "Elegant silver earrings handcrafted with traditional filigree work, perfect for both traditional and contemporary wear.",
-        features: [
-            "925 Sterling Silver",
-            "Handmade filigree work",
-            "Hypoallergenic",
-            "Lightweight and comfortable",
-            "Elegant packaging included"
-        ],
-        specifications: {
-            "Material": "925 Sterling Silver",
-            "Length": "2.5 inches",
-            "Weight": "8 grams",
-            "Closure": "Secure latch",
-            "Care": "Store in dry place"
-        }
-    },
-    6: {
-        id: 6,
-        name: "Handwoven Bamboo Basket",
-        brand: "BambooWorks",
-        price: 899,
-        originalPrice: 1199,
-        image: "IMAGE_URL_HERE",
-        description: "Eco-friendly handwoven bamboo basket, perfect for storage, picnics, or as a decorative piece in your home.",
-        features: [
-            "100% natural bamboo",
-            "Handwoven by skilled artisans",
-            "Eco-friendly and sustainable",
-            "Lightweight yet durable",
-            "Versatile use"
-        ],
-        specifications: {
-            "Material": "Natural Bamboo",
-            "Dimensions": "12 x 8 x 6 inches",
-            "Weight": "300 grams",
-            "Handle": "Integrated bamboo handle",
-            "Care": "Wipe clean with damp cloth"
-        }
-    }
-};
+// Google Apps Script Web App URL (replace with your deployed web app URL)
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxJypM8SROGCOBFNJCmiCn0EwkiPrudF9WZcaKvO4CTxAOIAizRLfa5ce7hiLOLVFC8/exec";
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', function() {
@@ -546,18 +401,16 @@ function submitOrder(e) {
     showSuccessModal(orderData);
 }
 
-function sendOrderEmail(orderData) {
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxpNuHeUy5pI194LQEs6VvVl4J53pWPCxhRC25jni9gcAT07hKx77_h_1wkAM5G9-xi/exec"; // ← replace with your deployed URL
+function prevSlide() {
+    const slides = document.querySelectorAll('.hero-slide');
+    goToSlide((currentSlide - 1 + slides.length) % slides.length);
+}
 
-    fetch(GOOGLE_SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        body: JSON.stringify(orderData)
-    })
-    .then(() => {
-        console.log("Order details sent successfully via Google Apps Script");
-    })
-    .catch((error) => {
-        console.error("Error sending order details:", error);
-    });
+function startSlideshow() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, SLIDE_DURATION);
+}
+
+function pauseSlideshow() {
+    clearInterval(slideInterval);
 }
