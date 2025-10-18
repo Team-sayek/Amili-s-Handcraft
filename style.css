@@ -1362,3 +1362,29 @@ nav ul li a:hover {
     transform: translateX(0);
   }
 }
+
+.price-details {
+    margin-bottom: 20px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #535766;
+}
+
+.price-row.total {
+    font-weight: 700;
+    color: #282c3f;
+    font-size: 16px;
+    border-top: 1px dashed #d4d5d9;
+    padding-top: 8px;
+    margin-top: 8px;
+}
+
+.discount-text {
+    color: #03a685;
+}

@@ -248,11 +248,23 @@
             </div>
         </div>
         <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span>₹<span id="cartTotal">0</span></span>
+            <div class="price-details">
+                <div class="price-row">
+                    <span>Discount on MRP</span>
+                    <span class="discount-text">-₹<span id="totalDiscount">0</span></span>
+                </div>
+                <div class="price-row">
+                    <span>Convenience Fee</span>
+                    <span>₹<span id="convenienceFee">99</span></span>
+                </div>
+                <div class="price-row total">
+                    <span>Total Amount</span>
+                    <span>₹<span id="cartTotal"></span></span>
+                </div>
             </div>
-            <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+            <button class="checkout-btn" id="checkoutBtn">
+                <span>PLACE ORDER</span>
+            </button>
         </div>
     </div>
 
@@ -458,6 +470,7 @@
             </div>
         </div>
     </footer>
+    
 
     <script src="script.js"></script>
 </body>
