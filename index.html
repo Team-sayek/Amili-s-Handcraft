@@ -9,32 +9,32 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
                     <img src="./images/SmallSquareLogoJpg.jpg" alt="ARTSY" class="logo-image">
                 </div>
-                
-                <nav class="main-nav">
-                    <a href="#" class="nav-link">POTTERY</a>
-                    <a href="#" class="nav-link">TEXTILES</a>
-                    <a href="#" class="nav-link">JEWELRY</a>
-                    <a href="#" class="nav-link">WOODWORK</a>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Pottery</a></li>
+                        <li><a href="#">Textiles</a></li>
+                        <li><a href="#">Jewelry</a></li>
+                        <li><a href="#">Woodwork</a></li>
+                        <li><a href="#">Home Decor</a></li>
+                    </ul>
                 </nav>
-
                 <div class="header-actions">
                     <div class="search-box">
                         <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Search for handicrafts and more">
+                        <input type="text" placeholder="Search for handicrafts...">
                     </div>
                     <div class="action-item">
                         <i class="far fa-heart"></i>
-                        <span>Wishlist</span>
                     </div>
-                    <div class="action-item cart-icon" id="cartIcon">
+                    <div class="action-item cart-icon">
                         <i class="fas fa-shopping-bag"></i>
-                        <span>Bag</span>
                         <span class="cart-count">0</span>
                     </div>
                 </div>
@@ -42,344 +42,339 @@
         </div>
     </header>
 
+    <!-- Hero Slider Section -->
     <section class="hero-slider">
-            <div class="hero-slides">
-                <div class="hero-slide active">
-                    <img src="https://images.unsplash.com/photo-1562565659-3c38d1c23231?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Premium Handicrafts Collection" class="slide-image">
-                    <div class="slide-content">
-                        <h2>Premium Handicrafts</h2>
-                        <p>Discover the finest artisanal creations</p>
-                        <button class="shop-now-btn">SHOP NOW</button>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Traditional Textiles" class="slide-image">
-                    <div class="slide-content">
-                        <h2>Traditional Textiles</h2>
-                        <p>Handwoven with generations of expertise</p>
-                        <button class="shop-now-btn">EXPLORE TEXTILES</button>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Artisan Pottery" class="slide-image">
-                    <div class="slide-content">
-                        <h2>Artisan Pottery</h2>
-                        <p>Each piece tells a unique story</p>
-                        <button class="shop-now-btn">BROWSE POTTERY</button>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Handmade Jewelry" class="slide-image">
-                    <div class="slide-content">
-                        <h2>Handmade Jewelry</h2>
-                        <p>Elegant pieces crafted with precision</p>
-                        <button class="shop-now-btn">VIEW JEWELRY</button>
-                    </div>
-                </div>
+        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1562565659-3c38d1c23231?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+            <div class="hero-slide-content">
+                <h1>Premium Handicrafts Collection</h1>
+                <p>Discover artisanal creations crafted with generations of expertise</p>
+                <a href="#" class="btn">Shop Now</a>
             </div>
-            
-            <div class="slide-indicators">
-                <span class="indicator active" data-slide="0"></span>
-                <span class="indicator" data-slide="1"></span>
-                <span class="indicator" data-slide="2"></span>
-                <span class="indicator" data-slide="3"></span>
+        </div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+            <div class="hero-slide-content">
+                <h1>Exclusive Handwoven Textiles</h1>
+                <p>Add warmth and color to your home with handmade textiles</p>
+                <a href="#" class="btn">Explore</a>
             </div>
-        </section>
+        </div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1570522554091-cb0fddf5d8c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+            <div class="hero-slide-content">
+                <h1>Artisanal Jewelry & Accessories</h1>
+                <p>Handcrafted pieces for every style and occasion</p>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+        </div>
+        <button class="hero-prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="hero-next"><i class="fas fa-chevron-right"></i></button>
+    </section>
 
-    <section class="category-strip">
+    <!-- Categories Section -->
+    <section class="categories">
         <div class="container">
-            <div class="category-items">
-                <div class="category-item">
-                    <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG90dGVyeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=200&q=60" alt="Pottery">
-                    <span>Pottery</span>
+            <h2 class="section-title">Shop By Category</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <img src="IMAGE_URL_HERE" alt="Pottery">
+                    <h3>Pottery</h3>
                 </div>
-                <div class="category-item">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dGV4dGlsZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=200&q=60" alt="Textiles">
-                    <span>Textiles</span>
+                <div class="category-card">
+                    <img src="IMAGE_URL_HERE" alt="Textiles">
+                    <h3>Textiles</h3>
                 </div>
-                <div class="category-item">
-                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFuZG1hZGUlMjBqZXdlbHJ5fGVufDB8fDB8fHww&auto=format&fit=crop&w=200&q=60" alt="Jewelry">
-                    <span>Jewelry</span>
+                <div class="category-card">
+                    <img src="IMAGE_URL_HERE" alt="Jewelry">
+                    <h3>Jewelry</h3>
                 </div>
-                <div class="category-item">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d29vZHdvcmt8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=200&q=60" alt="Woodwork">
-                    <span>Woodwork</span>
+                <div class="category-card">
+                    <img src="IMAGE_URL_HERE" alt="Woodwork">
+                    <h3>Woodwork</h3>
                 </div>
-                <div class="category-item">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvbWUlMjBkZWNvcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=200&q=60" alt="Home Decor">
-                    <span>Home Decor</span>
-                </div>
-                <div class="category-item">
-                    <img src="https://images.unsplash.com/photo-1578321272177-44c5295c4c5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFuZGljcmFmdCUyMGFydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=200&q=60" alt="Art">
-                    <span>Art</span>
+                <div class="category-card">
+                    <img src="IMAGE_URL_HERE" alt="Home Decor">
+                    <h3>Home Decor</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Deals of the Day -->
-    <section class="deals-section">
+    <!-- Products Section -->
+    <section class="products">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">DEALS OF THE DAY</h2>
-                <a href="#" class="view-all">VIEW ALL</a>
-            </div>
+            <h2 class="section-title">Deals of the Day</h2>
             <div class="products-grid">
                 <!-- Product 1 -->
                 <div class="product-card" data-id="1" data-price="2499" data-name="Hand-Painted Ceramic Vase" data-brand="ClayCraft">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG90dGVyeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="Hand-Painted Ceramic Vase">
-                        <div class="wishlist-icon">
-                            <i class="far fa-heart"></i>
+                        <img src="IMAGE_URL_HERE" alt="Hand-Painted Ceramic Vase">
+                        <div class="product-badge">17% OFF</div>
+                        <div class="product-actions">
+                            <button class="more-info-btn" data-id="1"><i class="fas fa-info"></i></button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
-                        <div class="product-brand">ClayCraft</div>
+                        <div class="product-category">Pottery</div>
                         <div class="product-name">Hand-Painted Ceramic Vase</div>
                         <div class="product-price">
                             <span class="current-price">₹2,499</span>
                             <span class="original-price">₹2,999</span>
-                            <span class="discount">(17% OFF)</span>
                         </div>
-                        <button class="add-to-bag-btn" data-id="1">ADD TO BAG</button>
+                        <button class="add-to-cart" data-id="1">Add to Cart</button>
                     </div>
                 </div>
 
                 <!-- Product 2 -->
                 <div class="product-card" data-id="2" data-price="1899" data-name="Traditional Handwoven Shawl" data-brand="WeaveMagic">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dGV4dGlsZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60" alt="Traditional Handwoven Shawl">
-                        <div class="wishlist-icon">
-                            <i class="far fa-heart"></i>
+                        <img src="IMAGE_URL_HERE" alt="Traditional Handwoven Shawl">
+                        <div class="product-badge">17% OFF</div>
+                        <div class="product-actions">
+                            <button class="more-info-btn" data-id="2"><i class="fas fa-info"></i></button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
-                        <div class="product-brand">WeaveMagic</div>
+                        <div class="product-category">Textiles</div>
                         <div class="product-name">Traditional Handwoven Shawl</div>
                         <div class="product-price">
                             <span class="current-price">₹1,899</span>
                             <span class="original-price">₹2,299</span>
-                            <span class="discount">(17% OFF)</span>
                         </div>
-                        <button class="add-to-bag-btn" data-id="2">ADD TO BAG</button>
+                        <button class="add-to-cart" data-id="2">Add to Cart</button>
                     </div>
                 </div>
 
                 <!-- Product 3 -->
                 <div class="product-card" data-id="3" data-price="3299" data-name="Carved Wooden Jewelry Box" data-brand="WoodArt">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d29vZHdvcmt8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60" alt="Carved Wooden Jewelry Box">
-                        <div class="wishlist-icon">
-                            <i class="far fa-heart"></i>
+                        <img src="IMAGE_URL_HERE" alt="Carved Wooden Jewelry Box">
+                        <div class="product-badge">18% OFF</div>
+                        <div class="product-actions">
+                            <button class="more-info-btn" data-id="3"><i class="fas fa-info"></i></button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
-                        <div class="product-brand">WoodArt</div>
+                        <div class="product-category">Woodwork</div>
                         <div class="product-name">Carved Wooden Jewelry Box</div>
                         <div class="product-price">
                             <span class="current-price">₹3,299</span>
                             <span class="original-price">₹3,999</span>
-                            <span class="discount">(18% OFF)</span>
                         </div>
-                        <button class="add-to-bag-btn" data-id="3">ADD TO BAG</button>
+                        <button class="add-to-cart" data-id="3">Add to Cart</button>
                     </div>
                 </div>
 
                 <!-- Product 4 -->
                 <div class="product-card" data-id="4" data-price="1599" data-name="Set of 4 Handmade Mugs" data-brand="PotteryHub">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG90dGVyeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="Set of 4 Handmade Mugs">
-                        <div class="wishlist-icon">
-                            <i class="far fa-heart"></i>
+                        <img src="IMAGE_URL_HERE" alt="Set of 4 Handmade Mugs">
+                        <div class="product-badge">20% OFF</div>
+                        <div class="product-actions">
+                            <button class="more-info-btn" data-id="4"><i class="fas fa-info"></i></button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
-                        <div class="product-brand">PotteryHub</div>
+                        <div class="product-category">Pottery</div>
                         <div class="product-name">Set of 4 Handmade Mugs</div>
                         <div class="product-price">
                             <span class="current-price">₹1,599</span>
                             <span class="original-price">₹1,999</span>
-                            <span class="discount">(20% OFF)</span>
                         </div>
-                        <button class="add-to-bag-btn" data-id="4">ADD TO BAG</button>
+                        <button class="add-to-cart" data-id="4">Add to Cart</button>
                     </div>
                 </div>
 
                 <!-- Product 5 -->
                 <div class="product-card" data-id="5" data-price="1299" data-name="Artisan Silver Earrings" data-brand="SilverCraft">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFuZG1hZGUlMjBqZXdlbHJ5fGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60" alt="Artisan Silver Earrings">
-                        <div class="wishlist-icon">
-                            <i class="far fa-heart"></i>
+                        <img src="IMAGE_URL_HERE" alt="Artisan Silver Earrings">
+                        <div class="product-badge">19% OFF</div>
+                        <div class="product-actions">
+                            <button class="more-info-btn" data-id="5"><i class="fas fa-info"></i></button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
-                        <div class="product-brand">SilverCraft</div>
+                        <div class="product-category">Jewelry</div>
                         <div class="product-name">Artisan Silver Earrings</div>
                         <div class="product-price">
                             <span class="current-price">₹1,299</span>
                             <span class="original-price">₹1,599</span>
-                            <span class="discount">(19% OFF)</span>
                         </div>
-                        <button class="add-to-bag-btn" data-id="5">ADD TO BAG</button>
+                        <button class="add-to-cart" data-id="5">Add to Cart</button>
                     </div>
                 </div>
 
                 <!-- Product 6 -->
                 <div class="product-card" data-id="6" data-price="899" data-name="Handwoven Bamboo Basket" data-brand="BambooWorks">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvbWUlMjBkZWNvcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="Handwoven Bamboo Basket">
-                        <div class="wishlist-icon">
-                            <i class="far fa-heart"></i>
+                        <img src="IMAGE_URL_HERE" alt="Handwoven Bamboo Basket">
+                        <div class="product-badge">25% OFF</div>
+                        <div class="product-actions">
+                            <button class="more-info-btn" data-id="6"><i class="fas fa-info"></i></button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
-                        <div class="product-brand">BambooWorks</div>
+                        <div class="product-category">Home Decor</div>
                         <div class="product-name">Handwoven Bamboo Basket</div>
                         <div class="product-price">
                             <span class="current-price">₹899</span>
                             <span class="original-price">₹1,199</span>
-                            <span class="discount">(25% OFF)</span>
                         </div>
-                        <button class="add-to-bag-btn" data-id="6">ADD TO BAG</button>
+                        <button class="add-to-cart" data-id="6">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Top Picks -->
-    <section class="top-picks">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">TOP PICKS</h2>
-                <a href="#" class="view-all">VIEW ALL</a>
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <span>Start shopping to add items to your cart</span>
             </div>
-            <div class="products-grid">
-                <!-- Product 7 -->
-                <div class="product-card" data-id="7" data-price="699" data-name="Embroidered Cushion Cover" data-brand="TextileTales">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dGV4dGlsZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60" alt="Embroidered Cushion Cover">
-                        <div class="wishlist-icon">
-                            <i class="far fa-heart"></i>
-                        </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>₹<span id="cartTotal">0</span></span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Customer Form Modal -->
+    <div class="customer-modal" id="customerModal">
+        <div class="customer-modal-content">
+            <div class="customer-modal-header">
+                <h3>Customer Information</h3>
+                <button class="close-modal" id="closeCustomerModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="customerForm">
+                <div class="form-group">
+                    <label for="customerName">Full Name</label>
+                    <input type="text" id="customerName" name="customerName" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="customerEmail">Email Address</label>
+                        <input type="email" id="customerEmail" name="customerEmail" required>
                     </div>
-                    <div class="product-info">
-                        <div class="product-brand">TextileTales</div>
-                        <div class="product-name">Embroidered Cushion Cover</div>
-                        <div class="product-price">
-                            <span class="current-price">₹699</span>
-                            <span class="original-price">₹899</span>
-                            <span class="discount">(22% OFF)</span>
-                        </div>
-                        <button class="add-to-bag-btn" data-id="7">ADD TO BAG</button>
+                    <div class="form-group">
+                        <label for="customerPhone">Phone Number</label>
+                        <input type="number" id="customerPhone" name="customerPhone" required>
                     </div>
                 </div>
-
-                <!-- Product 8 -->
-                <div class="product-card" data-id="8" data-price="1199" data-name="Terracotta Plant Pot Set" data-brand="ClayCraft">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG90dGVyeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="Terracotta Plant Pot Set">
-                        <div class="wishlist-icon">
-                            <i class="far fa-heart"></i>
-                        </div>
+                <div class="form-group">
+                    <label for="shippingAddress">Shipping Address</label>
+                    <textarea id="shippingAddress" name="shippingAddress" rows="3" required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="customerCity">City</label>
+                        <input type="text" id="customerCity" name="customerCity" required>
                     </div>
-                    <div class="product-info">
-                        <div class="product-brand">ClayCraft</div>
-                        <div class="product-name">Terracotta Plant Pot Set</div>
-                        <div class="product-price">
-                            <span class="current-price">₹1,199</span>
-                            <span class="original-price">₹1,499</span>
-                            <span class="discount">(20% OFF)</span>
-                        </div>
-                        <button class="add-to-bag-btn" data-id="8">ADD TO BAG</button>
+                    <div class="form-group">
+                        <label for="pincode">Pincode</label>
+                        <input type="number" id="pincode" name="pincode" required>
                     </div>
                 </div>
-
-                <!-- Product 9 -->
-                <div class="product-card" data-id="9" data-price="1499" data-name="Handwoven Table Runner" data-brand="ArtisanWeave">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dGV4dGlsZXN8ZW58MHx8MHx8fDA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="Handwoven Table Runner">
-                        <div class="wishlist-icon">
-                            <i class="far fa-heart"></i>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">ArtisanWeave</div>
-                        <div class="product-name">Handwoven Table Runner</div>
-                        <div class="product-price">
-                            <span class="current-price">₹1,499</span>
-                            <span class="original-price">₹1,799</span>
-                            <span class="discount">(17% OFF)</span>
-                        </div>
-                        <button class="add-to-bag-btn" data-id="9">ADD TO BAG</button>
+                <div class="order-summary">
+                    <h4>Order Summary</h4>
+                    <div id="orderItems"></div>
+                    <div class="order-total">
+                        <span>Total:</span>
+                        <span>₹<span id="orderTotal">0</span></span>
                     </div>
                 </div>
-
-                <!-- Product 10 -->
-                <div class="product-card" data-id="10" data-price="2199" data-name="Hand-Carved Wooden Bowl" data-brand="WoodCraft">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d29vZHdvcmt8ZW58MHx8MHx8fDA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="Hand-Carved Wooden Bowl">
-                        <div class="wishlist-icon">
-                            <i class="far fa-heart"></i>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">WoodCraft</div>
-                        <div class="product-name">Hand-Carved Wooden Bowl</div>
-                        <div class="product-price">
-                            <span class="current-price">₹2,199</span>
-                            <span class="original-price">₹2,599</span>
-                            <span class="discount">(15% OFF)</span>
-                        </div>
-                        <button class="add-to-bag-btn" data-id="10">ADD TO BAG</button>
-                    </div>
+                <div class="form-actions">
+                    <button type="button" class="back-btn" id="backToCart">Back to Cart</button>
+                    <button type="submit" class="submit-btn">Place Order</button>
                 </div>
+            </form>
+        </div>
+    </div>
 
-                <!-- Product 11 -->
-                <div class="product-card" data-id="11" data-price="2899" data-name="Ceramic Tea Set" data-brand="ClayArt">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG90dGVyeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="Ceramic Tea Set">
-                        <div class="wishlist-icon">
-                            <i class="far fa-heart"></i>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">ClayArt</div>
-                        <div class="product-name">Ceramic Tea Set</div>
-                        <div class="product-price">
-                            <span class="current-price">₹2,899</span>
-                            <span class="original-price">₹3,499</span>
-                            <span class="discount">(17% OFF)</span>
-                        </div>
-                        <button class="add-to-bag-btn" data-id="11">ADD TO BAG</button>
-                    </div>
+    <!-- Product Details Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="product-modal-content">
+            <button class="close-product-modal" id="closeProductModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="product-modal-body">
+                <div class="product-modal-images">
+                    <img src="IMAGE_URL_HERE" alt="Product Image" id="modalProductImage">
                 </div>
-
-                <!-- Product 12 -->
-                <div class="product-card" data-id="12" data-price="999" data-name="Handmade Beaded Necklace" data-brand="BeadMagic">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFuZG1hZGUlMjBqZXdlbHJ5fGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60" alt="Handmade Beaded Necklace">
-                        <div class="wishlist-icon">
-                            <i class="far fa-heart"></i>
+                <div class="product-modal-details">
+                    <div class="product-modal-header">
+                        <h2 id="modalProductBrand">Brand Name</h2>
+                        <h1 id="modalProductName">Product Name</h1>
+                        <div class="product-modal-price">
+                            <span class="current-price" id="modalCurrentPrice">₹0</span>
+                            <span class="original-price" id="modalOriginalPrice">₹0</span>
+                            <span class="discount" id="modalDiscount">0% OFF</span>
                         </div>
                     </div>
-                    <div class="product-info">
-                        <div class="product-brand">BeadMagic</div>
-                        <div class="product-name">Handmade Beaded Necklace</div>
-                        <div class="product-price">
-                            <span class="current-price">₹999</span>
-                            <span class="original-price">₹1,299</span>
-                            <span class="discount">(23% OFF)</span>
+                    <div class="product-modal-section">
+                        <h3>Description</h3>
+                        <p id="modalProductDescription">PRODUCT_DESCRIPTION_HERE</p>
+                    </div>
+                    <div class="product-modal-section">
+                        <h3>Features</h3>
+                        <ul class="features-list" id="modalFeaturesList">
+                            <!-- Features will be added dynamically -->
+                        </ul>
+                    </div>
+                    <div class="product-modal-section">
+                        <h3>Specifications</h3>
+                        <div class="specifications" id="modalSpecifications">
                         </div>
-                        <button class="add-to-bag-btn" data-id="12">ADD TO BAG</button>
+                    </div>
+                    <div class="product-modal-actions">
+                        <button class="add-to-cart-modal" id="addToCartModal">Add to Cart</button>
+                        <button class="wishlist-btn-modal">
+                            <i class="far fa-heart"></i> Add to Wishlist
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-     <footer class="footer">
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Order Placed Successfully!</h3>
+            <div class="order-details" id="successOrderDetails">
+            </div>
+            <p class="success-message">Thank you for your order! We will contact you shortly for Payment!! </p>
+            <button class="continue-shopping-btn" id="continueShopping">Continue Shopping!!</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -464,48 +459,6 @@
         </div>
     </footer>
 
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>SHOPPING BAG</h3>
-            <button class="close-cart" id="closeCart">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="cart-items" id="cartItems">
-            <div class="empty-cart">
-                <i class="fas fa-shopping-bag"></i>
-                <p>Your bag is empty</p>
-                <span>Start shopping to add items to your bag</span>
-            </div>
-        </div>
-        <div class="cart-footer">
-            <div class="price-details">
-                <div class="price-row">
-                    <span>Total MRP</span>
-                    <span>₹<span id="totalMrp">0</span></span>
-                </div>
-                <div class="price-row">
-                    <span>Discount on MRP</span>
-                    <span class="discount-text">-₹<span id="totalDiscount">0</span></span>
-                </div>
-                <div class="price-row">
-                    <span>Convenience Fee</span>
-                    <span>₹<span id="convenienceFee">99</span></span>
-                </div>
-                <div class="price-row total">
-                    <span>Total Amount</span>
-                    <span>₹<span id="cartTotal">99</span></span>
-                </div>
-            </div>
-            <button class="checkout-btn" id="checkoutBtn">
-                <span>PLACE ORDER</span>
-            </button>
-        </div>
-    </div>
-
-    <div class="overlay" id="overlay"></div>
-
     <script src="script.js"></script>
 </body>
-
 </html>
