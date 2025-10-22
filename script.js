@@ -47,6 +47,7 @@ const addToCartModal = document.getElementById('addToCartModal');
 
 // Product details data
 const productDetails = {
+    // Original Products (1-6)
     1: {
         id: 1,
         name: "Hand-Painted Ceramic Vase",
@@ -183,6 +184,219 @@ const productDetails = {
             "Weight": "300 grams",
             "Handle": "Integrated bamboo handle",
             "Care": "Wipe clean with damp cloth"
+        }
+    },
+
+    // Shirts Category (101-103)
+    101: {
+        id: 101,
+        name: "Embroidered Cotton Shirt",
+        brand: "CottonCraft",
+        price: 1299,
+        originalPrice: 1529,
+        image: "shirt1.jpg",
+        description: "Beautiful hand-embroidered cotton shirt with traditional patterns. Made from 100% premium cotton for maximum comfort and breathability.",
+        features: [
+            "100% Premium Cotton",
+            "Hand Embroidery",
+            "Traditional Patterns",
+            "Comfort Fit",
+            "Breathable Fabric"
+        ],
+        specifications: {
+            "Material": "100% Cotton",
+            "Care": "Hand Wash",
+            "Fit": "Regular",
+            "Color": "White",
+            "Size": "S, M, L, XL"
+        }
+    },
+    102: {
+        id: 102,
+        name: "Traditional Handblock Print Shirt",
+        brand: "PrintArt",
+        price: 1599,
+        originalPrice: 1999,
+        image: "shirt2.jpg",
+        description: "Authentic handblock printed shirt using traditional wooden blocks. Each piece is unique with intricate designs passed down through generations.",
+        features: [
+            "Handblock Printing",
+            "Traditional Art",
+            "Unique Patterns",
+            "Comfortable Fabric",
+            "Artisan Crafted"
+        ],
+        specifications: {
+            "Material": "Cotton Blend",
+            "Care": "Machine Wash",
+            "Fit": "Slim",
+            "Color": "Blue",
+            "Size": "S, M, L, XL"
+        }
+    },
+    103: {
+        id: 103,
+        name: "Linen Blend Formal Shirt",
+        brand: "LinenLux",
+        price: 1799,
+        originalPrice: 2049,
+        image: "shirt3.jpg",
+        description: "Elegant linen blend formal shirt perfect for office wear and special occasions. Features a crisp finish and comfortable fit.",
+        features: [
+            "Linen Blend",
+            "Formal Wear",
+            "Crisp Finish",
+            "Office Ready",
+            "Comfortable Fit"
+        ],
+        specifications: {
+            "Material": "Linen-Cotton Blend",
+            "Care": "Dry Clean",
+            "Fit": "Regular",
+            "Color": "Light Blue",
+            "Size": "S, M, L, XL"
+        }
+    },
+
+    // T-Shirts Category (201-203)
+    201: {
+        id: 201,
+        name: "Organic Cotton T-Shirt",
+        brand: "EcoWear",
+        price: 799,
+        originalPrice: 1065,
+        image: "tshirt1.jpg",
+        description: "Soft and sustainable organic cotton t-shirt. Eco-friendly production with no harmful chemicals, perfect for everyday wear.",
+        features: [
+            "100% Organic Cotton",
+            "Eco-Friendly",
+            "Soft Fabric",
+            "Sustainable",
+            "Chemical Free"
+        ],
+        specifications: {
+            "Material": "Organic Cotton",
+            "Care": "Machine Wash",
+            "Fit": "Regular",
+            "Color": "Black",
+            "Size": "S, M, L, XL"
+        }
+    },
+    202: {
+        id: 202,
+        name: "Graphic Print Casual T-Shirt",
+        brand: "UrbanStyle",
+        price: 899,
+        originalPrice: 1096,
+        image: "tshirt2.jpg",
+        description: "Trendy graphic print t-shirt with unique artwork. Made from premium cotton for all-day comfort and style.",
+        features: [
+            "Graphic Print",
+            "Premium Cotton",
+            "Trendy Design",
+            "Comfort Fit",
+            "Unique Artwork"
+        ],
+        specifications: {
+            "Material": "100% Cotton",
+            "Care": "Machine Wash",
+            "Fit": "Oversized",
+            "Color": "White",
+            "Size": "S, M, L, XL"
+        }
+    },
+    203: {
+        id: 203,
+        name: "Basic Crew Neck T-Shirt",
+        brand: "ComfortWear",
+        price: 699,
+        originalPrice: 999,
+        image: "tshirt3.jpg",
+        description: "Classic crew neck t-shirt in basic colors. Versatile and comfortable for daily wear or layering.",
+        features: [
+            "Crew Neck",
+            "Basic Colors",
+            "Versatile",
+            "Daily Wear",
+            "Easy to Layer"
+        ],
+        specifications: {
+            "Material": "Cotton Blend",
+            "Care": "Machine Wash",
+            "Fit": "Regular",
+            "Color": "Grey",
+            "Size": "S, M, L, XL"
+        }
+    },
+
+    // Pants Category (301-303)
+    301: {
+        id: 301,
+        name: "Cotton Linen Trousers",
+        brand: "ComfortFit",
+        price: 1899,
+        originalPrice: 2234,
+        image: "pant1.jpg",
+        description: "Lightweight cotton linen trousers perfect for summer. Breathable fabric with a relaxed fit for all-day comfort.",
+        features: [
+            "Cotton Linen Blend",
+            "Lightweight",
+            "Breathable",
+            "Relaxed Fit",
+            "Summer Wear"
+        ],
+        specifications: {
+            "Material": "Cotton-Linen Blend",
+            "Care": "Machine Wash",
+            "Fit": "Relaxed",
+            "Color": "Beige",
+            "Size": "28, 30, 32, 34"
+        }
+    },
+    302: {
+        id: 302,
+        name: "Formal Office Pants",
+        brand: "ExecutiveWear",
+        price: 2199,
+        originalPrice: 2443,
+        image: "pant2.jpg",
+        description: "Professional formal pants with sharp crease and premium finish. Ideal for office wear and business meetings.",
+        features: [
+            "Formal Wear",
+            "Sharp Crease",
+            "Premium Finish",
+            "Office Ready",
+            "Professional Look"
+        ],
+        specifications: {
+            "Material": "Polyester Blend",
+            "Care": "Dry Clean",
+            "Fit": "Slim",
+            "Color": "Navy Blue",
+            "Size": "28, 30, 32, 34"
+        }
+    },
+    303: {
+        id: 303,
+        name: "Casual Chino Pants",
+        brand: "UrbanFit",
+        price: 1599,
+        originalPrice: 1999,
+        image: "pant3.jpg",
+        description: "Versatile chino pants that bridge the gap between casual and formal. Perfect for smart casual occasions.",
+        features: [
+            "Chino Style",
+            "Versatile",
+            "Smart Casual",
+            "Comfortable",
+            "All Occasion"
+        ],
+        specifications: {
+            "Material": "Cotton Twill",
+            "Care": "Machine Wash",
+            "Fit": "Regular",
+            "Color": "Khaki",
+            "Size": "28, 30, 32, 34"
         }
     }
 };
@@ -679,4 +893,65 @@ document.addEventListener('click', function(e) {
         }
         e.stopPropagation();
     }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.querySelector('.search-box input');
+    
+    // Map search terms to category IDs
+    const categoryMap = {
+        'shirt': 'shirt',
+        'shirts': 'shirt',
+        't-shirt': 't-shirt',
+        't-shirts': 't-shirt',
+        'tshirt': 't-shirt',
+        'tshirts': 't-shirt',
+        'pant': 'pant',
+        'pants': 'pant',
+        'trouser': 'pant',
+        'trousers': 'pant'
+    };
+    
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            const searchTerm = this.value.trim().toLowerCase();
+            
+            // Find the category ID from the search term
+            let categoryId = categoryMap[searchTerm];
+            
+            // If no direct match, try partial matching
+            if (!categoryId) {
+                for (const [key, value] of Object.entries(categoryMap)) {
+                    if (searchTerm.includes(key)) {
+                        categoryId = value;
+                        break;
+                    }
+                }
+            }
+            
+            if (categoryId) {
+                const targetSection = document.getElementById(categoryId);
+                if (targetSection) {
+                    // Smooth scroll to the category
+                    targetSection.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Optional: Add a highlight effect
+                    targetSection.style.transition = 'all 0.5s ease';
+                    targetSection.style.backgroundColor = '#fff9e6';
+                    setTimeout(() => {
+                        targetSection.style.backgroundColor = '';
+                    }, 2000);
+                }
+            } else {
+                // If no category found, show a message
+                alert('Category not found. Please try "shirt", "t-shirt", or "pant".');
+            }
+            
+            // Clear the search input
+            this.value = '';
+        }
+    });
 });
