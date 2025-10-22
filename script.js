@@ -187,6 +187,9 @@ const productDetails = {
     }
 };
 
+// Buy Now functionality
+let currentProductForBuyNow = null;
+
 // Initialize the app
 document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
@@ -213,14 +216,8 @@ function setupEventListeners() {
     // Success modal functionality
     continueShopping.addEventListener('click', closeSuccessModal);
     
-    // Product interactions
+    // Product interactions - only keep the essential ones that aren't handled elsewhere
     document.addEventListener('click', function(e) {
-        // Add to cart from product cards
-        if (e.target.classList.contains('add-to-cart')) {
-            const productId = parseInt(e.target.dataset.id);
-            addToCart(productId);
-        }
-        
         // More info button
         if (e.target.classList.contains('more-info-btn') || e.target.parentElement.classList.contains('more-info-btn')) {
             const button = e.target.classList.contains('more-info-btn') ? e.target : e.target.parentElement;
@@ -522,26 +519,49 @@ function submitOrder(e) {
     e.preventDefault();
     
     const formData = new FormData(customerForm);
-    const orderData = {
-        orderId: 'ORD' + Date.now(),
-        customerName: formData.get('customerName'),
-        customerEmail: formData.get('customerEmail'),
-        customerPhone: formData.get('customerPhone'),
-        shippingAddress: formData.get('shippingAddress'),
-        customerCity: formData.get('customerCity'),
-        pincode: formData.get('pincode'),
-        totalAmount: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
-        items: [...cart]
-    };
+    let orderData;
     
-    console.log('Order submitted:', orderData);
-    
+    if (currentProductForBuyNow) {
+        // Buy Now order
+        orderData = {
+            orderId: 'ORD' + Date.now(),
+            customerName: formData.get('customerName'),
+            customerEmail: formData.get('customerEmail'),
+            customerPhone: formData.get('customerPhone'),
+            shippingAddress: formData.get('shippingAddress'),
+            customerCity: formData.get('customerCity'),
+            pincode: formData.get('pincode'),
+            totalAmount: currentProductForBuyNow.price,
+            items: [currentProductForBuyNow],
+            orderType: 'buy_now'
+        };
+        
+        // Clear the buy now product
+        currentProductForBuyNow = null;
+    } else {
+        // Regular cart order
+        orderData = {
+            orderId: 'ORD' + Date.now(),
+            customerName: formData.get('customerName'),
+            customerEmail: formData.get('customerEmail'),
+            customerPhone: formData.get('customerPhone'),
+            shippingAddress: formData.get('shippingAddress'),
+            customerCity: formData.get('customerCity'),
+            pincode: formData.get('pincode'),
+            totalAmount: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
+            items: [...cart],
+            orderType: 'cart'
+        };
+        
+        // Clear cart
+        cart = [];
+        updateCartUI();
+    }
 
+    // Send order data (your existing email logic)
     sendOrderEmail(orderData);
     
-    // Clear cart and show success
-    cart = [];
-    updateCartUI();
+    // Show success modal
     closeCustomerForm();
     showSuccessModal(orderData);
 }
@@ -561,3 +581,102 @@ function sendOrderEmail(orderData) {
         console.error("Error sending order details:", error);
     });
 }
+
+// Buy Now functionality
+function buyNowProduct(productId) {
+    const productData = getProductData(productId);
+    if (!productData) return;
+
+    // Store the product for buy now
+    currentProductForBuyNow = {
+        ...productData,
+        quantity: 1
+    };
+
+    // Close product modal if open
+    closeProductDetails();
+    
+    // Show customer form directly
+    showCustomerFormForBuyNow();
+}
+
+function showCustomerFormForBuyNow() {
+    const customerModal = document.getElementById('customerModal');
+    const orderItems = document.getElementById('orderItems');
+    const orderTotal = document.getElementById('orderTotal');
+
+    // Clear any existing cart items and set only the buy now product
+    orderItems.innerHTML = '';
+    
+    if (currentProductForBuyNow) {
+        const orderItem = document.createElement('div');
+        orderItem.className = 'order-item';
+        orderItem.innerHTML = `
+            <span>${currentProductForBuyNow.name} (Qty: 1)</span>
+            <span>₹${currentProductForBuyNow.price}</span>
+        `;
+        orderItems.appendChild(orderItem);
+        
+        orderTotal.textContent = currentProductForBuyNow.price;
+    }
+
+    // Show customer modal
+    customerModal.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Update the back to cart button to handle buy now scenario
+document.getElementById('backToCart').addEventListener('click', function() {
+    closeCustomerForm();
+    
+    // If it was a buy now flow, reopen the product modal
+    if (currentProductForBuyNow) {
+        showProductDetails(currentProductForBuyNow.id);
+        currentProductForBuyNow = null;
+    } else {
+        // Regular cart flow - open cart sidebar
+        openCart();
+    }
+});
+
+// Update close customer form to reset buy now state
+function closeCustomerForm() {
+    const customerModal = document.getElementById('customerModal');
+    customerModal.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+    
+    // Reset buy now state if modal is closed without ordering
+    currentProductForBuyNow = null;
+}
+
+// Add event listeners for product card buttons
+document.addEventListener('click', function(e) {
+    // Handle Add to Cart from product cards
+    if (e.target.classList.contains('add-to-cart')) {
+        const productId = parseInt(e.target.dataset.id);
+        addToCart(productId);
+        e.stopPropagation();
+        return;
+    }
+
+    // Handle Buy Now from product cards
+    if (e.target.classList.contains('buy-now-btn') || 
+        e.target.closest('.buy-now-btn')) {
+        const button = e.target.classList.contains('buy-now-btn') ? e.target : e.target.closest('.buy-now-btn');
+        const productId = parseInt(button.dataset.id);
+        buyNowProduct(productId);
+        e.stopPropagation();
+        return;
+    }
+
+    // Handle Buy Now from modal
+    if (e.target.classList.contains('buy-now-btn-modal') || 
+        e.target.closest('.buy-now-btn-modal')) {
+        if (currentProductId) {
+            buyNowProduct(currentProductId);
+        }
+        e.stopPropagation();
+    }
+});

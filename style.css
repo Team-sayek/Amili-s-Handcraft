@@ -1388,3 +1388,98 @@ nav ul li a:hover {
 .discount-text {
     color: #03a685;
 }
+
+/* --- Buy Now Buttons --- */
+.buy-now-btn,
+.buy-now-btn-modal {
+  background-color: #ff3f6c; /* Myntra pink */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.buy-now-btn:hover,
+.buy-now-btn-modal:hover {
+  background-color: #e91e63;
+}
+
+/* Adjust in modal */
+.product-modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.add-to-cart-modal,
+.buy-now-btn-modal {
+  flex: 1;
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 768px) {
+  .product-card .product-buttons {
+    flex-direction: column;
+  }
+
+  .add-to-cart,
+  .buy-now-btn {
+    width: 100%;
+  }
+}
+/* Dual Button Layout for Product Cards */
+.product-actions-dual {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.add-to-cart {
+    flex: 1;
+    padding: 10px;
+    background-color: #ff3f6c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #e6395f;
+}
+
+.add-to-cart.added {
+    background-color: #24a887;
+}
+
+.buy-now-btn {
+    flex: 1;
+    padding: 10px;
+    background: linear-gradient(135deg, #ff3f6c, #ff6b9c);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.buy-now-btn:hover {
+    background: linear-gradient(135deg, #e6395f, #ff527e);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(255, 63, 108, 0.3);
+}
+
+.buy-now-btn i {
+    font-size: 14px;
+}
