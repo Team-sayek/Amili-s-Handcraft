@@ -13,16 +13,16 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="./images/SmallSquareLogoJpg.jpg" alt="ARTSY" class="logo-image">
+                    <img src="./images/Aemili.png" alt="ARTSY" class="logo-image">
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#shirt">Shirt</a></li>
+                        <li><a href="#saree">Saree</a></li>
                         <li><a href="#t-shirt">T-Shirt</a></li>
-                        <li><a href="#pant">Pants</a></li>
-                        <li><a href="#">Jewelry</a></li>
-                        <li><a href="#">Woodwork</a></li>
-                        <li><a href="#">Home Decor</a></li>
+                        <li><a href="#woolen">Winter Collection</a></li>
+                        <li><a href="#candle">Candle</a></li>
+                        <li><a href="#home-decor">Home Decor</a></li>
+                        <li><a href="#baby">Baby</a></li>
                     </ul>
                 </nav>
                 <div class="header-actions">
@@ -72,30 +72,34 @@
             <h2 class="section-title">Shop By Category</h2>
             <div class="categories-grid">
                 <div class="category-card">
-                    <a href="#shirt">
-                        <img src="IMAGE_URL_HERE" alt="Shirts">
-                        <h3>Shirt</h3>
+                    <a href="#saree">
+                        <img src="./images/saree/Linen Saree.png" alt="Saree">
+                        <h3>Saree</h3>
                     </a>
                 </div>
                 <div class="category-card">
-                    <a href="#t-shirt">
-                        <img src="IMAGE_URL_HERE" alt="T-Shirts">
-                        <h3>T-Shirt</h3>
+                    <a href="#candle">
+                        <img src="./images/Candle Photos/IMG 6.png" alt="Candle">
+                        <h3>Candle</h3>
                     </a>
                 </div>
                 <div class="category-card">
-                    <a href="#pant">
-                        <img src="IMAGE_URL_HERE" alt="Pants">
-                        <h3>Pants</h3>
+                    <a href="#woolen">
+                        <img src="./images/Winter Section/revarsival leather jacket(women).png" alt="Woolen">
+                        <h3>Woolen</h3>
                     </a>
                 </div>
                 <div class="category-card">
-                    <img src="IMAGE_URL_HERE" alt="Woodwork">
-                    <h3>Woolen</h3>
+                    <a href="#home-decor">
+                        <img src="./images/Home Decor/wall hanging.png" alt="Home Decor">
+                        <h3>Home Decor</h3>
+                    </a>
                 </div>
                 <div class="category-card">
-                    <img src="IMAGE_URL_HERE" alt="Home Decor">
-                    <h3>Home Decor</h3>
+                    <a href="#baby">
+                        <img src="./images/Baby Section/New Born Socks.png" alt="Baby">
+                        <h3>Baby</h3>
+                    </a>
                 </div>
             </div>
         </div>
@@ -104,244 +108,129 @@
     <!-- Products Section -->
     <section class="products">
         <div class="container">
-            <h2 class="section-title">Deals of the Day</h2>
-            <div class="products-grid">
-                <!-- Product 1 -->
-                <div class="product-card" data-id="1" data-price="2499" data-name="Hand-Painted Ceramic Vase" data-brand="ClayCraft">
-                    <div class="product-image">
-                        <img src="IMAGE_URL_HERE" alt="Hand-Painted Ceramic Vase">
-                        <div class="product-badge">17% OFF</div>
-                        <div class="product-actions">
-                            <button class="more-info-btn" data-id="1"><i class="fas fa-info"></i></button>
+            <!-- Saree Category -->
+            <section id="saree" class="category-section">
+                <h2 class="section-title">Saree Collection</h2>
+                <div class="products-grid">
+                    <!-- Saree 1 -->
+                    <div class="product-card" data-id="1" data-price="1500" data-name="Hand Battik" data-brand="Amilis">
+                        <div class="product-image">
+                            <img src="./images/saree/Hand Battik saree.png" alt="Hand Battik Saree">
+                            <div class="product-badge">25% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="1"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Saree</div>
+                            <div class="product-name">Hand Battik</div>
+                            <div class="product-price">
+                                <span class="current-price">₹1,500</span>
+                                <span class="original-price">₹2,000</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="1">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="1">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="product-info">
-                        <div class="product-category">Pottery</div>
-                        <div class="product-name">Hand-Painted Ceramic Vase</div>
-                        <div class="product-price">
-                            <span class="current-price">₹2,499</span>
-                            <span class="original-price">₹2,999</span>
-                        </div>
-                        <div class="product-actions-dual">
-                            <button class="add-to-cart" data-id="1">Add to Cart</button>
-                            <button class="buy-now-btn" data-id="1">
-                                <i class="fas fa-bolt"></i> Buy Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Product 2 -->
-                <div class="product-card" data-id="2" data-price="1899" data-name="Traditional Handwoven Shawl" data-brand="WeaveMagic">
-                    <div class="product-image">
-                        <img src="IMAGE_URL_HERE" alt="Traditional Handwoven Shawl">
-                        <div class="product-badge">17% OFF</div>
-                        <div class="product-actions">
-                            <button class="more-info-btn" data-id="2"><i class="fas fa-info"></i></button>
+                    <!-- Saree 2 -->
+                    <div class="product-card" data-id="2" data-price="800" data-name="Kalamkari Saree" data-brand="Amilis">
+                        <div class="product-image">
+                            <img src="./images/saree/Kalamkari Saree.png" alt="Kalamkari Saree">
+                            <div class="product-badge">34% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="2"><i class="fas fa-info"></i></button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">Textiles</div>
-                        <div class="product-name">Traditional Handwoven Shawl</div>
-                        <div class="product-price">
-                            <span class="current-price">₹1,899</span>
-                            <span class="original-price">₹2,299</span>
-                        </div>
-                        <div class="product-actions-dual">
+                        <div class="product-info">
+                            <div class="product-category">Saree</div>
+                            <div class="product-name">Kalamkari Saree</div>
+                            <div class="product-price">
+                                <span class="current-price">₹800</span>
+                                <span class="original-price">₹1,200</span>
+                            </div>
+                            <div class="product-actions-dual">
                                 <button class="add-to-cart" data-id="2">Add to Cart</button>
                                 <button class="buy-now-btn" data-id="2">
                                     <i class="fas fa-bolt"></i> Buy Now
                                 </button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Product 3 -->
-                <div class="product-card" data-id="3" data-price="3299" data-name="Carved Wooden Jewelry Box" data-brand="WoodArt">
-                    <div class="product-image">
-                        <img src="IMAGE_URL_HERE" alt="Carved Wooden Jewelry Box">
-                        <div class="product-badge">18% OFF</div>
-                        <div class="product-actions">
-                            <button class="more-info-btn" data-id="3"><i class="fas fa-info"></i></button>
+                    <!-- Saree 3 -->
+                    <div class="product-card" data-id="3" data-price="7500" data-name="Kantha Stitch" data-brand="Amilis">
+                        <div class="product-image">
+                            <img src="./images/saree/Kantha stich.png" alt="Kantha Stitch Saree">
+                            <div class="product-badge">7% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="3"><i class="fas fa-info"></i></button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">Woodwork</div>
-                        <div class="product-name">Carved Wooden Jewelry Box</div>
-                        <div class="product-price">
-                            <span class="current-price">₹3,299</span>
-                            <span class="original-price">₹3,999</span>
-                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Saree</div>
+                            <div class="product-name">Kantha Stitch</div>
+                            <div class="product-price">
+                                <span class="current-price">₹7,500</span>
+                                <span class="original-price">₹8,000</span>
+                            </div>
                             <div class="product-actions-dual">
                                 <button class="add-to-cart" data-id="3">Add to Cart</button>
                                 <button class="buy-now-btn" data-id="3">
                                     <i class="fas fa-bolt"></i> Buy Now
                                 </button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Product 4 -->
-                <div class="product-card" data-id="4" data-price="1599" data-name="Set of 4 Handmade Mugs" data-brand="PotteryHub">
-                    <div class="product-image">
-                        <img src="IMAGE_URL_HERE" alt="Set of 4 Handmade Mugs">
-                        <div class="product-badge">20% OFF</div>
-                        <div class="product-actions">
-                            <button class="more-info-btn" data-id="4"><i class="fas fa-info"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">Pottery</div>
-                        <div class="product-name">Set of 4 Handmade Mugs</div>
-                        <div class="product-price">
-                            <span class="current-price">₹1,599</span>
-                            <span class="original-price">₹1,999</span>
-                        </div>
-                        <div class="product-actions-dual">
-                            <button class="add-to-cart" data-id="4">Add to Cart</button>
-                            <button class="buy-now-btn" data-id="4">
-                                <i class="fas fa-bolt"></i> Buy Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 5 -->
-                <div class="product-card" data-id="5" data-price="1299" data-name="Artisan Silver Earrings" data-brand="SilverCraft">
-                    <div class="product-image">
-                        <img src="IMAGE_URL_HERE" alt="Artisan Silver Earrings">
-                        <div class="product-badge">19% OFF</div>
-                        <div class="product-actions">
-                            <button class="more-info-btn" data-id="5"><i class="fas fa-info"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">Jewelry</div>
-                        <div class="product-name">Artisan Silver Earrings</div>
-                        <div class="product-price">
-                            <span class="current-price">₹1,299</span>
-                            <span class="original-price">₹1,599</span>
-                        </div>
-                        <div class="product-actions-dual">
-                            <button class="add-to-cart" data-id="5">Add to Cart</button>
-                            <button class="buy-now-btn" data-id="5">
-                                <i class="fas fa-bolt"></i> Buy Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 6 -->
-                <div class="product-card" data-id="6" data-price="899" data-name="Handwoven Bamboo Basket" data-brand="BambooWorks">
-                    <div class="product-image">
-                        <img src="IMAGE_URL_HERE" alt="Handwoven Bamboo Basket">
-                        <div class="product-badge">25% OFF</div>
-                        <div class="product-actions">
-                            <button class="more-info-btn" data-id="6"><i class="fas fa-info"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">Home Decor</div>
-                        <div class="product-name">Handwoven Bamboo Basket</div>
-                        <div class="product-price">
-                            <span class="current-price">₹899</span>
-                            <span class="original-price">₹1,199</span>
-                        </div>
-                        <div class="product-actions-dual">
-                            <button class="add-to-cart" data-id="6">Add to Cart</button>
-                            <button class="buy-now-btn" data-id="6">
-                                <i class="fas fa-bolt"></i> Buy Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Shirts Category -->
-            <section id="shirt" class="category-section">
-                <h2 class="section-title">Shirts Collection</h2>
-                <div class="products-grid">
-                    <!-- Shirt 1 -->
-                    <div class="product-card" data-id="101" data-price="1299" data-name="Embroidered Cotton Shirt" data-brand="CottonCraft"
-                        data-description="Beautiful hand-embroidered cotton shirt with traditional patterns. Made from 100% premium cotton for maximum comfort and breathability."
-                        data-features='["100% Premium Cotton", "Hand Embroidery", "Traditional Patterns", "Comfort Fit"]'
-                        data-specifications='{"Material": "100% Cotton", "Care": "Hand Wash", "Fit": "Regular", "Color": "White"}'
-                        data-image="shirt1.jpg">
+                    <!-- Saree 4 -->
+                    <div class="product-card" data-id="4" data-price="1500" data-name="Linen Saree" data-brand="Amilis">
                         <div class="product-image">
-                            <img src="shirt1.jpg" alt="Embroidered Cotton Shirt">
+                            <img src="./images/saree/Linen Saree.png" alt="Linen Saree">
+                            <div class="product-badge">25% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="4"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Saree</div>
+                            <div class="product-name">Linen Saree</div>
+                            <div class="product-price">
+                                <span class="current-price">₹1,500</span>
+                                <span class="original-price">₹2,000</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="4">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="4">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Saree 5 -->
+                    <div class="product-card" data-id="5" data-price="1200" data-name="Khesh Saree" data-brand="Amilis">
+                        <div class="product-image">
+                            <img src="./images/saree/Khesh(santiniketan)Saree.png" alt="Khesh Saree">
                             <div class="product-badge">15% OFF</div>
                             <div class="product-actions">
-                                <button class="more-info-btn" data-id="101"><i class="fas fa-info"></i></button>
+                                <button class="more-info-btn" data-id="5"><i class="fas fa-info"></i></button>
                             </div>
                         </div>
                         <div class="product-info">
-                            <div class="product-category">Shirts</div>
-                            <div class="product-name">Embroidered Cotton Shirt</div>
+                            <div class="product-category">Saree</div>
+                            <div class="product-name">Khesh Saree</div>
                             <div class="product-price">
-                                <span class="current-price">₹1,299</span>
-                                <span class="original-price">₹1,529</span>
+                                <span class="current-price">₹1,200</span>
+                                <span class="original-price">₹1,500</span>
                             </div>
                             <div class="product-actions-dual">
-                                <button class="add-to-cart" data-id="101">Add to Cart</button>
-                                <button class="buy-now-btn" data-id="101">
-                                    <i class="fas fa-bolt"></i> Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Shirt 2 -->
-                    <div class="product-card" data-id="102" data-price="1599" data-name="Traditional Handblock Print Shirt" data-brand="PrintArt"
-                        data-description="Authentic handblock printed shirt using traditional wooden blocks. Each piece is unique with intricate designs passed down through generations."
-                        data-features='["Handblock Printing", "Traditional Art", "Unique Patterns", "Comfortable Fabric"]'
-                        data-specifications='{"Material": "Cotton Blend", "Care": "Machine Wash", "Fit": "Slim", "Color": "Blue"}'
-                        data-image="shirt2.jpg">
-                        <div class="product-image">
-                            <img src="shirt2.jpg" alt="Traditional Handblock Print Shirt">
-                            <div class="product-badge">20% OFF</div>
-                            <div class="product-actions">
-                                <button class="more-info-btn" data-id="102"><i class="fas fa-info"></i></button>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-category">Shirts</div>
-                            <div class="product-name">Traditional Handblock Print Shirt</div>
-                            <div class="product-price">
-                                <span class="current-price">₹1,599</span>
-                                <span class="original-price">₹1,999</span>
-                            </div>
-                            <div class="product-actions-dual">
-                                <button class="add-to-cart" data-id="102">Add to Cart</button>
-                                <button class="buy-now-btn" data-id="102">
-                                    <i class="fas fa-bolt"></i> Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Shirt 3 -->
-                    <div class="product-card" data-id="103" data-price="1799" data-name="Linen Blend Formal Shirt" data-brand="LinenLux"
-                        data-description="Elegant linen blend formal shirt perfect for office wear and special occasions. Features a crisp finish and comfortable fit."
-                        data-features='["Linen Blend", "Formal Wear", "Crisp Finish", "Office Ready"]'
-                        data-specifications='{"Material": "Linen-Cotton Blend", "Care": "Dry Clean", "Fit": "Regular", "Color": "Light Blue"}'
-                        data-image="shirt3.jpg">
-                        <div class="product-image">
-                            <img src="shirt3.jpg" alt="Linen Blend Formal Shirt">
-                            <div class="product-badge">12% OFF</div>
-                            <div class="product-actions">
-                                <button class="more-info-btn" data-id="103"><i class="fas fa-info"></i></button>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-category">Shirts</div>
-                            <div class="product-name">Linen Blend Formal Shirt</div>
-                            <div class="product-price">
-                                <span class="current-price">₹1,799</span>
-                                <span class="original-price">₹2,049</span>
-                            </div>
-                            <div class="product-actions-dual">
-                                <button class="add-to-cart" data-id="103">Add to Cart</button>
-                                <button class="buy-now-btn" data-id="103">
+                                <button class="add-to-cart" data-id="5">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="5">
                                     <i class="fas fa-bolt"></i> Buy Now
                                 </button>
                             </div>
@@ -355,24 +244,20 @@
                 <h2 class="section-title">T-Shirts Collection</h2>
                 <div class="products-grid">
                     <!-- T-Shirt 1 -->
-                    <div class="product-card" data-id="201" data-price="799" data-name="Organic Cotton T-Shirt" data-brand="EcoWear"
-                        data-description="Soft and sustainable organic cotton t-shirt. Eco-friendly production with no harmful chemicals, perfect for everyday wear."
-                        data-features='["100% Organic Cotton", "Eco-Friendly", "Soft Fabric", "Sustainable"]'
-                        data-specifications='{"Material": "Organic Cotton", "Care": "Machine Wash", "Fit": "Regular", "Color": "Black"}'
-                        data-image="tshirt1.jpg">
+                    <div class="product-card" data-id="201" data-price="499" data-name="Customized Hand Printed T-Shirt" data-brand="Amilis">
                         <div class="product-image">
-                            <img src="tshirt1.jpg" alt="Organic Cotton T-Shirt">
-                            <div class="product-badge">25% OFF</div>
+                            <img src="./images/T-Shirt Section/Customized T-shirt.png" alt="Customized T-Shirt">
+                            <div class="product-badge">50% OFF</div>
                             <div class="product-actions">
                                 <button class="more-info-btn" data-id="201"><i class="fas fa-info"></i></button>
                             </div>
                         </div>
                         <div class="product-info">
                             <div class="product-category">T-Shirts</div>
-                            <div class="product-name">Organic Cotton T-Shirt</div>
+                            <div class="product-name">Customized Hand Printed T-Shirt</div>
                             <div class="product-price">
-                                <span class="current-price">₹799</span>
-                                <span class="original-price">₹1,065</span>
+                                <span class="current-price">₹499</span>
+                                <span class="original-price">₹999</span>
                             </div>
                             <div class="product-actions-dual">
                                 <button class="add-to-cart" data-id="201">Add to Cart</button>
@@ -382,59 +267,257 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    <!-- T-Shirt 2 -->
-                    <div class="product-card" data-id="202" data-price="899" data-name="Graphic Print Casual T-Shirt" data-brand="UrbanStyle"
-                        data-description="Trendy graphic print t-shirt with unique artwork. Made from premium cotton for all-day comfort and style."
-                        data-features='["Graphic Print", "Premium Cotton", "Trendy Design", "Comfort Fit"]'
-                        data-specifications='{"Material": "100% Cotton", "Care": "Machine Wash", "Fit": "Oversized", "Color": "White"}'
-                        data-image="tshirt2.jpg">
+            <!-- Woolen Category -->
+            <section id="woolen" class="category-section">
+                <h2 class="section-title">Winter Collection</h2>
+                <div class="products-grid">
+                    <!-- Woolen 1 -->
+                    <div class="product-card" data-id="401" data-price="2499" data-name="Handwoven Woolen Shawl" data-brand="WoolCraft">
                         <div class="product-image">
-                            <img src="tshirt2.jpg" alt="Graphic Print Casual T-Shirt">
-                            <div class="product-badge">18% OFF</div>
+                            <img src="./images/Winter Section/Insulated Jacket(men).png" alt="Woolen Shawl">
+                            <div class="product-badge">20% OFF</div>
                             <div class="product-actions">
-                                <button class="more-info-btn" data-id="202"><i class="fas fa-info"></i></button>
+                                <button class="more-info-btn" data-id="401"><i class="fas fa-info"></i></button>
                             </div>
                         </div>
                         <div class="product-info">
-                            <div class="product-category">T-Shirts</div>
-                            <div class="product-name">Graphic Print Casual T-Shirt</div>
+                            <div class="product-category">Woolen</div>
+                            <div class="product-name">Handwoven Woolen Shawl</div>
                             <div class="product-price">
-                                <span class="current-price">₹899</span>
-                                <span class="original-price">₹1,096</span>
+                                <span class="current-price">₹2,499</span>
+                                <span class="original-price">₹3,124</span>
                             </div>
                             <div class="product-actions-dual">
-                                <button class="add-to-cart" data-id="202">Add to Cart</button>
-                                <button class="buy-now-btn" data-id="202">
+                                <button class="add-to-cart" data-id="401">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="401">
                                     <i class="fas fa-bolt"></i> Buy Now
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- T-Shirt 3 -->
-                    <div class="product-card" data-id="203" data-price="699" data-name="Basic Crew Neck T-Shirt" data-brand="ComfortWear"
-                        data-description="Classic crew neck t-shirt in basic colors. Versatile and comfortable for daily wear or layering."
-                        data-features='["Crew Neck", "Basic Colors", "Versatile", "Daily Wear"]'
-                        data-specifications='{"Material": "Cotton Blend", "Care": "Machine Wash", "Fit": "Regular", "Color": "Grey"}'
-                        data-image="tshirt3.jpg">
+                    <!-- Woolen 2 -->
+                    <div class="product-card" data-id="402" data-price="1899" data-name="Woolen Sweater" data-brand="WoolCraft">
                         <div class="product-image">
-                            <img src="tshirt3.jpg" alt="Basic Crew Neck T-Shirt">
-                            <div class="product-badge">30% OFF</div>
+                            <img src="./images/Winter Section/Insulated Jacket(women).png" alt="Woolen Sweater">
+                            <div class="product-badge">15% OFF</div>
                             <div class="product-actions">
-                                <button class="more-info-btn" data-id="203"><i class="fas fa-info"></i></button>
+                                <button class="more-info-btn" data-id="402"><i class="fas fa-info"></i></button>
                             </div>
                         </div>
                         <div class="product-info">
-                            <div class="product-category">T-Shirts</div>
-                            <div class="product-name">Basic Crew Neck T-Shirt</div>
+                            <div class="product-category">Woolen</div>
+                            <div class="product-name">Woolen Sweater</div>
                             <div class="product-price">
-                                <span class="current-price">₹699</span>
-                                <span class="original-price">₹999</span>
+                                <span class="current-price">₹1,899</span>
+                                <span class="original-price">₹2,234</span>
                             </div>
                             <div class="product-actions-dual">
-                                <button class="add-to-cart" data-id="203">Add to Cart</button>
-                                <button class="buy-now-btn" data-id="203">
+                                <button class="add-to-cart" data-id="402">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="402">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Woolen 3 -->
+                    <div class="product-card" data-id="403" data-price="1899" data-name="Woolen Sweater" data-brand="WoolCraft">
+                        <div class="product-image">
+                            <img src="./images/Winter Section/Kashmiri Saul(Men).png" alt="Woolen Sweater">
+                            <div class="product-badge">15% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="403"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Woolen</div>
+                            <div class="product-name">Woolen Sweater</div>
+                            <div class="product-price">
+                                <span class="current-price">₹1,899</span>
+                                <span class="original-price">₹2,234</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="403">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="403">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Woolen 4 -->
+                    <div class="product-card" data-id="404" data-price="1899" data-name="Woolen Sweater" data-brand="WoolCraft">
+                        <div class="product-image">
+                            <img src="./images/Winter Section/Kashmiri Saul(women).png" alt="Woolen Sweater">
+                            <div class="product-badge">15% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="404"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Woolen</div>
+                            <div class="product-name">Woolen Sweater</div>
+                            <div class="product-price">
+                                <span class="current-price">₹1,899</span>
+                                <span class="original-price">₹2,234</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="404">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="404">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Woolen 5 -->
+                    <div class="product-card" data-id="405" data-price="1899" data-name="Woolen Sweater" data-brand="WoolCraft">
+                        <div class="product-image">
+                            <img src="./images/Winter Section/marino wool(men).png" alt="Woolen Sweater">
+                            <div class="product-badge">15% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="405"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Woolen</div>
+                            <div class="product-name">Woolen Sweater</div>
+                            <div class="product-price">
+                                <span class="current-price">₹1,899</span>
+                                <span class="original-price">₹2,234</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="405">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="405">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Woolen 6 -->
+                    <div class="product-card" data-id="406" data-price="1899" data-name="Woolen Sweater" data-brand="WoolCraft">
+                        <div class="product-image">
+                            <img src="./images/Winter Section/merino wool (women).png" alt="Woolen Sweater">
+                            <div class="product-badge">15% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="406"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Woolen</div>
+                            <div class="product-name">Woolen Sweater</div>
+                            <div class="product-price">
+                                <span class="current-price">₹1,899</span>
+                                <span class="original-price">₹2,234</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="406">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="406">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Woolen 7 -->
+                    <div class="product-card" data-id="407" data-price="1899" data-name="Woolen Sweater" data-brand="WoolCraft">
+                        <div class="product-image">
+                            <img src="./images/Winter Section/revarsival leather jacket(men).png" alt="Woolen Sweater">
+                            <div class="product-badge">15% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="407"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Woolen</div>
+                            <div class="product-name">Woolen Sweater</div>
+                            <div class="product-price">
+                                <span class="current-price">₹1,899</span>
+                                <span class="original-price">₹2,234</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="407">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="407">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Woolen 8 -->
+                    <div class="product-card" data-id="408" data-price="1899" data-name="Woolen Sweater" data-brand="WoolCraft">
+                        <div class="product-image">
+                            <img src="./images/Winter Section/revarsival leather jacket(women).png" alt="Woolen Sweater">
+                            <div class="product-badge">15% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="408"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Woolen</div>
+                            <div class="product-name">Woolen Sweater</div>
+                            <div class="product-price">
+                                <span class="current-price">₹1,899</span>
+                                <span class="original-price">₹2,234</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="408">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="408">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Woolen 9 -->
+                    <div class="product-card" data-id="409" data-price="1899" data-name="Woolen Sweater" data-brand="WoolCraft">
+                        <div class="product-image">
+                            <img src="./images/Winter Section/Winter Long over Coat(men).png" alt="Woolen Sweater">
+                            <div class="product-badge">15% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="409"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Woolen</div>
+                            <div class="product-name">Woolen Sweater</div>
+                            <div class="product-price">
+                                <span class="current-price">₹1,899</span>
+                                <span class="original-price">₹2,234</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="409">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="409">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Woolen 10 -->
+                    <div class="product-card" data-id="410" data-price="1899" data-name="Woolen Sweater" data-brand="WoolCraft">
+                        <div class="product-image">
+                            <img src="./images/Winter Section/Winter Long over Coat(women).png" alt="Woolen Sweater">
+                            <div class="product-badge">15% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="410"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Woolen</div>
+                            <div class="product-name">Woolen Sweater</div>
+                            <div class="product-price">
+                                <span class="current-price">₹1,899</span>
+                                <span class="original-price">₹2,234</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="410">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="410">
                                     <i class="fas fa-bolt"></i> Buy Now
                                 </button>
                             </div>
@@ -443,91 +526,465 @@
                 </div>
             </section>
 
-            <!-- Pants Category -->
-            <section id="pant" class="category-section">
-                <h2 class="section-title">Pants Collection</h2>
+            <!-- Candle Category -->
+            <section id="candle" class="category-section">
+                <h2 class="section-title">Candle Collection</h2>
                 <div class="products-grid">
-                    <!-- Pant 1 -->
-                    <div class="product-card" data-id="301" data-price="1899" data-name="Cotton Linen Trousers" data-brand="ComfortFit"
-                        data-description="Lightweight cotton linen trousers perfect for summer. Breathable fabric with a relaxed fit for all-day comfort."
-                        data-features='["Cotton Linen Blend", "Lightweight", "Breathable", "Relaxed Fit"]'
-                        data-specifications='{"Material": "Cotton-Linen Blend", "Care": "Machine Wash", "Fit": "Relaxed", "Color": "Beige"}'
-                        data-image="pant1.jpg">
+                    <!-- Candle 1 -->
+                    <div class="product-card" data-id="501" data-price="399" data-name="Marvel Candles" data-brand="CandleArt">
                         <div class="product-image">
-                            <img src="pant1.jpg" alt="Cotton Linen Trousers">
-                            <div class="product-badge">15% OFF</div>
+                            <img src="./images/Candle Photos/IMG1.jpg" alt="Marvel Candles">
+                            <div class="product-badge">30% OFF</div>
                             <div class="product-actions">
-                                <button class="more-info-btn" data-id="301"><i class="fas fa-info"></i></button>
+                                <button class="more-info-btn" data-id="501"><i class="fas fa-info"></i></button>
                             </div>
                         </div>
                         <div class="product-info">
-                            <div class="product-category">Pants</div>
-                            <div class="product-name">Cotton Linen Trousers</div>
+                            <div class="product-category">Candles</div>
+                            <div class="product-name">Marvel Candles</div>
                             <div class="product-price">
-                                <span class="current-price">₹1,899</span>
-                                <span class="original-price">₹2,234</span>
+                                <span class="current-price">₹399</span>
+                                <span class="original-price">₹570</span>
                             </div>
                             <div class="product-actions-dual">
-                                <button class="add-to-cart" data-id="301">Add to Cart</button>
-                                <button class="buy-now-btn" data-id="301">
+                                <button class="add-to-cart" data-id="501">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="501">
                                     <i class="fas fa-bolt"></i> Buy Now
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Pant 2 -->
-                    <div class="product-card" data-id="302" data-price="2199" data-name="Formal Office Pants" data-brand="ExecutiveWear"
-                        data-description="Professional formal pants with sharp crease and premium finish. Ideal for office wear and business meetings."
-                        data-features='["Formal Wear", "Sharp Crease", "Premium Finish", "Office Ready"]'
-                        data-specifications='{"Material": "Polyester Blend", "Care": "Dry Clean", "Fit": "Slim", "Color": "Navy Blue"}'
-                        data-image="pant2.jpg">
+                    <!-- Candle 2 -->
+                    <div class="product-card" data-id="502" data-price="349" data-name="Floral Scented Candle" data-brand="CandleArt">
                         <div class="product-image">
-                            <img src="pant2.jpg" alt="Formal Office Pants">
-                            <div class="product-badge">10% OFF</div>
+                            <img src="./images/Candle Photos/IMG2.png" alt="Floral Scented Candle">
+                            <div class="product-badge">25% OFF</div>
                             <div class="product-actions">
-                                <button class="more-info-btn" data-id="302"><i class="fas fa-info"></i></button>
+                                <button class="more-info-btn" data-id="502"><i class="fas fa-info"></i></button>
                             </div>
                         </div>
                         <div class="product-info">
-                            <div class="product-category">Pants</div>
-                            <div class="product-name">Formal Office Pants</div>
+                            <div class="product-category">Candles</div>
+                            <div class="product-name">Floral Scented Candle</div>
                             <div class="product-price">
-                                <span class="current-price">₹2,199</span>
-                                <span class="original-price">₹2,443</span>
+                                <span class="current-price">₹349</span>
+                                <span class="original-price">₹465</span>
                             </div>
                             <div class="product-actions-dual">
-                                <button class="add-to-cart" data-id="302">Add to Cart</button>
-                                <button class="buy-now-btn" data-id="302">
+                                <button class="add-to-cart" data-id="502">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="502">
                                     <i class="fas fa-bolt"></i> Buy Now
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Pant 3 -->
-                    <div class="product-card" data-id="303" data-price="1599" data-name="Casual Chino Pants" data-brand="UrbanFit"
-                        data-description="Versatile chino pants that bridge the gap between casual and formal. Perfect for smart casual occasions."
-                        data-features='["Chino Style", "Versatile", "Smart Casual", "Comfortable"]'
-                        data-specifications='{"Material": "Cotton Twill", "Care": "Machine Wash", "Fit": "Regular", "Color": "Khaki"}'
-                        data-image="pant3.jpg">
+                    <!-- Candle 3 -->
+                    <div class="product-card" data-id="503" data-price="299" data-name="Decorative Tea Light" data-brand="CandleArt">
                         <div class="product-image">
-                            <img src="pant3.jpg" alt="Casual Chino Pants">
+                            <img src="./images/Candle Photos/IMG3.png" alt="Decorative Tea Light">
+                            <div class="product-badge">40% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="503"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Candles</div>
+                            <div class="product-name">Decorative Tea Light</div>
+                            <div class="product-price">
+                                <span class="current-price">₹299</span>
+                                <span class="original-price">₹499</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="503">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="503">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Candle 4 -->
+                    <div class="product-card" data-id="504" data-price="299" data-name="Decorative Tea Light" data-brand="CandleArt">
+                        <div class="product-image">
+                            <img src="./images/Candle Photos/IMG4.png" alt="Decorative Tea Light">
+                            <div class="product-badge">40% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="504"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Candles</div>
+                            <div class="product-name">Decorative Tea Light</div>
+                            <div class="product-price">
+                                <span class="current-price">₹299</span>
+                                <span class="original-price">₹499</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="504">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="504">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Candle 5 -->
+                    <div class="product-card" data-id="505" data-price="299" data-name="Decorative Tea Light" data-brand="CandleArt">
+                        <div class="product-image">
+                            <img src="./images/Candle Photos/IMG5.png" alt="Decorative Tea Light">
+                            <div class="product-badge">40% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="505"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Candles</div>
+                            <div class="product-name">Decorative Tea Light</div>
+                            <div class="product-price">
+                                <span class="current-price">₹299</span>
+                                <span class="original-price">₹499</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="505">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="505">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Candle 6 -->
+                    <div class="product-card" data-id="506" data-price="299" data-name="Decorative Tea Light" data-brand="CandleArt">
+                        <div class="product-image">
+                            <img src="./images/Candle Photos/IMG 6.png" alt="Decorative Tea Light">
+                            <div class="product-badge">40% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="506"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Candles</div>
+                            <div class="product-name">Decorative Tea Light</div>
+                            <div class="product-price">
+                                <span class="current-price">₹299</span>
+                                <span class="original-price">₹499</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="506">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="506">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Candle 7 -->
+                    <div class="product-card" data-id="507" data-price="299" data-name="Decorative Tea Light" data-brand="CandleArt">
+                        <div class="product-image">
+                            <img src="./images/Candle Photos/IMG 7.png" alt="Decorative Tea Light">
+                            <div class="product-badge">40% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="507"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Candles</div>
+                            <div class="product-name">Decorative Tea Light</div>
+                            <div class="product-price">
+                                <span class="current-price">₹299</span>
+                                <span class="original-price">₹499</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="507">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="507">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Candle 8 -->
+                    <div class="product-card" data-id="508" data-price="299" data-name="Decorative Tea Light" data-brand="CandleArt">
+                        <div class="product-image">
+                            <img src="./images/Candle Photos/IMG 8.png" alt="Decorative Tea Light">
+                            <div class="product-badge">40% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="508"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Candles</div>
+                            <div class="product-name">Decorative Tea Light</div>
+                            <div class="product-price">
+                                <span class="current-price">₹299</span>
+                                <span class="original-price">₹499</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="508">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="508">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Candle 9 -->
+                    <div class="product-card" data-id="509" data-price="299" data-name="Decorative Tea Light" data-brand="CandleArt">
+                        <div class="product-image">
+                            <img src="./images/Candle Photos/IMG 9.png" alt="Decorative Tea Light">
+                            <div class="product-badge">40% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="509"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Candles</div>
+                            <div class="product-name">Decorative Tea Light</div>
+                            <div class="product-price">
+                                <span class="current-price">₹299</span>
+                                <span class="original-price">₹499</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="509">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="509">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Candle 10 -->
+                    <div class="product-card" data-id="510" data-price="299" data-name="Decorative Tea Light" data-brand="CandleArt">
+                        <div class="product-image">
+                            <img src="./images/Candle Photos/IMG 10.png" alt="Decorative Tea Light">
+                            <div class="product-badge">40% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="510"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Candles</div>
+                            <div class="product-name">Decorative Tea Light</div>
+                            <div class="product-price">
+                                <span class="current-price">₹299</span>
+                                <span class="original-price">₹499</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="510">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="510">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Home Decor Category -->
+            <section id="home-decor" class="category-section">
+                <h2 class="section-title">Home Decor Collection</h2>
+                <div class="products-grid">
+                    <!-- Home Decor 1 -->
+                    <div class="product-card" data-id="601" data-price="1299" data-name="Wall Art Decor" data-brand="HomeStyle">
+                        <div class="product-image">
+                            <img src="./images/Home Decor/Hand printed Bedsets Cotton.png" alt="Wall Art Decor">
                             <div class="product-badge">20% OFF</div>
                             <div class="product-actions">
-                                <button class="more-info-btn" data-id="303"><i class="fas fa-info"></i></button>
+                                <button class="more-info-btn" data-id="601"><i class="fas fa-info"></i></button>
                             </div>
                         </div>
                         <div class="product-info">
-                            <div class="product-category">Pants</div>
-                            <div class="product-name">Casual Chino Pants</div>
+                            <div class="product-category">Home Decor</div>
+                            <div class="product-name">Wall Art Decor</div>
                             <div class="product-price">
-                                <span class="current-price">₹1,599</span>
-                                <span class="original-price">₹1,999</span>
+                                <span class="current-price">₹1,299</span>
+                                <span class="original-price">₹1,624</span>
                             </div>
                             <div class="product-actions-dual">
-                                <button class="add-to-cart" data-id="303">Add to Cart</button>
-                                <button class="buy-now-btn" data-id="303">
+                                <button class="add-to-cart" data-id="601">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="601">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Home Decor 2 -->
+                    <div class="product-card" data-id="602" data-price="899" data-name="Decorative Vase" data-brand="HomeStyle">
+                        <div class="product-image">
+                            <img src="./images/Home Decor/Handmade cushion cover.png" alt="Decorative Vase">
+                            <div class="product-badge">25% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="602"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Home Decor</div>
+                            <div class="product-name">Decorative Vase</div>
+                            <div class="product-price">
+                                <span class="current-price">₹899</span>
+                                <span class="original-price">₹1,199</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="602">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="602">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Home Decor 3 -->
+                    <div class="product-card" data-id="603" data-price="899" data-name="Decorative Vase" data-brand="HomeStyle">
+                        <div class="product-image">
+                            <img src="./images/Home Decor/wall hanging.png" alt="Decorative Vase">
+                            <div class="product-badge">25% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="603"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Home Decor</div>
+                            <div class="product-name">Decorative Vase</div>
+                            <div class="product-price">
+                                <span class="current-price">₹899</span>
+                                <span class="original-price">₹1,199</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="603">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="603">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Baby Category -->
+            <section id="baby" class="category-section">
+                <h2 class="section-title">Baby Collection</h2>
+                <div class="products-grid">
+                    <!-- Baby 1 -->
+                    <div class="product-card" data-id="701" data-price="799" data-name="Baby Soft Toys" data-brand="BabyCare">
+                        <div class="product-image">
+                            <img src="./images/Baby Section/Cap.png" alt="Baby Soft Toys">
+                            <div class="product-badge">30% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="701"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Baby</div>
+                            <div class="product-name">Baby Soft Toys</div>
+                            <div class="product-price">
+                                <span class="current-price">₹799</span>
+                                <span class="original-price">₹1,141</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="701">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="701">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Baby 2 -->
+                    <div class="product-card" data-id="702" data-price="1299" data-name="Baby Clothing Set" data-brand="BabyCare">
+                        <div class="product-image">
+                            <img src="./images/Baby Section/New Born Socks.png" alt="Baby Clothing Set">
+                            <div class="product-badge">20% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="702"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Baby</div>
+                            <div class="product-name">Baby Clothing Set</div>
+                            <div class="product-price">
+                                <span class="current-price">₹1,299</span>
+                                <span class="original-price">₹1,624</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="702">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="702">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Baby 3 -->
+                    <div class="product-card" data-id="703" data-price="1299" data-name="Baby Clothing Set" data-brand="BabyCare">
+                        <div class="product-image">
+                            <img src="./images/Baby Section/Pure Cotton Nappy with cotton top.png" alt="Baby Clothing Set">
+                            <div class="product-badge">20% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="703"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Baby</div>
+                            <div class="product-name">Baby Clothing Set</div>
+                            <div class="product-price">
+                                <span class="current-price">₹1,299</span>
+                                <span class="original-price">₹1,624</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="703">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="703">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Baby 4 -->
+                    <div class="product-card" data-id="704" data-price="1299" data-name="Baby Clothing Set" data-brand="BabyCare">
+                        <div class="product-image">
+                            <img src="./images/Baby Section/Pure Cotton White Dress Girls.png" alt="Baby Clothing Set">
+                            <div class="product-badge">20% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="704"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Baby</div>
+                            <div class="product-name">Baby Clothing Set</div>
+                            <div class="product-price">
+                                <span class="current-price">₹1,299</span>
+                                <span class="original-price">₹1,624</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="704">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="704">
+                                    <i class="fas fa-bolt"></i> Buy Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Baby 5 -->
+                    <div class="product-card" data-id="705" data-price="1299" data-name="Baby Clothing Set" data-brand="BabyCare">
+                        <div class="product-image">
+                            <img src="./images/Baby Section/Pure cotton wraapers.png" alt="Baby Clothing Set">
+                            <div class="product-badge">20% OFF</div>
+                            <div class="product-actions">
+                                <button class="more-info-btn" data-id="705"><i class="fas fa-info"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Baby</div>
+                            <div class="product-name">Baby Clothing Set</div>
+                            <div class="product-price">
+                                <span class="current-price">₹1,299</span>
+                                <span class="original-price">₹1,624</span>
+                            </div>
+                            <div class="product-actions-dual">
+                                <button class="add-to-cart" data-id="705">Add to Cart</button>
+                                <button class="buy-now-btn" data-id="705">
                                     <i class="fas fa-bolt"></i> Buy Now
                                 </button>
                             </div>
@@ -598,7 +1055,7 @@
                     </div>
                     <div class="form-group">
                         <label for="customerPhone">Phone Number</label>
-                        <input type="number" id="customerPhone" name="customerPhone" required>
+                        <input type="tel" id="customerPhone" name="customerPhone" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -612,7 +1069,7 @@
                     </div>
                     <div class="form-group">
                         <label for="pincode">Pincode</label>
-                        <input type="number" id="pincode" name="pincode" required>
+                        <input type="text" id="pincode" name="pincode" required>
                     </div>
                 </div>
                 <div class="order-summary">
@@ -697,7 +1154,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="./images/SmallSquareLogoJpg.jpg" alt="Artsy Handicrafts" class="logo-image">
+                        <img src="./images/Aemili.png" alt="Artsy Handicrafts" class="logo-image">
                     </div>
                     <p class="footer-description">
                         Bringing you the finest handcrafted products from skilled artisans across India. 

@@ -27,7 +27,6 @@ setInterval(()=>{
 let cart = [];
 let currentProductId = null;
 
-
 const cartIcon = document.querySelector('.cart-icon');
 const cartSidebar = document.getElementById('cartSidebar');
 const closeCart = document.getElementById('closeCart');
@@ -45,358 +44,799 @@ const successModal = document.getElementById('successModal');
 const continueShopping = document.getElementById('continueShopping');
 const addToCartModal = document.getElementById('addToCartModal');
 
-// Product details data
+// Product details data - UPDATED FOR ALL PRODUCTS
 const productDetails = {
-    // Original Products (1-6)
+    // Saree Category (1-5)
     1: {
         id: 1,
-        name: "Hand-Painted Ceramic Vase",
-        brand: "ClayCraft",
-        price: 2499,
-        originalPrice: 2999,
-        image: "IMAGE_URL_HERE",
-        description: "Beautiful hand-painted ceramic vase with traditional motifs. Each piece is uniquely crafted by skilled artisans using centuries-old techniques.",
+        name: "Hand Battik Saree",
+        brand: "Amilis",
+        price: 1500,
+        originalPrice: 2000,
+        image: "./images/saree/Hand Battik saree.png",
+        description: "Beautiful handcrafted Batik saree with traditional wax-resist dyeing techniques. Each piece features unique patterns and vibrant colors, perfect for festive occasions.",
         features: [
-            "Handcrafted by skilled artisans",
-            "Traditional painting techniques",
-            "Food-safe ceramic glaze",
-            "Unique design - no two pieces are identical",
-            "Perfect for home decoration"
+            "Handcrafted Batik design",
+            "Traditional wax-resist technique",
+            "Vibrant colors and patterns",
+            "Comfortable cotton fabric",
+            "Perfect for festive occasions"
         ],
         specifications: {
-            "Material": "Premium Ceramic",
-            "Height": "12 inches",
-            "Width": "6 inches",
-            "Weight": "1.2 kg",
-            "Care": "Hand wash only"
+            "Material": "Pure Cotton",
+            "Length": "5.5 meters",
+            "Width": "1.2 meters",
+            "Weight": "800 grams",
+            "Care": "Dry clean recommended"
         }
     },
     2: {
         id: 2,
-        name: "Traditional Handwoven Shawl",
-        brand: "WeaveMagic",
-        price: 1899,
-        originalPrice: 2299,
-        image: "IMAGE_URL_HERE",
-        description: "Luxurious handwoven shawl made from premium natural fibers. Features intricate traditional patterns woven by master weavers.",
+        name: "Kalamkari Saree",
+        brand: "Amilis",
+        price: 800,
+        originalPrice: 1200,
+        image: "./images/saree/Kalamkari Saree.png",
+        description: "Exquisite Kalamkari saree featuring traditional hand-painted motifs inspired by nature and mythology. Made with natural dyes on pure cotton fabric.",
         features: [
-            "100% natural cotton fibers",
-            "Handwoven on traditional looms",
-            "Intricate traditional patterns",
-            "Soft and lightweight",
-            "Perfect for all seasons"
+            "Hand-painted Kalamkari art",
+            "Natural vegetable dyes",
+            "Traditional motifs and patterns",
+            "Pure cotton fabric",
+            "Lightweight and comfortable"
         ],
         specifications: {
-            "Material": "100% Natural Cotton",
-            "Dimensions": "72 x 36 inches",
-            "Weight": "450 grams",
-            "Care": "Dry clean recommended",
-            "Origin": "Varanasi, India"
+            "Material": "Pure Cotton",
+            "Length": "6 meters",
+            "Width": "1.1 meters",
+            "Weight": "750 grams",
+            "Care": "Hand wash in cold water"
         }
     },
     3: {
         id: 3,
-        name: "Carved Wooden Jewelry Box",
-        brand: "WoodArt",
-        price: 3299,
-        originalPrice: 3999,
-        image: "IMAGE_URL_HERE",
-        description: "Exquisitely carved wooden jewelry box with multiple compartments. Handcrafted from sustainable sheesham wood.",
+        name: "Kantha Stitch Saree",
+        brand: "Amilis",
+        price: 7500,
+        originalPrice: 8000,
+        image: "./images/saree/Kantha stich.png",
+        description: "Premium Kantha stitch saree featuring intricate hand-embroidered patterns. Traditional Bengali embroidery with delicate motifs on fine fabric.",
         features: [
-            "Hand-carved traditional motifs",
-            "Sustainable sheesham wood",
-            "Multiple compartments",
-            "Soft-closing hinge",
-            "Natural wood finish"
+            "Hand-embroidered Kantha stitch",
+            "Traditional Bengali craftsmanship",
+            "Intricate folk motifs",
+            "Fine cotton-silk blend",
+            "Elegant drape and finish"
         ],
         specifications: {
-            "Material": "Sheesham Wood",
-            "Dimensions": "8 x 6 x 4 inches",
-            "Compartments": "3 main + 2 small",
-            "Finish": "Natural wood polish",
-            "Weight": "800 grams"
+            "Material": "Cotton Silk Blend",
+            "Length": "6 meters",
+            "Width": "1.2 meters",
+            "Weight": "900 grams",
+            "Care": "Dry clean only"
         }
     },
     4: {
         id: 4,
-        name: "Set of 4 Handmade Mugs",
-        brand: "PotteryHub",
-        price: 1599,
-        originalPrice: 1999,
-        image: "IMAGE_URL_HERE",
-        description: "Beautiful set of 4 handmade ceramic mugs, each with unique glazing and perfect for your morning coffee or tea.",
+        name: "Linen Saree",
+        brand: "Amilis",
+        price: 1500,
+        originalPrice: 2000,
+        image: "./images/saree/Linen Saree.png",
+        description: "Elegant linen saree perfect for summer wear. Lightweight, breathable fabric with a crisp texture and sophisticated look.",
         features: [
-            "Set of 4 unique mugs",
-            "Microwave and dishwasher safe",
-            "Food-safe ceramic glaze",
-            "Comfortable grip handle",
-            "Perfect for daily use"
+            "Pure linen fabric",
+            "Lightweight and breathable",
+            "Perfect for summer",
+            "Crisp elegant texture",
+            "Sophisticated drape"
         ],
         specifications: {
-            "Material": "Stoneware Ceramic",
-            "Capacity": "350ml each",
-            "Set Includes": "4 mugs",
-            "Care": "Dishwasher safe",
-            "Weight": "2.5 kg total"
+            "Material": "Pure Linen",
+            "Length": "5.5 meters",
+            "Width": "1.1 meters",
+            "Weight": "700 grams",
+            "Care": "Machine wash gentle cycle"
         }
     },
     5: {
         id: 5,
-        name: "Artisan Silver Earrings",
-        brand: "SilverCraft",
-        price: 1299,
-        originalPrice: 1599,
-        image: "IMAGE_URL_HERE",
-        description: "Elegant silver earrings handcrafted with traditional filigree work, perfect for both traditional and contemporary wear.",
+        name: "Khesh Saree",
+        brand: "Amilis",
+        price: 1200,
+        originalPrice: 1500,
+        image: "./images/saree/Khesh(santiniketan)Saree.png",
+        description: "Traditional Khesh saree from Santiniketan, made using recycled sari strips. Eco-friendly and comfortable for daily wear.",
         features: [
-            "925 Sterling Silver",
-            "Handmade filigree work",
-            "Hypoallergenic",
-            "Lightweight and comfortable",
-            "Elegant packaging included"
+            "Recycled fabric strips",
+            "Eco-friendly production",
+            "Traditional Santiniketan craft",
+            "Light and airy texture",
+            "Perfect for daily wear"
         ],
         specifications: {
-            "Material": "925 Sterling Silver",
-            "Length": "2.5 inches",
-            "Weight": "8 grams",
-            "Closure": "Secure latch",
-            "Care": "Store in dry place"
-        }
-    },
-    6: {
-        id: 6,
-        name: "Handwoven Bamboo Basket",
-        brand: "BambooWorks",
-        price: 899,
-        originalPrice: 1199,
-        image: "IMAGE_URL_HERE",
-        description: "Eco-friendly handwoven bamboo basket, perfect for storage, picnics, or as a decorative piece in your home.",
-        features: [
-            "100% natural bamboo",
-            "Handwoven by skilled artisans",
-            "Eco-friendly and sustainable",
-            "Lightweight yet durable",
-            "Versatile use"
-        ],
-        specifications: {
-            "Material": "Natural Bamboo",
-            "Dimensions": "12 x 8 x 6 inches",
-            "Weight": "300 grams",
-            "Handle": "Integrated bamboo handle",
-            "Care": "Wipe clean with damp cloth"
+            "Material": "Recycled Cotton",
+            "Length": "5 meters",
+            "Width": "1 meter",
+            "Weight": "600 grams",
+            "Care": "Hand wash mild detergent"
         }
     },
 
-    // Shirts Category (101-103)
-    101: {
-        id: 101,
-        name: "Embroidered Cotton Shirt",
-        brand: "CottonCraft",
-        price: 1299,
-        originalPrice: 1529,
-        image: "shirt1.jpg",
-        description: "Beautiful hand-embroidered cotton shirt with traditional patterns. Made from 100% premium cotton for maximum comfort and breathability.",
-        features: [
-            "100% Premium Cotton",
-            "Hand Embroidery",
-            "Traditional Patterns",
-            "Comfort Fit",
-            "Breathable Fabric"
-        ],
-        specifications: {
-            "Material": "100% Cotton",
-            "Care": "Hand Wash",
-            "Fit": "Regular",
-            "Color": "White",
-            "Size": "S, M, L, XL"
-        }
-    },
-    102: {
-        id: 102,
-        name: "Traditional Handblock Print Shirt",
-        brand: "PrintArt",
-        price: 1599,
-        originalPrice: 1999,
-        image: "shirt2.jpg",
-        description: "Authentic handblock printed shirt using traditional wooden blocks. Each piece is unique with intricate designs passed down through generations.",
-        features: [
-            "Handblock Printing",
-            "Traditional Art",
-            "Unique Patterns",
-            "Comfortable Fabric",
-            "Artisan Crafted"
-        ],
-        specifications: {
-            "Material": "Cotton Blend",
-            "Care": "Machine Wash",
-            "Fit": "Slim",
-            "Color": "Blue",
-            "Size": "S, M, L, XL"
-        }
-    },
-    103: {
-        id: 103,
-        name: "Linen Blend Formal Shirt",
-        brand: "LinenLux",
-        price: 1799,
-        originalPrice: 2049,
-        image: "shirt3.jpg",
-        description: "Elegant linen blend formal shirt perfect for office wear and special occasions. Features a crisp finish and comfortable fit.",
-        features: [
-            "Linen Blend",
-            "Formal Wear",
-            "Crisp Finish",
-            "Office Ready",
-            "Comfortable Fit"
-        ],
-        specifications: {
-            "Material": "Linen-Cotton Blend",
-            "Care": "Dry Clean",
-            "Fit": "Regular",
-            "Color": "Light Blue",
-            "Size": "S, M, L, XL"
-        }
-    },
-
-    // T-Shirts Category (201-203)
+    // T-Shirts Category (201)
     201: {
         id: 201,
-        name: "Organic Cotton T-Shirt",
-        brand: "EcoWear",
-        price: 799,
-        originalPrice: 1065,
-        image: "tshirt1.jpg",
-        description: "Soft and sustainable organic cotton t-shirt. Eco-friendly production with no harmful chemicals, perfect for everyday wear.",
+        name: "Customized Hand Printed T-Shirt",
+        brand: "Amilis",
+        price: 499,
+        originalPrice: 999,
+        image: "./images/T-Shirt Section/Customized T-shirt.png",
+        description: "Customized hand-printed cotton T-shirt with unique designs available in both English and Bengali scripts. Perfect for gifting and personal style.",
         features: [
-            "100% Organic Cotton",
-            "Eco-Friendly",
-            "Soft Fabric",
-            "Sustainable",
-            "Chemical Free"
-        ],
-        specifications: {
-            "Material": "Organic Cotton",
-            "Care": "Machine Wash",
-            "Fit": "Regular",
-            "Color": "Black",
-            "Size": "S, M, L, XL"
-        }
-    },
-    202: {
-        id: 202,
-        name: "Graphic Print Casual T-Shirt",
-        brand: "UrbanStyle",
-        price: 899,
-        originalPrice: 1096,
-        image: "tshirt2.jpg",
-        description: "Trendy graphic print t-shirt with unique artwork. Made from premium cotton for all-day comfort and style.",
-        features: [
-            "Graphic Print",
-            "Premium Cotton",
-            "Trendy Design",
-            "Comfort Fit",
-            "Unique Artwork"
+            "Custom hand printing",
+            "Available in English & Bengali",
+            "100% premium cotton",
+            "Comfortable daily wear",
+            "Perfect for gifting"
         ],
         specifications: {
             "Material": "100% Cotton",
-            "Care": "Machine Wash",
-            "Fit": "Oversized",
-            "Color": "White",
-            "Size": "S, M, L, XL"
-        }
-    },
-    203: {
-        id: 203,
-        name: "Basic Crew Neck T-Shirt",
-        brand: "ComfortWear",
-        price: 699,
-        originalPrice: 999,
-        image: "tshirt3.jpg",
-        description: "Classic crew neck t-shirt in basic colors. Versatile and comfortable for daily wear or layering.",
-        features: [
-            "Crew Neck",
-            "Basic Colors",
-            "Versatile",
-            "Daily Wear",
-            "Easy to Layer"
-        ],
-        specifications: {
-            "Material": "Cotton Blend",
-            "Care": "Machine Wash",
-            "Fit": "Regular",
-            "Color": "Grey",
-            "Size": "S, M, L, XL"
+            "Fit": "Regular Fit",
+            "Colors": "Multiple options",
+            "Sizes": "S, M, L, XL",
+            "Care": "Machine wash cold"
         }
     },
 
-    // Pants Category (301-303)
-    301: {
-        id: 301,
-        name: "Cotton Linen Trousers",
-        brand: "ComfortFit",
-        price: 1899,
-        originalPrice: 2234,
-        image: "pant1.jpg",
-        description: "Lightweight cotton linen trousers perfect for summer. Breathable fabric with a relaxed fit for all-day comfort.",
+    // Woolen Category (401-410) - Winter Collection
+    401: {
+        id: 401,
+        name: "Insulated Men's Jacket",
+        brand: "Amilis Winter",
+        price: 2499,
+        originalPrice: 3124,
+        image: "./images/Winter Section/Insulated Jacket(men).png",
+        description: "Premium insulated men's jacket for extreme winter conditions. Features thermal lining and waterproof exterior.",
         features: [
-            "Cotton Linen Blend",
-            "Lightweight",
-            "Breathable",
-            "Relaxed Fit",
-            "Summer Wear"
-        ],
-        specifications: {
-            "Material": "Cotton-Linen Blend",
-            "Care": "Machine Wash",
-            "Fit": "Relaxed",
-            "Color": "Beige",
-            "Size": "28, 30, 32, 34"
-        }
-    },
-    302: {
-        id: 302,
-        name: "Formal Office Pants",
-        brand: "ExecutiveWear",
-        price: 2199,
-        originalPrice: 2443,
-        image: "pant2.jpg",
-        description: "Professional formal pants with sharp crease and premium finish. Ideal for office wear and business meetings.",
-        features: [
-            "Formal Wear",
-            "Sharp Crease",
-            "Premium Finish",
-            "Office Ready",
-            "Professional Look"
+            "Premium insulation",
+            "Waterproof exterior",
+            "Thermal lining",
+            "Multiple pockets",
+            "Adjustable hood"
         ],
         specifications: {
             "Material": "Polyester Blend",
-            "Care": "Dry Clean",
-            "Fit": "Slim",
-            "Color": "Navy Blue",
-            "Size": "28, 30, 32, 34"
+            "Insulation": "Thermal",
+            "Size": "M, L, XL, XXL",
+            "Color": "Black",
+            "Care": "Machine wash gentle"
         }
     },
-    303: {
-        id: 303,
-        name: "Casual Chino Pants",
-        brand: "UrbanFit",
-        price: 1599,
-        originalPrice: 1999,
-        image: "pant3.jpg",
-        description: "Versatile chino pants that bridge the gap between casual and formal. Perfect for smart casual occasions.",
+    402: {
+        id: 402,
+        name: "Insulated Women's Jacket",
+        brand: "Amilis Winter",
+        price: 1899,
+        originalPrice: 2234,
+        image: "./images/Winter Section/Insulated Jacket(women).png",
+        description: "Stylish insulated women's jacket with slim fit design. Perfect for cold weather with excellent warmth retention.",
         features: [
-            "Chino Style",
-            "Versatile",
-            "Smart Casual",
-            "Comfortable",
-            "All Occasion"
+            "Slim fit design",
+            "Premium insulation",
+            "Wind resistant",
+            "Fashionable colors",
+            "Comfortable lining"
         ],
         specifications: {
-            "Material": "Cotton Twill",
-            "Care": "Machine Wash",
-            "Fit": "Regular",
-            "Color": "Khaki",
-            "Size": "28, 30, 32, 34"
+            "Material": "Nylon Blend",
+            "Fit": "Slim Fit",
+            "Size": "S, M, L",
+            "Color": "Various",
+            "Care": "Machine wash cold"
+        }
+    },
+    403: {
+        id: 403,
+        name: "Kashmiri Shawl (Men)",
+        brand: "Amilis Winter",
+        price: 1899,
+        originalPrice: 2234,
+        image: "./images/Winter Section/Kashmiri Saul(Men).png",
+        description: "Authentic Kashmiri wool shawl for men with traditional embroidery. Handcrafted by skilled artisans.",
+        features: [
+            "Pure Kashmiri wool",
+            "Hand embroidery",
+            "Traditional patterns",
+            "Premium warmth",
+            "Elegant design"
+        ],
+        specifications: {
+            "Material": "Pure Wool",
+            "Dimensions": "2 x 1 meters",
+            "Weight": "500 grams",
+            "Color": "Traditional",
+            "Care": "Dry clean only"
+        }
+    },
+    404: {
+        id: 404,
+        name: "Kashmiri Shawl (Women)",
+        brand: "Amilis Winter",
+        price: 1899,
+        originalPrice: 2234,
+        image: "./images/Winter Section/Kashmiri Saul(women).png",
+        description: "Beautiful Kashmiri wool shawl for women with intricate embroidery and delicate patterns.",
+        features: [
+            "Fine wool fabric",
+            "Intricate embroidery",
+            "Delicate patterns",
+            "Lightweight warmth",
+            "Elegant drape"
+        ],
+        specifications: {
+            "Material": "Fine Wool",
+            "Dimensions": "2.2 x 1.1 meters",
+            "Weight": "450 grams",
+            "Color": "Feminine colors",
+            "Care": "Dry clean only"
+        }
+    },
+    405: {
+        id: 405,
+        name: "Merino Wool Sweater (Men)",
+        brand: "Amilis Winter",
+        price: 1899,
+        originalPrice: 2234,
+        image: "./images/Winter Section/marino wool(men).png",
+        description: "Premium merino wool sweater for men. Soft, warm, and perfect for cold winter days.",
+        features: [
+            "Premium merino wool",
+            "Soft and warm",
+            "Comfortable fit",
+            "Breathable fabric",
+            "Classic design"
+        ],
+        specifications: {
+            "Material": "Merino Wool",
+            "Fit": "Regular Fit",
+            "Size": "M, L, XL",
+            "Color": "Solid colors",
+            "Care": "Hand wash"
+        }
+    },
+    406: {
+        id: 406,
+        name: "Merino Wool Sweater (Women)",
+        brand: "Amilis Winter",
+        price: 1899,
+        originalPrice: 2234,
+        image: "./images/Winter Section/merino wool (women).png",
+        description: "Elegant merino wool sweater for women with fashionable design and excellent warmth.",
+        features: [
+            "Fine merino wool",
+            "Fashionable design",
+            "Excellent warmth",
+            "Soft texture",
+            "Versatile style"
+        ],
+        specifications: {
+            "Material": "Merino Wool",
+            "Fit": "Fitted",
+            "Size": "S, M, L",
+            "Color": "Pastel shades",
+            "Care": "Hand wash"
+        }
+    },
+    407: {
+        id: 407,
+        name: "Leather Jacket (Men)",
+        brand: "Amilis Winter",
+        price: 1899,
+        originalPrice: 2234,
+        image: "./images/Winter Section/revarsival leather jacket(men).png",
+        description: "Stylish leather jacket for men with retro design. Perfect for winter fashion and casual wear.",
+        features: [
+            "Premium leather",
+            "Retro design",
+            "Warm lining",
+            "Multiple pockets",
+            "Stylish look"
+        ],
+        specifications: {
+            "Material": "Genuine Leather",
+            "Fit": "Regular Fit",
+            "Size": "M, L, XL",
+            "Color": "Brown/Black",
+            "Care": "Leather care"
+        }
+    },
+    408: {
+        id: 408,
+        name: "Leather Jacket (Women)",
+        brand: "Amilis Winter",
+        price: 1899,
+        originalPrice: 2234,
+        image: "./images/Winter Section/revarsival leather jacket(women).png",
+        description: "Fashionable leather jacket for women with modern design and comfortable fit.",
+        features: [
+            "Quality leather",
+            "Modern design",
+            "Comfortable fit",
+            "Stylish details",
+            "Warm lining"
+        ],
+        specifications: {
+            "Material": "Genuine Leather",
+            "Fit": "Slim Fit",
+            "Size": "S, M, L",
+            "Color": "Various",
+            "Care": "Leather care"
+        }
+    },
+    409: {
+        id: 409,
+        name: "Winter Overcoat (Men)",
+        brand: "Amilis Winter",
+        price: 1899,
+        originalPrice: 2234,
+        image: "./images/Winter Section/Winter Long over Coat(men).png",
+        description: "Long winter overcoat for men with premium wool blend fabric. Perfect for formal winter occasions.",
+        features: [
+            "Wool blend fabric",
+            "Long length design",
+            "Formal style",
+            "Warm lining",
+            "Classic buttons"
+        ],
+        specifications: {
+            "Material": "Wool Blend",
+            "Length": "Long",
+            "Size": "M, L, XL",
+            "Color": "Classic colors",
+            "Care": "Dry clean"
+        }
+    },
+    410: {
+        id: 410,
+        name: "Winter Overcoat (Women)",
+        brand: "Amilis Winter",
+        price: 1899,
+        originalPrice: 2234,
+        image: "./images/Winter Section/Winter Long over Coat(women).png",
+        description: "Elegant long winter overcoat for women with fashionable design and premium fabric.",
+        features: [
+            "Premium fabric",
+            "Elegant design",
+            "Warm and cozy",
+            "Fashionable cut",
+            "Comfortable fit"
+        ],
+        specifications: {
+            "Material": "Wool Blend",
+            "Length": "Long",
+            "Size": "S, M, L",
+            "Color": "Elegant colors",
+            "Care": "Dry clean"
+        }
+    },
+
+    // Candle Category (501-510)
+    501: {
+        id: 501,
+        name: "Marvel Character Candle",
+        brand: "Amilis Candles",
+        price: 399,
+        originalPrice: 570,
+        image: "./images/Candle Photos/IMG1.jpg",
+        description: "Decorative candle featuring Marvel superhero designs. Perfect for fans and as unique gifts.",
+        features: [
+            "Marvel superhero designs",
+            "Decorative collectible",
+            "Long burning time",
+            "Mild pleasant scent",
+            "Perfect for gifting"
+        ],
+        specifications: {
+            "Material": "Paraffin Wax",
+            "Burn Time": "20-25 hours",
+            "Height": "3 inches",
+            "Diameter": "3 inches",
+            "Scent": "Mild"
+        }
+    },
+    502: {
+        id: 502,
+        name: "Floral Scented Candle",
+        brand: "Amilis Candles",
+        price: 349,
+        originalPrice: 465,
+        image: "./images/Candle Photos/IMG2.png",
+        description: "Beautiful floral scented candle that fills your space with relaxing fragrance. Hand-poured with care.",
+        features: [
+            "Floral fragrance",
+            "Hand-poured",
+            "Natural essential oils",
+            "Relaxing ambiance",
+            "Elegant design"
+        ],
+        specifications: {
+            "Material": "Soy Wax",
+            "Burn Time": "15-20 hours",
+            "Fragrance": "Lavender/Rose",
+            "Height": "2.5 inches",
+            "Diameter": "2.5 inches"
+        }
+    },
+    503: {
+        id: 503,
+        name: "Decorative Tea Light Set",
+        brand: "Amilis Candles",
+        price: 299,
+        originalPrice: 499,
+        image: "./images/Candle Photos/IMG3.png",
+        description: "Set of decorative tea lights perfect for creating warm ambiance. Beautiful designs for any occasion.",
+        features: [
+            "Set of decorative lights",
+            "Creates warm ambiance",
+            "Beautiful designs",
+            "Long-lasting burn",
+            "Perfect for events"
+        ],
+        specifications: {
+            "Material": "Paraffin Wax",
+            "Burn Time": "4-5 hours each",
+            "Quantity": "6 pieces",
+            "Fragrance": "Unscented",
+            "Colors": "Multiple"
+        }
+    },
+    504: {
+        id: 504,
+        name: "Geometric Pattern Candle",
+        brand: "Amilis Candles",
+        price: 299,
+        originalPrice: 499,
+        image: "./images/Candle Photos/IMG4.png",
+        description: "Modern geometric pattern candle with contemporary design. Adds style to any room decor.",
+        features: [
+            "Geometric patterns",
+            "Modern design",
+            "Contemporary style",
+            "Clean burning",
+            "Room decor"
+        ],
+        specifications: {
+            "Material": "Paraffin Wax",
+            "Burn Time": "15-18 hours",
+            "Design": "Geometric",
+            "Height": "3 inches",
+            "Diameter": "2.8 inches"
+        }
+    },
+    505: {
+        id: 505,
+        name: "Nature Inspired Candle",
+        brand: "Amilis Candles",
+        price: 299,
+        originalPrice: 499,
+        image: "./images/Candle Photos/IMG5.png",
+        description: "Nature-inspired decorative candle with organic patterns. Brings natural beauty to your space.",
+        features: [
+            "Nature-inspired design",
+            "Organic patterns",
+            "Natural aesthetics",
+            "Pleasant scent",
+            "Eco-friendly"
+        ],
+        specifications: {
+            "Material": "Soy Wax",
+            "Burn Time": "12-15 hours",
+            "Fragrance": "Natural",
+            "Height": "2.8 inches",
+            "Diameter": "2.5 inches"
+        }
+    },
+    506: {
+        id: 506,
+        name: "Artistic Design Candle",
+        brand: "Amilis Candles",
+        price: 299,
+        originalPrice: 499,
+        image: "./images/Candle Photos/IMG 6.png",
+        description: "Artistic decorative candle with unique handcrafted designs. A piece of art that illuminates.",
+        features: [
+            "Artistic design",
+            "Handcrafted",
+            "Unique patterns",
+            "Creative expression",
+            "Decorative piece"
+        ],
+        specifications: {
+            "Material": "Beeswax Blend",
+            "Burn Time": "10-12 hours",
+            "Design": "Artistic",
+            "Height": "3.2 inches",
+            "Diameter": "2.7 inches"
+        }
+    },
+    507: {
+        id: 507,
+        name: "Traditional Pattern Candle",
+        brand: "Amilis Candles",
+        price: 299,
+        originalPrice: 499,
+        image: "./images/Candle Photos/IMG 7.png",
+        description: "Candle with traditional Indian patterns and motifs. Celecultural heritage through design.",
+        features: [
+            "Traditional patterns",
+            "Indian motifs",
+            "Cultural heritage",
+            "Festive design",
+            "Celebratory"
+        ],
+        specifications: {
+            "Material": "Paraffin Wax",
+            "Burn Time": "14-16 hours",
+            "Pattern": "Traditional",
+            "Height": "3 inches",
+            "Diameter": "2.5 inches"
+        }
+    },
+    508: {
+        id: 508,
+        name: "Elegant White Candle",
+        brand: "Amilis Candles",
+        price: 299,
+        originalPrice: 499,
+        image: "./images/Candle Photos/IMG 8.png",
+        description: "Elegant white candle with sophisticated design. Perfect for formal settings and special occasions.",
+        features: [
+            "Elegant white design",
+            "Sophisticated look",
+            "Formal occasions",
+            "Clean aesthetic",
+            "Versatile decor"
+        ],
+        specifications: {
+            "Material": "Paraffin Wax",
+            "Burn Time": "18-20 hours",
+            "Color": "Pure White",
+            "Height": "3.5 inches",
+            "Diameter": "2.5 inches"
+        }
+    },
+    509: {
+        id: 509,
+        name: "Colorful Festive Candle",
+        brand: "Amilis Candles",
+        price: 299,
+        originalPrice: 499,
+        image: "./images/Candle Photos/IMG 9.png",
+        description: "Colorful festive candle perfect for celebrations and parties. Brightens up any occasion.",
+        features: [
+            "Colorful design",
+            "Festive appeal",
+            "Party decoration",
+            "Bright colors",
+            "Celebration themed"
+        ],
+        specifications: {
+            "Material": "Paraffin Wax",
+            "Burn Time": "12-14 hours",
+            "Colors": "Multicolor",
+            "Height": "2.8 inches",
+            "Diameter": "2.6 inches"
+        }
+    },
+    510: {
+        id: 510,
+        name: "Special Edition Candle",
+        brand: "Amilis Candles",
+        price: 299,
+        originalPrice: 499,
+        image: "./images/Candle Photos/IMG 10.png",
+        description: "Special edition decorative candle with exclusive design. Limited availability collectible.",
+        features: [
+            "Special edition",
+            "Exclusive design",
+            "Limited availability",
+            "Collectible item",
+            "Unique gift"
+        ],
+        specifications: {
+            "Material": "Premium Wax",
+            "Burn Time": "20-22 hours",
+            "Edition": "Special",
+            "Height": "3.3 inches",
+            "Diameter": "2.8 inches"
+        }
+    },
+
+    // Home Decor Category (601-603)
+    601: {
+        id: 601,
+        name: "Hand Printed Cotton Bedsheets",
+        brand: "Amilis Home",
+        price: 1299,
+        originalPrice: 1624,
+        image: "./images/Home Decor/Hand printed Bedsets Cotton.png",
+        description: "Beautiful hand-printed cotton bedsheets with traditional designs. Adds ethnic charm to your bedroom.",
+        features: [
+            "Hand-printed design",
+            "Pure cotton fabric",
+            "Traditional patterns",
+            "Comfortable sleep",
+            "Easy maintenance"
+        ],
+        specifications: {
+            "Material": "Pure Cotton",
+            "Size": "Queen Size",
+            "Set Includes": "Bedsheet + 2 Pillow Covers",
+            "Colors": "Traditional",
+            "Care": "Machine wash"
+        }
+    },
+    602: {
+        id: 602,
+        name: "Handmade Cushion Cover",
+        brand: "Amilis Home",
+        price: 899,
+        originalPrice: 1199,
+        image: "./images/Home Decor/Handmade cushion cover.png",
+        description: "Handmade cushion cover with intricate embroidery and traditional patterns. Enhances home decor.",
+        features: [
+            "Handmade embroidery",
+            "Traditional patterns",
+            "Premium fabric",
+            "Decorative appeal",
+            "Comfortable"
+        ],
+        specifications: {
+            "Material": "Cotton Blend",
+            "Size": "18 x 18 inches",
+            "Design": "Embroidered",
+            "Colors": "Vibrant",
+            "Care": "Hand wash"
+        }
+    },
+    603: {
+        id: 603,
+        name: "Decorative Wall Hanging",
+        brand: "Amilis Home",
+        price: 899,
+        originalPrice: 1199,
+        image: "./images/Home Decor/wall hanging.png",
+        description: "Traditional decorative wall hanging with folk art designs. Perfect for living room or entrance decor.",
+        features: [
+            "Traditional folk art",
+            "Wall decoration",
+            "Colorful designs",
+            "Cultural heritage",
+            "Easy to hang"
+        ],
+        specifications: {
+            "Material": "Cotton/Thread",
+            "Size": "3 x 2 feet",
+            "Design": "Folk Art",
+            "Colors": "Bright",
+            "Care": "Dry clean"
+        }
+    },
+
+    // Baby Category (701-705)
+    701: {
+        id: 701,
+        name: "Baby Cap Set",
+        brand: "Amilis Baby",
+        price: 799,
+        originalPrice: 1141,
+        image: "./images/Baby Section/Cap.png",
+        description: "Soft and comfortable baby caps made from pure cotton. Perfect for newborn head protection.",
+        features: [
+            "Pure cotton fabric",
+            "Soft and gentle",
+            "Newborn protection",
+            "Comfortable fit",
+            "Cute designs"
+        ],
+        specifications: {
+            "Material": "100% Cotton",
+            "Age": "0-6 months",
+            "Set Includes": "3 caps",
+            "Colors": "Pastel",
+            "Care": "Hand wash"
+        }
+    },
+    702: {
+        id: 702,
+        name: "New Born Socks Set",
+        brand: "Amilis Baby",
+        price: 1299,
+        originalPrice: 1624,
+        image: "./images/Baby Section/New Born Socks.png",
+        description: "Soft cotton socks for newborns. Keeps baby's feet warm and comfortable.",
+        features: [
+            "Soft cotton socks",
+            "Newborn size",
+            "Non-slip design",
+            "Comfortable fit",
+            "Multiple colors"
+        ],
+        specifications: {
+            "Material": "Pure Cotton",
+            "Age": "0-3 months",
+            "Set Includes": "6 pairs",
+            "Colors": "Assorted",
+            "Care": "Machine wash gentle"
+        }
+    },
+    703: {
+        id: 703,
+        name: "Cotton Nappy with Top",
+        brand: "Amilis Baby",
+        price: 1299,
+        originalPrice: 1624,
+        image: "./images/Baby Section/Pure Cotton Nappy with cotton top.png",
+        description: "Pure cotton nappy set with matching top. Soft, absorbent and comfortable for babies.",
+        features: [
+            "Pure cotton fabric",
+            "Soft and absorbent",
+            "Matching top",
+            "Comfortable wear",
+            "Easy to change"
+        ],
+        specifications: {
+            "Material": "100% Cotton",
+            "Age": "0-12 months",
+            "Set Includes": "Nappy + Top",
+            "Colors": "Baby colors",
+            "Care": "Machine wash"
+        }
+    },
+    704: {
+        id: 704,
+        name: "Pure Cotton White Dress",
+        brand: "Amilis Baby",
+        price: 1299,
+        originalPrice: 1624,
+        image: "./images/Baby Section/Pure Cotton White Dress Girls.png",
+        description: "Beautiful pure cotton white dress for baby girls. Elegant and comfortable for special occasions.",
+        features: [
+            "Pure white cotton",
+            "Elegant design",
+            "Special occasions",
+            "Comfortable fit",
+            "Delicate details"
+        ],
+        specifications: {
+            "Material": "100% Cotton",
+            "Age": "0-12 months",
+            "Design": "Dress",
+            "Colors": "White",
+            "Care": "Hand wash"
+        }
+    },
+    705: {
+        id: 705,
+        name: "Pure Cotton Wrappers",
+        brand: "Amilis Baby",
+        price: 1299,
+        originalPrice: 1624,
+        image: "./images/Baby Section/Pure cotton wraapers.png",
+        description: "Soft pure cotton wrappers for newborns. Perfect for swaddling and keeping baby comfortable.",
+        features: [
+            "Soft pure cotton",
+            "Swaddling wraps",
+            "Newborn comfort",
+            "Multiple uses",
+            "Gentle on skin"
+        ],
+        specifications: {
+            "Material": "100% Cotton",
+            "Size": "Large wraps",
+            "Quantity": "3 pieces",
+            "Colors": "Soft colors",
+            "Care": "Machine wash"
         }
     }
 };
@@ -408,7 +848,112 @@ let currentProductForBuyNow = null;
 document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
     updateCartUI();
+    setupSearchFunctionality();
 });
+
+// Setup search functionality
+function setupSearchFunctionality() {
+    const searchInput = document.querySelector('.search-box input');
+    
+    // Map search terms to category IDs - UPDATED FOR 6 CATEGORIES
+    const categoryMap = {
+        // Saree
+        'saree': 'saree',
+        'sarees': 'saree',
+        'sari': 'saree',
+        
+        // T-Shirt
+        't-shirt': 't-shirt',
+        't-shirts': 't-shirt',
+        'tshirt': 't-shirt',
+        'tshirts': 't-shirt',
+        
+        // Woolen/Winter Collection
+        'woolen': 'woolen',
+        'winter': 'woolen',
+        'winter collection': 'woolen',
+        'jacket': 'woolen',
+        'jackets': 'woolen',
+        'sweater': 'woolen',
+        'sweaters': 'woolen',
+        'shawl': 'woolen',
+        'shawls': 'woolen',
+        'coat': 'woolen',
+        'coats': 'woolen',
+        
+        // Candle
+        'candle': 'candle',
+        'candles': 'candle',
+        'candlestick': 'candle',
+        
+        // Home Decor
+        'home decor': 'home-decor',
+        'home': 'home-decor',
+        'decor': 'home-decor',
+        'home decoration': 'home-decor',
+        'bedsheet': 'home-decor',
+        'bedsheets': 'home-decor',
+        'cushion': 'home-decor',
+        'cushions': 'home-decor',
+        'wall hanging': 'home-decor',
+        
+        // Baby
+        'baby': 'baby',
+        'babies': 'baby',
+        'infant': 'baby',
+        'newborn': 'baby',
+        'baby clothes': 'baby',
+        'baby wear': 'baby',
+        'baby cap': 'baby',
+        'baby socks': 'baby',
+        'baby dress': 'baby'
+    };
+    
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            const searchTerm = this.value.trim().toLowerCase();
+            
+            // Find the category ID from the search term
+            let categoryId = categoryMap[searchTerm];
+            
+            // If no direct match, try partial matching
+            if (!categoryId) {
+                for (const [key, value] of Object.entries(categoryMap)) {
+                    if (searchTerm.includes(key)) {
+                        categoryId = value;
+                        break;
+                    }
+                }
+            }
+            
+            if (categoryId) {
+                const targetSection = document.getElementById(categoryId);
+                if (targetSection) {
+                    // Smooth scroll to the category
+                    targetSection.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Optional: Add a highlight effect
+                    targetSection.style.transition = 'all 0.5s ease';
+                    targetSection.style.backgroundColor = '#fff9e6';
+                    setTimeout(() => {
+                        targetSection.style.backgroundColor = '';
+                    }, 2000);
+                } else {
+                    console.log('Category section not found:', categoryId);
+                }
+            } else {
+                // If no category found, show a message
+                alert('Category not found. Please try searching for: "saree", "t-shirt", "winter collection", "candle", "home decor", or "baby".');
+            }
+            
+            // Clear the search input
+            this.value = '';
+        }
+    });
+}
 
 // Setup event listeners
 function setupEventListeners() {
@@ -430,7 +975,7 @@ function setupEventListeners() {
     // Success modal functionality
     continueShopping.addEventListener('click', closeSuccessModal);
     
-    // Product interactions - only keep the essential ones that aren't handled elsewhere
+    // Product interactions
     document.addEventListener('click', function(e) {
         // More info button
         if (e.target.classList.contains('more-info-btn') || e.target.parentElement.classList.contains('more-info-btn')) {
@@ -457,13 +1002,39 @@ function setupEventListeners() {
                 removeFromCart(productId);
             }
         }
+        
+        // Add to Cart button on product cards
+        if (e.target.classList.contains('add-to-cart')) {
+            const productId = parseInt(e.target.dataset.id);
+            addToCart(productId);
+            e.stopPropagation();
+        }
+        
+        // Buy Now button on product cards
+        if (e.target.classList.contains('buy-now-btn') || e.target.closest('.buy-now-btn')) {
+            const button = e.target.classList.contains('buy-now-btn') ? e.target : e.target.closest('.buy-now-btn');
+            const productId = parseInt(button.dataset.id);
+            buyNowProduct(productId);
+            e.stopPropagation();
+        }
+        
+        // Buy Now button in product modal
+        if (e.target.classList.contains('buy-now-btn-modal') || e.target.closest('.buy-now-btn-modal')) {
+            if (currentProductId) {
+                buyNowProduct(currentProductId);
+            }
+            e.stopPropagation();
+        }
     });
 }
 
 // Cart functions
 function addToCart(productId) {
     const product = getProductData(productId);
-    if (!product) return;
+    if (!product) {
+        console.error(`Product with ID ${productId} not found`);
+        return;
+    }
 
     const existingItem = cart.find(item => item.id === productId);
     if (existingItem) {
@@ -527,7 +1098,7 @@ function updateCartUI() {
             cartItemElement.dataset.id = item.id;
             cartItemElement.innerHTML = `
                 <div class="cart-item-image">
-                    <img src="${item.image}" alt="${item.name}">
+                    <img src="${item.image}" alt="${item.name}" onerror="this.src='./images/placeholder.jpg'">
                 </div>
                 <div class="cart-item-details">
                     <div class="cart-item-name">${item.name}</div>
@@ -553,8 +1124,17 @@ function updateCartTotal() {
 }
 
 function getProductData(productId) {
+    // First check if product exists in productDetails
+    if (productDetails[productId]) {
+        return productDetails[productId];
+    }
+    
+    // Fallback to data attributes in HTML
     const productCard = document.querySelector(`.product-card[data-id="${productId}"]`);
-    if (!productCard) return null;
+    if (!productCard) {
+        console.error(`Product card with ID ${productId} not found`);
+        return null;
+    }
 
     return {
         id: productId,
@@ -639,7 +1219,10 @@ function backToCartHandler() {
 
 function showProductDetails(productId) {
     const product = productDetails[productId];
-    if (!product) return;
+    if (!product) {
+        console.error(`Product details for ID ${productId} not found`);
+        return;
+    }
     
     currentProductId = productId;
     
@@ -716,6 +1299,14 @@ function closeSuccessModal() {
     successModal.classList.remove('active');
     overlay.classList.remove('active');
     document.body.style.overflow = 'auto';
+    
+    // Clear cart after successful order
+    if (currentProductForBuyNow) {
+        currentProductForBuyNow = null;
+    } else {
+        cart = [];
+        updateCartUI();
+    }
 }
 
 // Order processing
@@ -815,7 +1406,6 @@ function buyNowProduct(productId) {
 }
 
 function showCustomerFormForBuyNow() {
-    const customerModal = document.getElementById('customerModal');
     const orderItems = document.getElementById('orderItems');
     const orderTotal = document.getElementById('orderTotal');
 
@@ -839,119 +1429,3 @@ function showCustomerFormForBuyNow() {
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
-
-// Update the back to cart button to handle buy now scenario
-document.getElementById('backToCart').addEventListener('click', function() {
-    closeCustomerForm();
-    
-    // If it was a buy now flow, reopen the product modal
-    if (currentProductForBuyNow) {
-        showProductDetails(currentProductForBuyNow.id);
-        currentProductForBuyNow = null;
-    } else {
-        // Regular cart flow - open cart sidebar
-        openCart();
-    }
-});
-
-// Update close customer form to reset buy now state
-function closeCustomerForm() {
-    const customerModal = document.getElementById('customerModal');
-    customerModal.classList.remove('active');
-    overlay.classList.remove('active');
-    document.body.style.overflow = 'auto';
-    
-    // Reset buy now state if modal is closed without ordering
-    currentProductForBuyNow = null;
-}
-
-// Add event listeners for product card buttons
-document.addEventListener('click', function(e) {
-    // Handle Add to Cart from product cards
-    if (e.target.classList.contains('add-to-cart')) {
-        const productId = parseInt(e.target.dataset.id);
-        addToCart(productId);
-        e.stopPropagation();
-        return;
-    }
-
-    // Handle Buy Now from product cards
-    if (e.target.classList.contains('buy-now-btn') || 
-        e.target.closest('.buy-now-btn')) {
-        const button = e.target.classList.contains('buy-now-btn') ? e.target : e.target.closest('.buy-now-btn');
-        const productId = parseInt(button.dataset.id);
-        buyNowProduct(productId);
-        e.stopPropagation();
-        return;
-    }
-
-    // Handle Buy Now from modal
-    if (e.target.classList.contains('buy-now-btn-modal') || 
-        e.target.closest('.buy-now-btn-modal')) {
-        if (currentProductId) {
-            buyNowProduct(currentProductId);
-        }
-        e.stopPropagation();
-    }
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.querySelector('.search-box input');
-    
-    // Map search terms to category IDs
-    const categoryMap = {
-        'shirt': 'shirt',
-        'shirts': 'shirt',
-        't-shirt': 't-shirt',
-        't-shirts': 't-shirt',
-        'tshirt': 't-shirt',
-        'tshirts': 't-shirt',
-        'pant': 'pant',
-        'pants': 'pant',
-        'trouser': 'pant',
-        'trousers': 'pant'
-    };
-    
-    searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            const searchTerm = this.value.trim().toLowerCase();
-            
-            // Find the category ID from the search term
-            let categoryId = categoryMap[searchTerm];
-            
-            // If no direct match, try partial matching
-            if (!categoryId) {
-                for (const [key, value] of Object.entries(categoryMap)) {
-                    if (searchTerm.includes(key)) {
-                        categoryId = value;
-                        break;
-                    }
-                }
-            }
-            
-            if (categoryId) {
-                const targetSection = document.getElementById(categoryId);
-                if (targetSection) {
-                    // Smooth scroll to the category
-                    targetSection.scrollIntoView({ 
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    
-                    // Optional: Add a highlight effect
-                    targetSection.style.transition = 'all 0.5s ease';
-                    targetSection.style.backgroundColor = '#fff9e6';
-                    setTimeout(() => {
-                        targetSection.style.backgroundColor = '';
-                    }, 2000);
-                }
-            } else {
-                // If no category found, show a message
-                alert('Category not found. Please try "shirt", "t-shirt", or "pant".');
-            }
-            
-            // Clear the search input
-            this.value = '';
-        }
-    });
-});
