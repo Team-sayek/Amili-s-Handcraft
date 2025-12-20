@@ -1844,3 +1844,57 @@ function showCustomerFormForBuyNow() {
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
+
+// Add this function to your script.js
+function openProductModal(productId) {
+    const product = getProductData(productId);
+    if (!product) return;
+    
+    // Show modal
+    showProductDetails(productId);
+    
+    // Add class to body to prevent background scrolling
+    document.body.classList.add('modal-open');
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    document.body.style.height = '100%';
+}
+
+function closeProductDetails() {
+    productModal.classList.remove('active');
+    overlay.classList.remove('active');
+    
+    // Remove class from body to restore scrolling
+    document.body.classList.remove('modal-open');
+    document.body.style.position = '';
+    document.body.style.width = '';
+    document.body.style.height = '';
+    
+    currentProductId = null;
+    selectedSize = null;
+    currentImageSlider = {
+        currentIndex: 0,
+        images: [],
+        container: null,
+        dotsContainer: null
+    };
+}
+
+// Update your product card click handler to use openProductModal
+function setupProductCardClick() {
+    document.addEventListener('click', function(e) {
+        const productCard = e.target.closest('.product-card');
+        
+        if (productCard) {
+            const isAddToCart = e.target.closest('.add-to-cart');
+            const isBuyNow = e.target.closest('.buy-now-btn');
+            
+            if (!isAddToCart && !isBuyNow) {
+                const productId = parseInt(productCard.dataset.id);
+                if (productId) {
+                    openProductModal(productId); // Changed from showProductDetails
+                }
+            }
+        }
+    });
+}
