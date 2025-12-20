@@ -26,6 +26,13 @@ setInterval(()=>{
 // Cart state
 let cart = [];
 let currentProductId = null;
+let currentImageSlider = {
+    currentIndex: 0,
+    images: [],
+    container: null,
+    dotsContainer: null
+};
+let selectedSize = null;
 
 const cartIcon = document.querySelector('.cart-icon');
 const cartSidebar = document.getElementById('cartSidebar');
@@ -43,17 +50,24 @@ const closeProductModal = document.getElementById('closeProductModal');
 const successModal = document.getElementById('successModal');
 const continueShopping = document.getElementById('continueShopping');
 const addToCartModal = document.getElementById('addToCartModal');
+const sizeSection = document.getElementById('sizeSection');
+const sizeButtons = document.getElementById('sizeButtons');
+const sizeError = document.getElementById('sizeError');
 
-// Product details data - UPDATED FOR ALL PRODUCTS
+// Product details data - UPDATED WITH SIZE AVAILABILITY
 const productDetails = {
-    // Saree Category (1-5)
+    // Saree Category (1-5) - No sizes needed
     1: {
         id: 1,
         name: "Hand Battik Saree",
         brand: "Amilis",
         price: 1500,
         originalPrice: 2000,
-        image: "./images/saree/Hand Battik saree.png",
+        images: [
+            "./images/saree/Hand Battik saree.png",
+            "./images/saree/Hand Battik saree.png",
+            "./images/saree/Hand Battik saree.png"
+        ],
         description: "Beautiful handcrafted Batik saree with traditional wax-resist dyeing techniques. Each piece features unique patterns and vibrant colors, perfect for festive occasions.",
         features: [
             "Handcrafted Batik design",
@@ -68,7 +82,8 @@ const productDetails = {
             "Width": "1.2 meters",
             "Weight": "800 grams",
             "Care": "Dry clean recommended"
-        }
+        },
+        hasSizes: false
     },
     2: {
         id: 2,
@@ -76,7 +91,11 @@ const productDetails = {
         brand: "Amilis",
         price: 800,
         originalPrice: 1200,
-        image: "./images/saree/Kalamkari Saree.png",
+        images: [
+            "./images/saree/Kalamkari Saree.png",
+            "./images/saree/Kalamkari Saree.png",
+            "./images/saree/Kalamkari Saree.png"
+        ],
         description: "Exquisite Kalamkari saree featuring traditional hand-painted motifs inspired by nature and mythology. Made with natural dyes on pure cotton fabric.",
         features: [
             "Hand-painted Kalamkari art",
@@ -91,7 +110,8 @@ const productDetails = {
             "Width": "1.1 meters",
             "Weight": "750 grams",
             "Care": "Hand wash in cold water"
-        }
+        },
+        hasSizes: false
     },
     3: {
         id: 3,
@@ -99,7 +119,11 @@ const productDetails = {
         brand: "Amilis",
         price: 7500,
         originalPrice: 8000,
-        image: "./images/saree/Kantha stich.png",
+        images: [
+            "./images/saree/Kantha stich.png",
+            "./images/saree/Kantha stich.png",
+            "./images/saree/Kantha stich.png"
+        ],
         description: "Premium Kantha stitch saree featuring intricate hand-embroidered patterns. Traditional Bengali embroidery with delicate motifs on fine fabric.",
         features: [
             "Hand-embroidered Kantha stitch",
@@ -114,7 +138,8 @@ const productDetails = {
             "Width": "1.2 meters",
             "Weight": "900 grams",
             "Care": "Dry clean only"
-        }
+        },
+        hasSizes: false
     },
     4: {
         id: 4,
@@ -122,7 +147,11 @@ const productDetails = {
         brand: "Amilis",
         price: 1500,
         originalPrice: 2000,
-        image: "./images/saree/Linen Saree.png",
+        images: [
+            "./images/saree/Linen Saree.png",
+            "./images/saree/Linen Saree.png",
+            "./images/saree/Linen Saree.png"
+        ],
         description: "Elegant linen saree perfect for summer wear. Lightweight, breathable fabric with a crisp texture and sophisticated look.",
         features: [
             "Pure linen fabric",
@@ -137,7 +166,8 @@ const productDetails = {
             "Width": "1.1 meters",
             "Weight": "700 grams",
             "Care": "Machine wash gentle cycle"
-        }
+        },
+        hasSizes: false
     },
     5: {
         id: 5,
@@ -145,7 +175,11 @@ const productDetails = {
         brand: "Amilis",
         price: 1200,
         originalPrice: 1500,
-        image: "./images/saree/Khesh(santiniketan)Saree.png",
+        images: [
+            "./images/saree/Khesh(santiniketan)Saree.png",
+            "./images/saree/Khesh(santiniketan)Saree.png",
+            "./images/saree/Khesh(santiniketan)Saree.png"
+        ],
         description: "Traditional Khesh saree from Santiniketan, made using recycled sari strips. Eco-friendly and comfortable for daily wear.",
         features: [
             "Recycled fabric strips",
@@ -160,17 +194,22 @@ const productDetails = {
             "Width": "1 meter",
             "Weight": "600 grams",
             "Care": "Hand wash mild detergent"
-        }
+        },
+        hasSizes: false
     },
 
-    // T-Shirts Category (201)
+    // T-Shirts Category (201) - Has sizes
     201: {
         id: 201,
         name: "Customized Hand Printed T-Shirt",
         brand: "Amilis",
         price: 499,
         originalPrice: 999,
-        image: "./images/T-Shirt Section/Customized T-shirt.png",
+        images: [
+            "./images/T-Shirt Section/Customized T-shirt.png",
+            "./images/T-Shirt Section/Customized T-shirt.png",
+            "./images/T-Shirt Section/Customized T-shirt.png"
+        ],
         description: "Customized hand-printed cotton T-shirt with unique designs available in both English and Bengali scripts. Perfect for gifting and personal style.",
         features: [
             "Custom hand printing",
@@ -185,17 +224,24 @@ const productDetails = {
             "Colors": "Multiple options",
             "Sizes": "S, M, L, XL",
             "Care": "Machine wash cold"
-        }
+        },
+        hasSizes: true,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        availableSizes: ["S", "M", "L", "XL"]
     },
 
-    // Woolen Category (401-410) - Winter Collection
+    // Woolen Category (401-410) - Winter Collection - Has sizes
     401: {
         id: 401,
-        name: "Insulated Men's Jacket",
-        brand: "Amilis Winter",
+        name: "Handwoven Woolen Shawl",
+        brand: "WoolCraft",
         price: 2499,
         originalPrice: 3124,
-        image: "./images/Winter Section/Insulated Jacket(men).png",
+        images: [
+            "./images/Winter Section/Insulated Jacket(men).png",
+            "./images/Winter Section/Insulated Jacket(men).png",
+            "./images/Winter Section/Insulated Jacket(men).png"
+        ],
         description: "Premium insulated men's jacket for extreme winter conditions. Features thermal lining and waterproof exterior.",
         features: [
             "Premium insulation",
@@ -210,15 +256,22 @@ const productDetails = {
             "Size": "M, L, XL, XXL",
             "Color": "Black",
             "Care": "Machine wash gentle"
-        }
+        },
+        hasSizes: true,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        availableSizes: ["M", "L", "XL", "XXL"]
     },
     402: {
         id: 402,
-        name: "Insulated Women's Jacket",
-        brand: "Amilis Winter",
+        name: "Woolen Sweater",
+        brand: "WoolCraft",
         price: 1899,
         originalPrice: 2234,
-        image: "./images/Winter Section/Insulated Jacket(women).png",
+        images: [
+            "./images/Winter Section/Insulated Jacket(women).png",
+            "./images/Winter Section/Insulated Jacket(women).png",
+            "./images/Winter Section/Insulated Jacket(women).png"
+        ],
         description: "Stylish insulated women's jacket with slim fit design. Perfect for cold weather with excellent warmth retention.",
         features: [
             "Slim fit design",
@@ -233,15 +286,22 @@ const productDetails = {
             "Size": "S, M, L",
             "Color": "Various",
             "Care": "Machine wash cold"
-        }
+        },
+        hasSizes: true,
+        sizes: ["XS", "S", "M", "L", "XL"],
+        availableSizes: ["S", "M", "L"]
     },
     403: {
         id: 403,
-        name: "Kashmiri Shawl (Men)",
-        brand: "Amilis Winter",
+        name: "Woolen Sweater",
+        brand: "WoolCraft",
         price: 1899,
         originalPrice: 2234,
-        image: "./images/Winter Section/Kashmiri Saul(Men).png",
+        images: [
+            "./images/Winter Section/Kashmiri Saul(Men).png",
+            "./images/Winter Section/Kashmiri Saul(Men).png",
+            "./images/Winter Section/Kashmiri Saul(Men).png"
+        ],
         description: "Authentic Kashmiri wool shawl for men with traditional embroidery. Handcrafted by skilled artisans.",
         features: [
             "Pure Kashmiri wool",
@@ -256,15 +316,22 @@ const productDetails = {
             "Weight": "500 grams",
             "Color": "Traditional",
             "Care": "Dry clean only"
-        }
+        },
+        hasSizes: true,
+        sizes: ["One Size", "L", "XL"],
+        availableSizes: ["One Size", "L", "XL"]
     },
     404: {
         id: 404,
-        name: "Kashmiri Shawl (Women)",
-        brand: "Amilis Winter",
+        name: "Woolen Sweater",
+        brand: "WoolCraft",
         price: 1899,
         originalPrice: 2234,
-        image: "./images/Winter Section/Kashmiri Saul(women).png",
+        images: [
+            "./images/Winter Section/Kashmiri Saul(women).png",
+            "./images/Winter Section/Kashmiri Saul(women).png",
+            "./images/Winter Section/Kashmiri Saul(women).png"
+        ],
         description: "Beautiful Kashmiri wool shawl for women with intricate embroidery and delicate patterns.",
         features: [
             "Fine wool fabric",
@@ -279,15 +346,22 @@ const productDetails = {
             "Weight": "450 grams",
             "Color": "Feminine colors",
             "Care": "Dry clean only"
-        }
+        },
+        hasSizes: true,
+        sizes: ["One Size", "S", "M"],
+        availableSizes: ["One Size", "S", "M"]
     },
     405: {
         id: 405,
-        name: "Merino Wool Sweater (Men)",
-        brand: "Amilis Winter",
+        name: "Woolen Sweater",
+        brand: "WoolCraft",
         price: 1899,
         originalPrice: 2234,
-        image: "./images/Winter Section/marino wool(men).png",
+        images: [
+            "./images/Winter Section/marino wool(men).png",
+            "./images/Winter Section/marino wool(men).png",
+            "./images/Winter Section/marino wool(men).png"
+        ],
         description: "Premium merino wool sweater for men. Soft, warm, and perfect for cold winter days.",
         features: [
             "Premium merino wool",
@@ -302,15 +376,22 @@ const productDetails = {
             "Size": "M, L, XL",
             "Color": "Solid colors",
             "Care": "Hand wash"
-        }
+        },
+        hasSizes: true,
+        sizes: ["S", "M", "L", "XL"],
+        availableSizes: ["M", "L", "XL"]
     },
     406: {
         id: 406,
-        name: "Merino Wool Sweater (Women)",
-        brand: "Amilis Winter",
+        name: "Woolen Sweater",
+        brand: "WoolCraft",
         price: 1899,
         originalPrice: 2234,
-        image: "./images/Winter Section/merino wool (women).png",
+        images: [
+            "./images/Winter Section/merino wool (women).png",
+            "./images/Winter Section/merino wool (women).png",
+            "./images/Winter Section/merino wool (women).png"
+        ],
         description: "Elegant merino wool sweater for women with fashionable design and excellent warmth.",
         features: [
             "Fine merino wool",
@@ -325,15 +406,22 @@ const productDetails = {
             "Size": "S, M, L",
             "Color": "Pastel shades",
             "Care": "Hand wash"
-        }
+        },
+        hasSizes: true,
+        sizes: ["XS", "S", "M", "L"],
+        availableSizes: ["S", "M", "L"]
     },
     407: {
         id: 407,
-        name: "Leather Jacket (Men)",
-        brand: "Amilis Winter",
+        name: "Woolen Sweater",
+        brand: "WoolCraft",
         price: 1899,
         originalPrice: 2234,
-        image: "./images/Winter Section/revarsival leather jacket(men).png",
+        images: [
+            "./images/Winter Section/revarsival leather jacket(men).png",
+            "./images/Winter Section/revarsival leather jacket(men).png",
+            "./images/Winter Section/revarsival leather jacket(men).png"
+        ],
         description: "Stylish leather jacket for men with retro design. Perfect for winter fashion and casual wear.",
         features: [
             "Premium leather",
@@ -348,15 +436,22 @@ const productDetails = {
             "Size": "M, L, XL",
             "Color": "Brown/Black",
             "Care": "Leather care"
-        }
+        },
+        hasSizes: true,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        availableSizes: ["M", "L", "XL"]
     },
     408: {
         id: 408,
-        name: "Leather Jacket (Women)",
-        brand: "Amilis Winter",
+        name: "Woolen Sweater",
+        brand: "WoolCraft",
         price: 1899,
         originalPrice: 2234,
-        image: "./images/Winter Section/revarsival leather jacket(women).png",
+        images: [
+            "./images/Winter Section/revarsival leather jacket(women).png",
+            "./images/Winter Section/revarsival leather jacket(women).png",
+            "./images/Winter Section/revarsival leather jacket(women).png"
+        ],
         description: "Fashionable leather jacket for women with modern design and comfortable fit.",
         features: [
             "Quality leather",
@@ -371,15 +466,22 @@ const productDetails = {
             "Size": "S, M, L",
             "Color": "Various",
             "Care": "Leather care"
-        }
+        },
+        hasSizes: true,
+        sizes: ["XS", "S", "M", "L"],
+        availableSizes: ["S", "M", "L"]
     },
     409: {
         id: 409,
-        name: "Winter Overcoat (Men)",
-        brand: "Amilis Winter",
+        name: "Woolen Sweater",
+        brand: "WoolCraft",
         price: 1899,
         originalPrice: 2234,
-        image: "./images/Winter Section/Winter Long over Coat(men).png",
+        images: [
+            "./images/Winter Section/Winter Long over Coat(men).png",
+            "./images/Winter Section/Winter Long over Coat(men).png",
+            "./images/Winter Section/Winter Long over Coat(men).png"
+        ],
         description: "Long winter overcoat for men with premium wool blend fabric. Perfect for formal winter occasions.",
         features: [
             "Wool blend fabric",
@@ -394,15 +496,22 @@ const productDetails = {
             "Size": "M, L, XL",
             "Color": "Classic colors",
             "Care": "Dry clean"
-        }
+        },
+        hasSizes: true,
+        sizes: ["M", "L", "XL", "XXL"],
+        availableSizes: ["M", "L", "XL"]
     },
     410: {
         id: 410,
-        name: "Winter Overcoat (Women)",
-        brand: "Amilis Winter",
+        name: "Woolen Sweater",
+        brand: "WoolCraft",
         price: 1899,
         originalPrice: 2234,
-        image: "./images/Winter Section/Winter Long over Coat(women).png",
+        images: [
+            "./images/Winter Section/Winter Long over Coat(women).png",
+            "./images/Winter Section/Winter Long over Coat(women).png",
+            "./images/Winter Section/Winter Long over Coat(women).png"
+        ],
         description: "Elegant long winter overcoat for women with fashionable design and premium fabric.",
         features: [
             "Premium fabric",
@@ -417,17 +526,24 @@ const productDetails = {
             "Size": "S, M, L",
             "Color": "Elegant colors",
             "Care": "Dry clean"
-        }
+        },
+        hasSizes: true,
+        sizes: ["XS", "S", "M", "L"],
+        availableSizes: ["S", "M", "L"]
     },
 
-    // Candle Category (501-510)
+    // Candle Category (501-510) - No sizes needed
     501: {
         id: 501,
-        name: "Marvel Character Candle",
-        brand: "Amilis Candles",
+        name: "Marvel Candles",
+        brand: "CandleArt",
         price: 399,
         originalPrice: 570,
-        image: "./images/Candle Photos/IMG1.jpg",
+        images: [
+            "./images/Candle Photos/IMG1.jpg",
+            "./images/Candle Photos/IMG1.jpg",
+            "./images/Candle Photos/IMG1.jpg"
+        ],
         description: "Decorative candle featuring Marvel superhero designs. Perfect for fans and as unique gifts.",
         features: [
             "Marvel superhero designs",
@@ -442,15 +558,20 @@ const productDetails = {
             "Height": "3 inches",
             "Diameter": "3 inches",
             "Scent": "Mild"
-        }
+        },
+        hasSizes: false
     },
     502: {
         id: 502,
         name: "Floral Scented Candle",
-        brand: "Amilis Candles",
+        brand: "CandleArt",
         price: 349,
         originalPrice: 465,
-        image: "./images/Candle Photos/IMG2.png",
+        images: [
+            "./images/Candle Photos/IMG2.png",
+            "./images/Candle Photos/IMG2.png",
+            "./images/Candle Photos/IMG2.png"
+        ],
         description: "Beautiful floral scented candle that fills your space with relaxing fragrance. Hand-poured with care.",
         features: [
             "Floral fragrance",
@@ -465,15 +586,20 @@ const productDetails = {
             "Fragrance": "Lavender/Rose",
             "Height": "2.5 inches",
             "Diameter": "2.5 inches"
-        }
+        },
+        hasSizes: false
     },
     503: {
         id: 503,
-        name: "Decorative Tea Light Set",
-        brand: "Amilis Candles",
+        name: "Decorative Tea Light",
+        brand: "CandleArt",
         price: 299,
         originalPrice: 499,
-        image: "./images/Candle Photos/IMG3.png",
+        images: [
+            "./images/Candle Photos/IMG3.png",
+            "./images/Candle Photos/IMG3.png",
+            "./images/Candle Photos/IMG3.png"
+        ],
         description: "Set of decorative tea lights perfect for creating warm ambiance. Beautiful designs for any occasion.",
         features: [
             "Set of decorative lights",
@@ -488,15 +614,20 @@ const productDetails = {
             "Quantity": "6 pieces",
             "Fragrance": "Unscented",
             "Colors": "Multiple"
-        }
+        },
+        hasSizes: false
     },
     504: {
         id: 504,
-        name: "Geometric Pattern Candle",
-        brand: "Amilis Candles",
+        name: "Decorative Tea Light",
+        brand: "CandleArt",
         price: 299,
         originalPrice: 499,
-        image: "./images/Candle Photos/IMG4.png",
+        images: [
+            "./images/Candle Photos/IMG4.png",
+            "./images/Candle Photos/IMG4.png",
+            "./images/Candle Photos/IMG4.png"
+        ],
         description: "Modern geometric pattern candle with contemporary design. Adds style to any room decor.",
         features: [
             "Geometric patterns",
@@ -511,15 +642,20 @@ const productDetails = {
             "Design": "Geometric",
             "Height": "3 inches",
             "Diameter": "2.8 inches"
-        }
+        },
+        hasSizes: false
     },
     505: {
         id: 505,
-        name: "Nature Inspired Candle",
-        brand: "Amilis Candles",
+        name: "Decorative Tea Light",
+        brand: "CandleArt",
         price: 299,
         originalPrice: 499,
-        image: "./images/Candle Photos/IMG5.png",
+        images: [
+            "./images/Candle Photos/IMG5.png",
+            "./images/Candle Photos/IMG5.png",
+            "./images/Candle Photos/IMG5.png"
+        ],
         description: "Nature-inspired decorative candle with organic patterns. Brings natural beauty to your space.",
         features: [
             "Nature-inspired design",
@@ -534,15 +670,20 @@ const productDetails = {
             "Fragrance": "Natural",
             "Height": "2.8 inches",
             "Diameter": "2.5 inches"
-        }
+        },
+        hasSizes: false
     },
     506: {
         id: 506,
-        name: "Artistic Design Candle",
-        brand: "Amilis Candles",
+        name: "Decorative Tea Light",
+        brand: "CandleArt",
         price: 299,
         originalPrice: 499,
-        image: "./images/Candle Photos/IMG 6.png",
+        images: [
+            "./images/Candle Photos/IMG 6.png",
+            "./images/Candle Photos/IMG 6.png",
+            "./images/Candle Photos/IMG 6.png"
+        ],
         description: "Artistic decorative candle with unique handcrafted designs. A piece of art that illuminates.",
         features: [
             "Artistic design",
@@ -557,15 +698,20 @@ const productDetails = {
             "Design": "Artistic",
             "Height": "3.2 inches",
             "Diameter": "2.7 inches"
-        }
+        },
+        hasSizes: false
     },
     507: {
         id: 507,
-        name: "Traditional Pattern Candle",
-        brand: "Amilis Candles",
+        name: "Decorative Tea Light",
+        brand: "CandleArt",
         price: 299,
         originalPrice: 499,
-        image: "./images/Candle Photos/IMG 7.png",
+        images: [
+            "./images/Candle Photos/IMG 7.png",
+            "./images/Candle Photos/IMG 7.png",
+            "./images/Candle Photos/IMG 7.png"
+        ],
         description: "Candle with traditional Indian patterns and motifs. Celecultural heritage through design.",
         features: [
             "Traditional patterns",
@@ -580,15 +726,20 @@ const productDetails = {
             "Pattern": "Traditional",
             "Height": "3 inches",
             "Diameter": "2.5 inches"
-        }
+        },
+        hasSizes: false
     },
     508: {
         id: 508,
-        name: "Elegant White Candle",
-        brand: "Amilis Candles",
+        name: "Decorative Tea Light",
+        brand: "CandleArt",
         price: 299,
         originalPrice: 499,
-        image: "./images/Candle Photos/IMG 8.png",
+        images: [
+            "./images/Candle Photos/IMG 8.png",
+            "./images/Candle Photos/IMG 8.png",
+            "./images/Candle Photos/IMG 8.png"
+        ],
         description: "Elegant white candle with sophisticated design. Perfect for formal settings and special occasions.",
         features: [
             "Elegant white design",
@@ -603,15 +754,20 @@ const productDetails = {
             "Color": "Pure White",
             "Height": "3.5 inches",
             "Diameter": "2.5 inches"
-        }
+        },
+        hasSizes: false
     },
     509: {
         id: 509,
-        name: "Colorful Festive Candle",
-        brand: "Amilis Candles",
+        name: "Decorative Tea Light",
+        brand: "CandleArt",
         price: 299,
         originalPrice: 499,
-        image: "./images/Candle Photos/IMG 9.png",
+        images: [
+            "./images/Candle Photos/IMG 9.png",
+            "./images/Candle Photos/IMG 9.png",
+            "./images/Candle Photos/IMG 9.png"
+        ],
         description: "Colorful festive candle perfect for celebrations and parties. Brightens up any occasion.",
         features: [
             "Colorful design",
@@ -626,15 +782,20 @@ const productDetails = {
             "Colors": "Multicolor",
             "Height": "2.8 inches",
             "Diameter": "2.6 inches"
-        }
+        },
+        hasSizes: false
     },
     510: {
         id: 510,
-        name: "Special Edition Candle",
-        brand: "Amilis Candles",
+        name: "Decorative Tea Light",
+        brand: "CandleArt",
         price: 299,
         originalPrice: 499,
-        image: "./images/Candle Photos/IMG 10.png",
+        images: [
+            "./images/Candle Photos/IMG 10.png",
+            "./images/Candle Photos/IMG 10.png",
+            "./images/Candle Photos/IMG 10.png"
+        ],
         description: "Special edition decorative candle with exclusive design. Limited availability collectible.",
         features: [
             "Special edition",
@@ -649,17 +810,22 @@ const productDetails = {
             "Edition": "Special",
             "Height": "3.3 inches",
             "Diameter": "2.8 inches"
-        }
+        },
+        hasSizes: false
     },
 
-    // Home Decor Category (601-603)
+    // Home Decor Category (601-603) - No sizes needed
     601: {
         id: 601,
-        name: "Hand Printed Cotton Bedsheets",
-        brand: "Amilis Home",
+        name: "Wall Art Decor",
+        brand: "HomeStyle",
         price: 1299,
         originalPrice: 1624,
-        image: "./images/Home Decor/Hand printed Bedsets Cotton.png",
+        images: [
+            "./images/Home Decor/Hand printed Bedsets Cotton.png",
+            "./images/Home Decor/Hand printed Bedsets Cotton.png",
+            "./images/Home Decor/Hand printed Bedsets Cotton.png"
+        ],
         description: "Beautiful hand-printed cotton bedsheets with traditional designs. Adds ethnic charm to your bedroom.",
         features: [
             "Hand-printed design",
@@ -674,15 +840,20 @@ const productDetails = {
             "Set Includes": "Bedsheet + 2 Pillow Covers",
             "Colors": "Traditional",
             "Care": "Machine wash"
-        }
+        },
+        hasSizes: false
     },
     602: {
         id: 602,
-        name: "Handmade Cushion Cover",
-        brand: "Amilis Home",
+        name: "Decorative Vase",
+        brand: "HomeStyle",
         price: 899,
         originalPrice: 1199,
-        image: "./images/Home Decor/Handmade cushion cover.png",
+        images: [
+            "./images/Home Decor/Handmade cushion cover.png",
+            "./images/Home Decor/Handmade cushion cover.png",
+            "./images/Home Decor/Handmade cushion cover.png"
+        ],
         description: "Handmade cushion cover with intricate embroidery and traditional patterns. Enhances home decor.",
         features: [
             "Handmade embroidery",
@@ -697,15 +868,20 @@ const productDetails = {
             "Design": "Embroidered",
             "Colors": "Vibrant",
             "Care": "Hand wash"
-        }
+        },
+        hasSizes: false
     },
     603: {
         id: 603,
-        name: "Decorative Wall Hanging",
-        brand: "Amilis Home",
+        name: "Decorative Vase",
+        brand: "HomeStyle",
         price: 899,
         originalPrice: 1199,
-        image: "./images/Home Decor/wall hanging.png",
+        images: [
+            "./images/Home Decor/wall hanging.png",
+            "./images/Home Decor/wall hanging.png",
+            "./images/Home Decor/wall hanging.png"
+        ],
         description: "Traditional decorative wall hanging with folk art designs. Perfect for living room or entrance decor.",
         features: [
             "Traditional folk art",
@@ -720,17 +896,22 @@ const productDetails = {
             "Design": "Folk Art",
             "Colors": "Bright",
             "Care": "Dry clean"
-        }
+        },
+        hasSizes: false
     },
 
-    // Baby Category (701-705)
+    // Baby Category (701-705) - Has sizes (age ranges or clothing sizes)
     701: {
         id: 701,
-        name: "Baby Cap Set",
-        brand: "Amilis Baby",
+        name: "Baby Soft Toys",
+        brand: "BabyCare",
         price: 799,
         originalPrice: 1141,
-        image: "./images/Baby Section/Cap.png",
+        images: [
+            "./images/Baby Section/Cap.png",
+            "./images/Baby Section/Cap.png",
+            "./images/Baby Section/Cap.png"
+        ],
         description: "Soft and comfortable baby caps made from pure cotton. Perfect for newborn head protection.",
         features: [
             "Pure cotton fabric",
@@ -745,15 +926,22 @@ const productDetails = {
             "Set Includes": "3 caps",
             "Colors": "Pastel",
             "Care": "Hand wash"
-        }
+        },
+        hasSizes: true,
+        sizes: ["0-3 Months", "3-6 Months", "6-12 Months"],
+        availableSizes: ["0-3 Months", "3-6 Months"]
     },
     702: {
         id: 702,
-        name: "New Born Socks Set",
-        brand: "Amilis Baby",
+        name: "Baby Clothing Set",
+        brand: "BabyCare",
         price: 1299,
         originalPrice: 1624,
-        image: "./images/Baby Section/New Born Socks.png",
+        images: [
+            "./images/Baby Section/New Born Socks.png",
+            "./images/Baby Section/New Born Socks.png",
+            "./images/Baby Section/New Born Socks.png"
+        ],
         description: "Soft cotton socks for newborns. Keeps baby's feet warm and comfortable.",
         features: [
             "Soft cotton socks",
@@ -768,15 +956,22 @@ const productDetails = {
             "Set Includes": "6 pairs",
             "Colors": "Assorted",
             "Care": "Machine wash gentle"
-        }
+        },
+        hasSizes: true,
+        sizes: ["Newborn", "0-3 Months", "3-6 Months"],
+        availableSizes: ["Newborn", "0-3 Months"]
     },
     703: {
         id: 703,
-        name: "Cotton Nappy with Top",
-        brand: "Amilis Baby",
+        name: "Baby Clothing Set",
+        brand: "BabyCare",
         price: 1299,
         originalPrice: 1624,
-        image: "./images/Baby Section/Pure Cotton Nappy with cotton top.png",
+        images: [
+            "./images/Baby Section/Pure Cotton Nappy with cotton top.png",
+            "./images/Baby Section/Pure Cotton Nappy with cotton top.png",
+            "./images/Baby Section/Pure Cotton Nappy with cotton top.png"
+        ],
         description: "Pure cotton nappy set with matching top. Soft, absorbent and comfortable for babies.",
         features: [
             "Pure cotton fabric",
@@ -791,15 +986,22 @@ const productDetails = {
             "Set Includes": "Nappy + Top",
             "Colors": "Baby colors",
             "Care": "Machine wash"
-        }
+        },
+        hasSizes: true,
+        sizes: ["Newborn", "0-3M", "3-6M", "6-12M"],
+        availableSizes: ["Newborn", "0-3M", "3-6M"]
     },
     704: {
         id: 704,
-        name: "Pure Cotton White Dress",
-        brand: "Amilis Baby",
+        name: "Baby Clothing Set",
+        brand: "BabyCare",
         price: 1299,
         originalPrice: 1624,
-        image: "./images/Baby Section/Pure Cotton White Dress Girls.png",
+        images: [
+            "./images/Baby Section/Pure Cotton White Dress Girls.png",
+            "./images/Baby Section/Pure Cotton White Dress Girls.png",
+            "./images/Baby Section/Pure Cotton White Dress Girls.png"
+        ],
         description: "Beautiful pure cotton white dress for baby girls. Elegant and comfortable for special occasions.",
         features: [
             "Pure white cotton",
@@ -814,15 +1016,22 @@ const productDetails = {
             "Design": "Dress",
             "Colors": "White",
             "Care": "Hand wash"
-        }
+        },
+        hasSizes: true,
+        sizes: ["Newborn", "0-3M", "3-6M", "6-9M", "9-12M"],
+        availableSizes: ["0-3M", "3-6M", "6-9M"]
     },
     705: {
         id: 705,
-        name: "Pure Cotton Wrappers",
-        brand: "Amilis Baby",
+        name: "Baby Clothing Set",
+        brand: "BabyCare",
         price: 1299,
         originalPrice: 1624,
-        image: "./images/Baby Section/Pure cotton wraapers.png",
+        images: [
+            "./images/Baby Section/Pure cotton wraapers.png",
+            "./images/Baby Section/Pure cotton wraapers.png",
+            "./images/Baby Section/Pure cotton wraapers.png"
+        ],
         description: "Soft pure cotton wrappers for newborns. Perfect for swaddling and keeping baby comfortable.",
         features: [
             "Soft pure cotton",
@@ -837,7 +1046,10 @@ const productDetails = {
             "Quantity": "3 pieces",
             "Colors": "Soft colors",
             "Care": "Machine wash"
-        }
+        },
+        hasSizes: true,
+        sizes: ["Small", "Medium", "Large"],
+        availableSizes: ["Small", "Medium"]
     }
 };
 
@@ -849,26 +1061,40 @@ document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
     updateCartUI();
     setupSearchFunctionality();
+    setupProductCardClick();
 });
+
+// Setup product card click functionality
+function setupProductCardClick() {
+    document.addEventListener('click', function(e) {
+        const productCard = e.target.closest('.product-card');
+        
+        if (productCard) {
+            const isAddToCart = e.target.closest('.add-to-cart');
+            const isBuyNow = e.target.closest('.buy-now-btn');
+            
+            if (!isAddToCart && !isBuyNow) {
+                const productId = parseInt(productCard.dataset.id);
+                if (productId) {
+                    showProductDetails(productId);
+                }
+            }
+        }
+    });
+}
 
 // Setup search functionality
 function setupSearchFunctionality() {
     const searchInput = document.querySelector('.search-box input');
     
-    // Map search terms to category IDs - UPDATED FOR 6 CATEGORIES
     const categoryMap = {
-        // Saree
         'saree': 'saree',
         'sarees': 'saree',
         'sari': 'saree',
-        
-        // T-Shirt
         't-shirt': 't-shirt',
         't-shirts': 't-shirt',
         'tshirt': 't-shirt',
         'tshirts': 't-shirt',
-        
-        // Woolen/Winter Collection
         'woolen': 'woolen',
         'winter': 'woolen',
         'winter collection': 'woolen',
@@ -880,13 +1106,9 @@ function setupSearchFunctionality() {
         'shawls': 'woolen',
         'coat': 'woolen',
         'coats': 'woolen',
-        
-        // Candle
         'candle': 'candle',
         'candles': 'candle',
         'candlestick': 'candle',
-        
-        // Home Decor
         'home decor': 'home-decor',
         'home': 'home-decor',
         'decor': 'home-decor',
@@ -896,8 +1118,6 @@ function setupSearchFunctionality() {
         'cushion': 'home-decor',
         'cushions': 'home-decor',
         'wall hanging': 'home-decor',
-        
-        // Baby
         'baby': 'baby',
         'babies': 'baby',
         'infant': 'baby',
@@ -913,10 +1133,8 @@ function setupSearchFunctionality() {
         if (e.key === 'Enter') {
             const searchTerm = this.value.trim().toLowerCase();
             
-            // Find the category ID from the search term
             let categoryId = categoryMap[searchTerm];
             
-            // If no direct match, try partial matching
             if (!categoryId) {
                 for (const [key, value] of Object.entries(categoryMap)) {
                     if (searchTerm.includes(key)) {
@@ -929,27 +1147,21 @@ function setupSearchFunctionality() {
             if (categoryId) {
                 const targetSection = document.getElementById(categoryId);
                 if (targetSection) {
-                    // Smooth scroll to the category
                     targetSection.scrollIntoView({ 
                         behavior: 'smooth',
                         block: 'start'
                     });
                     
-                    // Optional: Add a highlight effect
                     targetSection.style.transition = 'all 0.5s ease';
                     targetSection.style.backgroundColor = '#fff9e6';
                     setTimeout(() => {
                         targetSection.style.backgroundColor = '';
                     }, 2000);
-                } else {
-                    console.log('Category section not found:', categoryId);
                 }
             } else {
-                // If no category found, show a message
                 alert('Category not found. Please try searching for: "saree", "t-shirt", "winter collection", "candle", "home decor", or "baby".');
             }
             
-            // Clear the search input
             this.value = '';
         }
     });
@@ -977,35 +1189,46 @@ function setupEventListeners() {
     
     // Product interactions
     document.addEventListener('click', function(e) {
-        // More info button
-        if (e.target.classList.contains('more-info-btn') || e.target.parentElement.classList.contains('more-info-btn')) {
-            const button = e.target.classList.contains('more-info-btn') ? e.target : e.target.parentElement;
-            const productId = parseInt(button.dataset.id);
-            showProductDetails(productId);
+        // Size selection buttons
+        if (e.target.classList.contains('size-btn') && !e.target.classList.contains('out-of-stock')) {
+            const sizeButton = e.target;
+            const allSizeButtons = document.querySelectorAll('.size-btn');
+            
+            // Remove selected class from all buttons
+            allSizeButtons.forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked button
+            sizeButton.classList.add('selected');
+            selectedSize = sizeButton.dataset.size;
+            sizeError.style.display = 'none';
         }
         
-        // Cart item controls
+        // Cart item controls - FIXED: Better event delegation
         if (e.target.classList.contains('quantity-btn')) {
-            const cartItem = e.target.closest('.cart-item');
+            const button = e.target;
+            const cartItem = button.closest('.cart-item');
             if (cartItem) {
-                const productId = parseInt(cartItem.dataset.id);
-                const isIncrease = e.target.classList.contains('increase') || e.target.parentElement.classList.contains('increase');
-                updateCartItemQuantity(productId, isIncrease);
+                const cartId = cartItem.dataset.id;
+                const isIncrease = button.classList.contains('increase');
+                updateCartItemQuantity(cartId, isIncrease);
             }
         }
         
-        // Remove item from cart
+        // Remove item from cart - FIXED: Better event delegation
         if (e.target.classList.contains('remove-item')) {
             const cartItem = e.target.closest('.cart-item');
             if (cartItem) {
-                const productId = parseInt(cartItem.dataset.id);
-                removeFromCart(productId);
+                const cartId = cartItem.dataset.id;
+                removeFromCart(cartId);
             }
         }
         
         // Add to Cart button on product cards
-        if (e.target.classList.contains('add-to-cart')) {
-            const productId = parseInt(e.target.dataset.id);
+        if (e.target.classList.contains('add-to-cart') || e.target.closest('.add-to-cart')) {
+            const button = e.target.classList.contains('add-to-cart') ? e.target : e.target.closest('.add-to-cart');
+            const productId = parseInt(button.dataset.id);
             addToCart(productId);
             e.stopPropagation();
         }
@@ -1025,41 +1248,176 @@ function setupEventListeners() {
             }
             e.stopPropagation();
         }
+        
+        // Image slider controls
+        if (e.target.closest('.slider-prev')) {
+            prevImage();
+            e.stopPropagation();
+        }
+        
+        if (e.target.closest('.slider-next')) {
+            nextImage();
+            e.stopPropagation();
+        }
+        
+        if (e.target.classList.contains('slider-dot')) {
+            const dotIndex = parseInt(e.target.dataset.index);
+            goToImage(dotIndex);
+            e.stopPropagation();
+        }
     });
 }
 
+// Image slider functions
+function initImageSlider(images) {
+    if (!images || !Array.isArray(images) || images.length === 0) {
+        console.error('No images provided for slider');
+        return;
+    }
+    
+    currentImageSlider.images = images;
+    currentImageSlider.currentIndex = 0;
+    currentImageSlider.container = document.getElementById('sliderContainer');
+    currentImageSlider.dotsContainer = document.getElementById('sliderDots');
+    
+    currentImageSlider.container.innerHTML = '';
+    currentImageSlider.dotsContainer.innerHTML = '';
+    
+    images.forEach((image, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'slider-slide';
+        slide.innerHTML = `<img src="${image}" alt="Product Image ${index + 1}" onerror="this.src='./images/placeholder.jpg'">`;
+        currentImageSlider.container.appendChild(slide);
+        
+        const dot = document.createElement('span');
+        dot.className = 'slider-dot';
+        dot.dataset.index = index;
+        if (index === 0) dot.classList.add('active');
+        currentImageSlider.dotsContainer.appendChild(dot);
+    });
+    
+    updateSliderPosition();
+}
+
+function updateSliderPosition() {
+    const slides = document.querySelectorAll('.slider-slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    
+    slides.forEach((slide, index) => {
+        slide.style.transform = `translateX(-${currentImageSlider.currentIndex * 100}%)`;
+    });
+    
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentImageSlider.currentIndex);
+    });
+}
+
+function nextImage() {
+    if (currentImageSlider.images.length > 0) {
+        currentImageSlider.currentIndex = (currentImageSlider.currentIndex + 1) % currentImageSlider.images.length;
+        updateSliderPosition();
+    }
+}
+
+function prevImage() {
+    if (currentImageSlider.images.length > 0) {
+        currentImageSlider.currentIndex = (currentImageSlider.currentIndex - 1 + currentImageSlider.images.length) % currentImageSlider.images.length;
+        updateSliderPosition();
+    }
+}
+
+function goToImage(index) {
+    if (index >= 0 && index < currentImageSlider.images.length) {
+        currentImageSlider.currentIndex = index;
+        updateSliderPosition();
+    }
+}
+
+// Size selection functions
+function setupSizeSelection(product) {
+    // Reset selected size
+    selectedSize = null;
+    sizeButtons.innerHTML = '';
+    sizeError.style.display = 'none';
+    
+    if (product.hasSizes && product.sizes && product.sizes.length > 0) {
+        // Show size section
+        sizeSection.style.display = 'block';
+        
+        // Create size buttons
+        product.sizes.forEach(size => {
+            const sizeButton = document.createElement('button');
+            sizeButton.className = 'size-btn';
+            sizeButton.dataset.size = size;
+            sizeButton.textContent = size;
+            
+            // Check if size is available
+            if (product.availableSizes && product.availableSizes.includes(size)) {
+                sizeButton.classList.add('available');
+            } else {
+                sizeButton.classList.add('out-of-stock');
+                sizeButton.title = 'Out of stock';
+            }
+            
+            sizeButtons.appendChild(sizeButton);
+        });
+    } else {
+        // Hide size section for products without sizes
+        sizeSection.style.display = 'none';
+    }
+}
+
 // Cart functions
-function addToCart(productId) {
+function addToCart(productId, size = null) {
     const product = getProductData(productId);
     if (!product) {
         console.error(`Product with ID ${productId} not found`);
         return;
     }
 
-    const existingItem = cart.find(item => item.id === productId);
+    // Check if size is required but not selected
+    if (product.hasSizes && !size && !selectedSize) {
+        sizeError.style.display = 'inline';
+        sizeError.textContent = 'Please select a size';
+        return;
+    }
+
+    // Use selected size if available
+    const selectedProductSize = size || selectedSize;
+    
+    // Generate a unique cart ID that includes size for products with sizes
+    const cartItemId = product.hasSizes ? `${productId}-${selectedProductSize}` : productId.toString();
+
+    const existingItem = cart.find(item => item.cartId === cartItemId);
     if (existingItem) {
         existingItem.quantity += 1;
     } else {
         cart.push({
             id: product.id,
+            cartId: cartItemId,
             name: product.name,
             price: product.price,
-            image: product.image,
-            quantity: 1
+            image: product.images ? product.images[0] : product.image,
+            quantity: 1,
+            size: product.hasSizes ? selectedProductSize : null,
+            hasSizes: product.hasSizes
         });
     }
 
     updateCartUI();
     showCartNotification();
+    
+    // Reset selected size for next product
+    selectedSize = null;
 }
 
-function removeFromCart(productId) {
-    cart = cart.filter(item => item.id !== productId);
+function removeFromCart(cartId) {
+    cart = cart.filter(item => item.cartId !== cartId);
     updateCartUI();
 }
 
-function updateCartItemQuantity(productId, isIncrease) {
-    const cartItem = cart.find(item => item.id === productId);
+function updateCartItemQuantity(cartId, isIncrease) {
+    const cartItem = cart.find(item => item.cartId === cartId);
     if (!cartItem) return;
 
     if (isIncrease) {
@@ -1068,7 +1426,7 @@ function updateCartItemQuantity(productId, isIncrease) {
         if (cartItem.quantity > 1) {
             cartItem.quantity -= 1;
         } else {
-            removeFromCart(productId);
+            removeFromCart(cartId);
             return;
         }
     }
@@ -1095,13 +1453,14 @@ function updateCartUI() {
         cart.forEach(item => {
             const cartItemElement = document.createElement('div');
             cartItemElement.className = 'cart-item';
-            cartItemElement.dataset.id = item.id;
+            cartItemElement.dataset.id = item.cartId;
             cartItemElement.innerHTML = `
                 <div class="cart-item-image">
                     <img src="${item.image}" alt="${item.name}" onerror="this.src='./images/placeholder.jpg'">
                 </div>
                 <div class="cart-item-details">
                     <div class="cart-item-name">${item.name}</div>
+                    ${item.size ? `<div class="cart-item-size">Size: ${item.size}</div>` : ''}
                     <div class="cart-item-price">₹${item.price}</div>
                     <div class="cart-item-controls">
                         <button class="quantity-btn decrease">-</button>
@@ -1124,12 +1483,10 @@ function updateCartTotal() {
 }
 
 function getProductData(productId) {
-    // First check if product exists in productDetails
     if (productDetails[productId]) {
         return productDetails[productId];
     }
     
-    // Fallback to data attributes in HTML
     const productCard = document.querySelector(`.product-card[data-id="${productId}"]`);
     if (!productCard) {
         console.error(`Product card with ID ${productId} not found`);
@@ -1138,9 +1495,13 @@ function getProductData(productId) {
 
     return {
         id: productId,
-        name: productCard.dataset.name,
-        price: parseInt(productCard.dataset.price),
-        image: productCard.querySelector('img').src
+        name: productCard.dataset.name || 'Product',
+        price: parseInt(productCard.dataset.price) || 0,
+        images: [productCard.querySelector('img').src],
+        description: productCard.dataset.description || 'No description available',
+        features: ['No features listed'],
+        specifications: {},
+        hasSizes: false
     };
 }
 
@@ -1196,7 +1557,10 @@ function showCustomerForm() {
         const orderItem = document.createElement('div');
         orderItem.className = 'order-item';
         orderItem.innerHTML = `
-            <span>${item.name} (Qty: ${item.quantity})</span>
+            <div class="order-item-details">
+                <span>${item.name} (Qty: ${item.quantity})</span>
+                ${item.size ? `<span class="order-item-size">Size: ${item.size}</span>` : ''}
+            </div>
             <span>₹${item.price * item.quantity}</span>
         `;
         orderItems.appendChild(orderItem);
@@ -1218,47 +1582,70 @@ function backToCartHandler() {
 }
 
 function showProductDetails(productId) {
-    const product = productDetails[productId];
+    const product = getProductData(productId);
     if (!product) {
         console.error(`Product details for ID ${productId} not found`);
+        alert('Product details not available.');
         return;
     }
     
     currentProductId = productId;
     
-    // Update modal content
-    document.getElementById('modalProductImage').src = product.image;
-    document.getElementById('modalProductBrand').textContent = product.brand;
-    document.getElementById('modalProductName').textContent = product.name;
-    document.getElementById('modalCurrentPrice').textContent = `₹${product.price}`;
-    document.getElementById('modalOriginalPrice').textContent = `₹${product.originalPrice}`;
+    // Initialize image slider with product images
+    initImageSlider(product.images || [product.image] || ['./images/placeholder.jpg']);
     
-    const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+    // Setup size selection if product has sizes
+    setupSizeSelection(product);
+    
+    // Update modal content
+    document.getElementById('modalProductBrand').textContent = product.brand || 'Brand';
+    document.getElementById('modalProductName').textContent = product.name || 'Product';
+    document.getElementById('modalCurrentPrice').textContent = `₹${product.price || 0}`;
+    document.getElementById('modalOriginalPrice').textContent = `₹${product.originalPrice || product.price || 0}`;
+    
+    const discount = product.originalPrice ? 
+        Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100) : 0;
     document.getElementById('modalDiscount').textContent = `${discount}% OFF`;
     
-    document.getElementById('modalProductDescription').textContent = product.description;
+    document.getElementById('modalProductDescription').textContent = product.description || 'No description available.';
     
     // Update features
     const featuresList = document.getElementById('modalFeaturesList');
     featuresList.innerHTML = '';
-    product.features.forEach(feature => {
+    if (product.features && product.features.length > 0) {
+        product.features.forEach(feature => {
+            const li = document.createElement('li');
+            li.textContent = feature;
+            featuresList.appendChild(li);
+        });
+    } else {
         const li = document.createElement('li');
-        li.textContent = feature;
+        li.textContent = 'No features listed';
         featuresList.appendChild(li);
-    });
+    }
     
     // Update specifications
     const specifications = document.getElementById('modalSpecifications');
     specifications.innerHTML = '';
-    Object.entries(product.specifications).forEach(([key, value]) => {
+    if (product.specifications && Object.keys(product.specifications).length > 0) {
+        Object.entries(product.specifications).forEach(([key, value]) => {
+            const specRow = document.createElement('div');
+            specRow.className = 'spec-row';
+            specRow.innerHTML = `
+                <span class="spec-key">${key}:</span>
+                <span class="spec-value">${value}</span>
+            `;
+            specifications.appendChild(specRow);
+        });
+    } else {
         const specRow = document.createElement('div');
         specRow.className = 'spec-row';
         specRow.innerHTML = `
-            <span class="spec-key">${key}:</span>
-            <span class="spec-value">${value}</span>
+            <span class="spec-key">Details:</span>
+            <span class="spec-value">No specifications available</span>
         `;
         specifications.appendChild(specRow);
-    });
+    }
     
     // Show modal
     productModal.classList.add('active');
@@ -1271,6 +1658,13 @@ function closeProductDetails() {
     overlay.classList.remove('active');
     document.body.style.overflow = 'auto';
     currentProductId = null;
+    selectedSize = null;
+    currentImageSlider = {
+        currentIndex: 0,
+        images: [],
+        container: null,
+        dotsContainer: null
+    };
 }
 
 function addToCartFromModal() {
@@ -1282,11 +1676,20 @@ function addToCartFromModal() {
 
 function showSuccessModal(orderData) {
     const successOrderDetails = document.getElementById('successOrderDetails');
+    
+    let itemsList = '';
+    orderData.items.forEach(item => {
+        itemsList += `<p><strong>${item.name}</strong> (Qty: ${item.quantity})${item.size ? ` - Size: ${item.size}` : ''} - ₹${item.price * item.quantity}</p>`;
+    });
+    
     successOrderDetails.innerHTML = `
         <p><strong>Order ID:</strong> ${orderData.orderId}</p>
         <p><strong>Customer:</strong> ${orderData.customerName}</p>
         <p><strong>Email:</strong> ${orderData.customerEmail}</p>
         <p><strong>Phone:</strong> ${orderData.customerPhone}</p>
+        <p><strong>Address:</strong> ${orderData.shippingAddress}, ${orderData.customerCity} - ${orderData.pincode}</p>
+        <p><strong>Items Ordered:</strong></p>
+        ${itemsList}
         <p><strong>Total Amount:</strong> ₹${orderData.totalAmount}</p>
     `;
     
@@ -1337,11 +1740,13 @@ function submitOrder(e) {
             customerCity: formData.get('customerCity'),
             pincode: formData.get('pincode'),
             totalAmount: currentProductForBuyNow.price,
-            items: [currentProductForBuyNow],
+            items: [{
+                ...currentProductForBuyNow,
+                size: currentProductForBuyNow.size || null
+            }],
             orderType: 'buy_now'
         };
         
-        // Clear the buy now product
         currentProductForBuyNow = null;
     } else {
         // Regular cart order
@@ -1354,25 +1759,27 @@ function submitOrder(e) {
             customerCity: formData.get('customerCity'),
             pincode: formData.get('pincode'),
             totalAmount: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
-            items: [...cart],
+            items: cart.map(item => ({
+                id: item.id,
+                name: item.name,
+                price: item.price,
+                quantity: item.quantity,
+                size: item.size || null
+            })),
             orderType: 'cart'
         };
         
-        // Clear cart
         cart = [];
         updateCartUI();
     }
-
-    // Send order data (your existing email logic)
     sendOrderEmail(orderData);
     
-    // Show success modal
     closeCustomerForm();
     showSuccessModal(orderData);
 }
 
 function sendOrderEmail(orderData) {
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxpNuHeUy5pI194LQEs6VvVl4J53pWPCxhRC25jni9gcAT07hKx77_h_1wkAM5G9-xi/exec"; // ← replace with your deployed URL
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwOfpEasdjZCQMfufGSpYDQtsHHCMtU9F1RyyqWQLsaRyETmua5OmBRn_en-WgdoXEx3w/exec";
 
     fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
@@ -1389,13 +1796,20 @@ function sendOrderEmail(orderData) {
 
 // Buy Now functionality
 function buyNowProduct(productId) {
-    const productData = getProductData(productId);
-    if (!productData) return;
+    const product = getProductData(productId);
+    if (!product) return;
+
+    if (product.hasSizes && !selectedSize) {
+        sizeError.style.display = 'inline';
+        sizeError.textContent = 'Please select a size';
+        return;
+    }
 
     // Store the product for buy now
     currentProductForBuyNow = {
-        ...productData,
-        quantity: 1
+        ...product,
+        quantity: 1,
+        size: product.hasSizes ? selectedSize : null
     };
 
     // Close product modal if open
@@ -1409,14 +1823,16 @@ function showCustomerFormForBuyNow() {
     const orderItems = document.getElementById('orderItems');
     const orderTotal = document.getElementById('orderTotal');
 
-    // Clear any existing cart items and set only the buy now product
     orderItems.innerHTML = '';
     
     if (currentProductForBuyNow) {
         const orderItem = document.createElement('div');
         orderItem.className = 'order-item';
         orderItem.innerHTML = `
-            <span>${currentProductForBuyNow.name} (Qty: 1)</span>
+            <div class="order-item-details">
+                <span>${currentProductForBuyNow.name} (Qty: 1)</span>
+                ${currentProductForBuyNow.size ? `<span class="order-item-size">Size: ${currentProductForBuyNow.size}</span>` : ''}
+            </div>
             <span>₹${currentProductForBuyNow.price}</span>
         `;
         orderItems.appendChild(orderItem);
@@ -1424,7 +1840,6 @@ function showCustomerFormForBuyNow() {
         orderTotal.textContent = currentProductForBuyNow.price;
     }
 
-    // Show customer modal
     customerModal.classList.add('active');
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
