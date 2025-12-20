@@ -197,7 +197,7 @@ const productDetails = {
         price: 499,
         originalPrice: 999,
         images: [
-            "./image1/T-Shirt Section/CustomizedT-shir.jpeg",
+            "./image1/T-shirt Section/CustomizedT-shir.jpeg",
         ],
         description: "Customized hand-printed cotton T-shirt with unique designs available in both English and Bengali scripts. Perfect for gifting and personal style.",
         features: [
@@ -1826,3 +1826,4 @@ function showCustomerFormForBuyNow() {
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
+
