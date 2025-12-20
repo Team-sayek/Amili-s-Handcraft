@@ -64,9 +64,7 @@ const productDetails = {
         price: 1500,
         originalPrice: 2000,
         images: [
-            "./images/saree/Hand Battik saree.png",
-            "./images/saree/Hand Battik saree.png",
-            "./images/saree/Hand Battik saree.png"
+            "./image1/saree/Hand Battik saree.jpeg",
         ],
         description: "Beautiful handcrafted Batik saree with traditional wax-resist dyeing techniques. Each piece features unique patterns and vibrant colors, perfect for festive occasions.",
         features: [
@@ -92,9 +90,8 @@ const productDetails = {
         price: 800,
         originalPrice: 1200,
         images: [
-            "./images/saree/Kalamkari Saree.png",
-            "./images/saree/Kalamkari Saree.png",
-            "./images/saree/Kalamkari Saree.png"
+            "./image1/saree/KalamkariSare.jpeg",
+
         ],
         description: "Exquisite Kalamkari saree featuring traditional hand-painted motifs inspired by nature and mythology. Made with natural dyes on pure cotton fabric.",
         features: [
@@ -120,9 +117,7 @@ const productDetails = {
         price: 7500,
         originalPrice: 8000,
         images: [
-            "./images/saree/Kantha stich.png",
-            "./images/saree/Kantha stich.png",
-            "./images/saree/Kantha stich.png"
+            "./image1/saree/Kanthastic.jpeg",
         ],
         description: "Premium Kantha stitch saree featuring intricate hand-embroidered patterns. Traditional Bengali embroidery with delicate motifs on fine fabric.",
         features: [
@@ -148,9 +143,7 @@ const productDetails = {
         price: 1500,
         originalPrice: 2000,
         images: [
-            "./images/saree/Linen Saree.png",
-            "./images/saree/Linen Saree.png",
-            "./images/saree/Linen Saree.png"
+            "./image1/saree/LinenSare.jpeg",
         ],
         description: "Elegant linen saree perfect for summer wear. Lightweight, breathable fabric with a crisp texture and sophisticated look.",
         features: [
@@ -176,9 +169,7 @@ const productDetails = {
         price: 1200,
         originalPrice: 1500,
         images: [
-            "./images/saree/Khesh(santiniketan)Saree.png",
-            "./images/saree/Khesh(santiniketan)Saree.png",
-            "./images/saree/Khesh(santiniketan)Saree.png"
+            "./image1/saree/KheshsantiniketanSare.jpeg",
         ],
         description: "Traditional Khesh saree from Santiniketan, made using recycled sari strips. Eco-friendly and comfortable for daily wear.",
         features: [
@@ -206,9 +197,7 @@ const productDetails = {
         price: 499,
         originalPrice: 999,
         images: [
-            "./images/T-Shirt Section/Customized T-shirt.png",
-            "./images/T-Shirt Section/Customized T-shirt.png",
-            "./images/T-Shirt Section/Customized T-shirt.png"
+            "./image1/T-Shirt Section/CustomizedT-shir.jpeg",
         ],
         description: "Customized hand-printed cotton T-shirt with unique designs available in both English and Bengali scripts. Perfect for gifting and personal style.",
         features: [
@@ -233,14 +222,13 @@ const productDetails = {
     // Woolen Category (401-410) - Winter Collection - Has sizes
     401: {
         id: 401,
-        name: "Handwoven Woolen Shawl",
+        name: "Insulated Jacket (unisex)",
         brand: "WoolCraft",
         price: 2499,
         originalPrice: 3124,
         images: [
-            "./images/Winter Section/Insulated Jacket(men).png",
-            "./images/Winter Section/Insulated Jacket(men).png",
-            "./images/Winter Section/Insulated Jacket(men).png"
+            "./image1/Winter Section/InsulatedJacketme.jpeg",
+            "./image1/Winter Section/InsulatedJacketwome.jpeg",
         ],
         description: "Premium insulated men's jacket for extreme winter conditions. Features thermal lining and waterproof exterior.",
         features: [
@@ -268,9 +256,8 @@ const productDetails = {
         price: 1899,
         originalPrice: 2234,
         images: [
-            "./images/Winter Section/Insulated Jacket(women).png",
-            "./images/Winter Section/Insulated Jacket(women).png",
-            "./images/Winter Section/Insulated Jacket(women).png"
+            "./image1/Winter Section/Insulated Jacket(women).png",
+            "./image1/Winter Section/Insulated Jacket(women).png",
         ],
         description: "Stylish insulated women's jacket with slim fit design. Perfect for cold weather with excellent warmth retention.",
         features: [
@@ -293,14 +280,13 @@ const productDetails = {
     },
     403: {
         id: 403,
-        name: "Woolen Sweater",
+        name: "Kashmiri shawl",
         brand: "WoolCraft",
         price: 1899,
         originalPrice: 2234,
         images: [
-            "./images/Winter Section/Kashmiri Saul(Men).png",
-            "./images/Winter Section/Kashmiri Saul(Men).png",
-            "./images/Winter Section/Kashmiri Saul(Men).png"
+            "./image1/Winter Section/KashmiriSaulMe.jpeg",
+            "./image1/Winter Section/KashmiriSaulwome.jpeg",
         ],
         description: "Authentic Kashmiri wool shawl for men with traditional embroidery. Handcrafted by skilled artisans.",
         features: [
@@ -358,9 +344,8 @@ const productDetails = {
         price: 1899,
         originalPrice: 2234,
         images: [
-            "./images/Winter Section/marino wool(men).png",
-            "./images/Winter Section/marino wool(men).png",
-            "./images/Winter Section/marino wool(men).png"
+            "./image1/Winter Section/marinowoolme.jpeg",
+            "./image1/Winter Section/merinowoolwome.jpeg",
         ],
         description: "Premium merino wool sweater for men. Soft, warm, and perfect for cold winter days.",
         features: [
@@ -413,14 +398,13 @@ const productDetails = {
     },
     407: {
         id: 407,
-        name: "Woolen Sweater",
+        name: "Leather Jacket",
         brand: "WoolCraft",
         price: 1899,
         originalPrice: 2234,
         images: [
-            "./images/Winter Section/revarsival leather jacket(men).png",
-            "./images/Winter Section/revarsival leather jacket(men).png",
-            "./images/Winter Section/revarsival leather jacket(men).png"
+            "./image1/Winter Section/revarsivalleatherjacketme.jpeg",
+            "./image1/Winter Section/revarsivalleatherjacketwome.jpeg",
         ],
         description: "Stylish leather jacket for men with retro design. Perfect for winter fashion and casual wear.",
         features: [
@@ -473,14 +457,13 @@ const productDetails = {
     },
     409: {
         id: 409,
-        name: "Woolen Sweater",
+        name: "Long over coat (unisex)",
         brand: "WoolCraft",
         price: 1899,
         originalPrice: 2234,
         images: [
-            "./images/Winter Section/Winter Long over Coat(men).png",
-            "./images/Winter Section/Winter Long over Coat(men).png",
-            "./images/Winter Section/Winter Long over Coat(men).png"
+            "./image1/Winter Section/WinterLongoverCoatwome.jpeg",
+            "./image1/Winter Section/WinterLongoverCoatme.jpeg"
         ],
         description: "Long winter overcoat for men with premium wool blend fabric. Perfect for formal winter occasions.",
         features: [
@@ -503,14 +486,13 @@ const productDetails = {
     },
     410: {
         id: 410,
-        name: "Woolen Sweater",
+        name: "Long Over coat (unisex)",
         brand: "WoolCraft",
         price: 1899,
         originalPrice: 2234,
         images: [
-            "./images/Winter Section/Winter Long over Coat(women).png",
-            "./images/Winter Section/Winter Long over Coat(women).png",
-            "./images/Winter Section/Winter Long over Coat(women).png"
+            "./image1/Winter Section/WinterLongoverCoatwome.jpeg",
+            "./image1/Winter Section/WinterLongoverCoatme.jpeg",
         ],
         description: "Elegant long winter overcoat for women with fashionable design and premium fabric.",
         features: [
@@ -1843,58 +1825,4 @@ function showCustomerFormForBuyNow() {
     customerModal.classList.add('active');
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
-}
-
-// Add this function to your script.js
-function openProductModal(productId) {
-    const product = getProductData(productId);
-    if (!product) return;
-    
-    // Show modal
-    showProductDetails(productId);
-    
-    // Add class to body to prevent background scrolling
-    document.body.classList.add('modal-open');
-    document.body.style.position = 'fixed';
-    document.body.style.width = '100%';
-    document.body.style.height = '100%';
-}
-
-function closeProductDetails() {
-    productModal.classList.remove('active');
-    overlay.classList.remove('active');
-    
-    // Remove class from body to restore scrolling
-    document.body.classList.remove('modal-open');
-    document.body.style.position = '';
-    document.body.style.width = '';
-    document.body.style.height = '';
-    
-    currentProductId = null;
-    selectedSize = null;
-    currentImageSlider = {
-        currentIndex: 0,
-        images: [],
-        container: null,
-        dotsContainer: null
-    };
-}
-
-// Update your product card click handler to use openProductModal
-function setupProductCardClick() {
-    document.addEventListener('click', function(e) {
-        const productCard = e.target.closest('.product-card');
-        
-        if (productCard) {
-            const isAddToCart = e.target.closest('.add-to-cart');
-            const isBuyNow = e.target.closest('.buy-now-btn');
-            
-            if (!isAddToCart && !isBuyNow) {
-                const productId = parseInt(productCard.dataset.id);
-                if (productId) {
-                    openProductModal(productId); // Changed from showProductDetails
-                }
-            }
-        }
-    });
 }
