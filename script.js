@@ -1761,7 +1761,7 @@ function submitOrder(e) {
 }
 
 function sendOrderEmail(orderData) {
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwOfpEasdjZCQMfufGSpYDQtsHHCMtU9F1RyyqWQLsaRyETmua5OmBRn_en-WgdoXEx3w/exec";
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyQGm9tM9Te7sDGB9zGqaaNsldF4umBqD2zbh-ib4O8WBcCtyxgSJ7N_utVHBKnIMN2/exec";
 
     fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
@@ -1826,4 +1826,5 @@ function showCustomerFormForBuyNow() {
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
+
 
