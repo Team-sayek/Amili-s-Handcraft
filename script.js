@@ -427,16 +427,15 @@ const productDetails = {
     },
     408: {
         id: 408,
-        name: "Woolen Sweater",
+        name: "Reversible Leather Jacket(unisex)",
         brand: "WoolCraft",
         price: 1899,
         originalPrice: 2234,
         images: [
-            "./images/Winter Section/revarsival leather jacket(women).png",
-            "./images/Winter Section/revarsival leather jacket(women).png",
-            "./images/Winter Section/revarsival leather jacket(women).png"
+            "./image1/Winter Section/revarsivalleatherjacketwome.jpeg",
+             "./image1/Winter Section/revarsivalleatherjacketme.jpeg",
         ],
-        description: "Fashionable leather jacket for women with modern design and comfortable fit.",
+        description: "Fashionable leather jacket for both men and women with modern design and comfortable fit.",
         features: [
             "Quality leather",
             "Modern design",
@@ -494,7 +493,7 @@ const productDetails = {
             "./image1/Winter Section/WinterLongoverCoatwome.jpeg",
             "./image1/Winter Section/WinterLongoverCoatme.jpeg",
         ],
-        description: "Elegant long winter overcoat for women with fashionable design and premium fabric.",
+        description: "Elegant long winter overcoat for both men and women with fashionable design and premium fabric.",
         features: [
             "Premium fabric",
             "Elegant design",
@@ -522,13 +521,11 @@ const productDetails = {
         price: 399,
         originalPrice: 570,
         images: [
-            "./images/Candle Photos/IMG1.jpg",
-            "./images/Candle Photos/IMG1.jpg",
-            "./images/Candle Photos/IMG1.jpg"
+            "./image1/Candle Photos/marvelcandle.jpeg",
         ],
-        description: "Decorative candle featuring Marvel superhero designs. Perfect for fans and as unique gifts.",
+        description: "Decorative candle featuring Marvel designs. Perfect for fans and as unique gifts.",
         features: [
-            "Marvel superhero designs",
+            "Marvel designs",
             "Decorative collectible",
             "Long burning time",
             "Mild pleasant scent",
@@ -550,9 +547,7 @@ const productDetails = {
         price: 349,
         originalPrice: 465,
         images: [
-            "./images/Candle Photos/IMG2.png",
-            "./images/Candle Photos/IMG2.png",
-            "./images/Candle Photos/IMG2.png"
+            "./image1/Candle Photos/scent.jpeg",
         ],
         description: "Beautiful floral scented candle that fills your space with relaxing fragrance. Hand-poured with care.",
         features: [
@@ -573,14 +568,13 @@ const productDetails = {
     },
     503: {
         id: 503,
-        name: "Decorative Tea Light",
+        name: "Decorative Candle",
         brand: "CandleArt",
         price: 299,
         originalPrice: 499,
         images: [
-            "./images/Candle Photos/IMG3.png",
-            "./images/Candle Photos/IMG3.png",
-            "./images/Candle Photos/IMG3.png"
+            "./image1/Candle Photos/IMG.jpeg",
+            "./image1/Candle Photos/IMG5.jpeg",
         ],
         description: "Set of decorative tea lights perfect for creating warm ambiance. Beautiful designs for any occasion.",
         features: [
@@ -606,9 +600,7 @@ const productDetails = {
         price: 299,
         originalPrice: 499,
         images: [
-            "./images/Candle Photos/IMG4.png",
-            "./images/Candle Photos/IMG4.png",
-            "./images/Candle Photos/IMG4.png"
+            "./image1/Candle Photos/IMG4.jpeg",
         ],
         description: "Modern geometric pattern candle with contemporary design. Adds style to any room decor.",
         features: [
@@ -629,14 +621,14 @@ const productDetails = {
     },
     505: {
         id: 505,
-        name: "Decorative Tea Light",
+        name: "Folwer Candles",
         brand: "CandleArt",
         price: 299,
         originalPrice: 499,
         images: [
-            "./images/Candle Photos/IMG5.png",
-            "./images/Candle Photos/IMG5.png",
-            "./images/Candle Photos/IMG5.png"
+            "./image1/Candle Photos/IMG 11.jpeg",
+            "./image1/Candle Photos/IMG 8.jpeg",
+            "./image1/Candle Photos/IMG 9.jpeg"
         ],
         description: "Nature-inspired decorative candle with organic patterns. Brings natural beauty to your space.",
         features: [
@@ -648,7 +640,7 @@ const productDetails = {
         ],
         specifications: {
             "Material": "Soy Wax",
-            "Burn Time": "12-15 hours",
+            "Burn Time": "2-3 hours",
             "Fragrance": "Natural",
             "Height": "2.8 inches",
             "Diameter": "2.5 inches"
@@ -657,14 +649,14 @@ const productDetails = {
     },
     506: {
         id: 506,
-        name: "Decorative Tea Light",
+        name: "customized Candle",
         brand: "CandleArt",
         price: 299,
         originalPrice: 499,
         images: [
-            "./images/Candle Photos/IMG 6.png",
-            "./images/Candle Photos/IMG 6.png",
-            "./images/Candle Photos/IMG 6.png"
+            "./image1/Candle Photos/IMG3.jpeg",
+             "./image1/Candle Photos/IMG 11.jpeg",
+              "./image1/Candle Photos/IMG2.jpeg",
         ],
         description: "Artistic decorative candle with unique handcrafted designs. A piece of art that illuminates.",
         features: [
@@ -685,13 +677,13 @@ const productDetails = {
     },
     507: {
         id: 507,
-        name: "Decorative Tea Light",
+        name: "Jar Candle",
         brand: "CandleArt",
         price: 299,
         originalPrice: 499,
         images: [
-            "./images/Candle Photos/IMG 7.png",
-            "./images/Candle Photos/IMG 7.png",
+            "./image1/Candle Photos/IMG3.jpeg",
+            "./image1/Candle Photos/IMG1.jpg",
             "./images/Candle Photos/IMG 7.png"
         ],
         description: "Candle with traditional Indian patterns and motifs. Celecultural heritage through design.",
@@ -713,14 +705,12 @@ const productDetails = {
     },
     508: {
         id: 508,
-        name: "Decorative Tea Light",
+        name: "Pillar Candle",
         brand: "CandleArt",
         price: 299,
         originalPrice: 499,
         images: [
-            "./images/Candle Photos/IMG 8.png",
-            "./images/Candle Photos/IMG 8.png",
-            "./images/Candle Photos/IMG 8.png"
+            "./image1/Candle Photos/IMG2.jpeg",
         ],
         description: "Elegant white candle with sophisticated design. Perfect for formal settings and special occasions.",
         features: [
@@ -799,14 +789,12 @@ const productDetails = {
     // Home Decor Category (601-603) - No sizes needed
     601: {
         id: 601,
-        name: "Wall Art Decor",
+        name: "Hand printed bedsheet",
         brand: "HomeStyle",
         price: 1299,
         originalPrice: 1624,
         images: [
-            "./images/Home Decor/Hand printed Bedsets Cotton.png",
-            "./images/Home Decor/Hand printed Bedsets Cotton.png",
-            "./images/Home Decor/Hand printed Bedsets Cotton.png"
+            "./image1/Home Decor/HandprintedBedsetsCotto.jpeg",
         ],
         description: "Beautiful hand-printed cotton bedsheets with traditional designs. Adds ethnic charm to your bedroom.",
         features: [
@@ -827,14 +815,12 @@ const productDetails = {
     },
     602: {
         id: 602,
-        name: "Decorative Vase",
+        name: "Hand printed cushion",
         brand: "HomeStyle",
         price: 899,
         originalPrice: 1199,
         images: [
-            "./images/Home Decor/Handmade cushion cover.png",
-            "./images/Home Decor/Handmade cushion cover.png",
-            "./images/Home Decor/Handmade cushion cover.png"
+            "./image1/Home Decor/Handmadecushioncove.jpeg",
         ],
         description: "Handmade cushion cover with intricate embroidery and traditional patterns. Enhances home decor.",
         features: [
@@ -855,14 +841,12 @@ const productDetails = {
     },
     603: {
         id: 603,
-        name: "Decorative Vase",
+        name: "Wall Hanging",
         brand: "HomeStyle",
         price: 899,
         originalPrice: 1199,
         images: [
-            "./images/Home Decor/wall hanging.png",
-            "./images/Home Decor/wall hanging.png",
-            "./images/Home Decor/wall hanging.png"
+            "./image1/Home Decor/wallhangin.jpeg",
         ],
         description: "Traditional decorative wall hanging with folk art designs. Perfect for living room or entrance decor.",
         features: [
@@ -885,14 +869,12 @@ const productDetails = {
     // Baby Category (701-705) - Has sizes (age ranges or clothing sizes)
     701: {
         id: 701,
-        name: "Baby Soft Toys",
+        name: "Handmade Cap",
         brand: "BabyCare",
         price: 799,
         originalPrice: 1141,
         images: [
-            "./images/Baby Section/Cap.png",
-            "./images/Baby Section/Cap.png",
-            "./images/Baby Section/Cap.png"
+            "./image1/Baby Section/Cap.jpeg",
         ],
         description: "Soft and comfortable baby caps made from pure cotton. Perfect for newborn head protection.",
         features: [
@@ -915,14 +897,12 @@ const productDetails = {
     },
     702: {
         id: 702,
-        name: "Baby Clothing Set",
+        name: "New Born Socks",
         brand: "BabyCare",
         price: 1299,
         originalPrice: 1624,
         images: [
-            "./images/Baby Section/New Born Socks.png",
-            "./images/Baby Section/New Born Socks.png",
-            "./images/Baby Section/New Born Socks.png"
+            "./image1/Baby Section/NewBornSock.jpeg",
         ],
         description: "Soft cotton socks for newborns. Keeps baby's feet warm and comfortable.",
         features: [
@@ -945,14 +925,12 @@ const productDetails = {
     },
     703: {
         id: 703,
-        name: "Baby Clothing Set",
+        name: "Cotton Nappy",
         brand: "BabyCare",
         price: 1299,
         originalPrice: 1624,
         images: [
-            "./images/Baby Section/Pure Cotton Nappy with cotton top.png",
-            "./images/Baby Section/Pure Cotton Nappy with cotton top.png",
-            "./images/Baby Section/Pure Cotton Nappy with cotton top.png"
+            "./image1/Baby Section/PureCottonNappywithcottonto.jpeg",
         ],
         description: "Pure cotton nappy set with matching top. Soft, absorbent and comfortable for babies.",
         features: [
@@ -975,14 +953,12 @@ const productDetails = {
     },
     704: {
         id: 704,
-        name: "Baby Clothing Set",
+        name: "Pure White Cotton Dress Girls",
         brand: "BabyCare",
         price: 1299,
         originalPrice: 1624,
         images: [
-            "./images/Baby Section/Pure Cotton White Dress Girls.png",
-            "./images/Baby Section/Pure Cotton White Dress Girls.png",
-            "./images/Baby Section/Pure Cotton White Dress Girls.png"
+            "./image1/Baby Section/PureCottonWhiteDressGirl.jpeg",
         ],
         description: "Beautiful pure cotton white dress for baby girls. Elegant and comfortable for special occasions.",
         features: [
@@ -1005,14 +981,12 @@ const productDetails = {
     },
     705: {
         id: 705,
-        name: "Baby Clothing Set",
+        name: "Cotton Wraps",
         brand: "BabyCare",
         price: 1299,
         originalPrice: 1624,
         images: [
-            "./images/Baby Section/Pure cotton wraapers.png",
-            "./images/Baby Section/Pure cotton wraapers.png",
-            "./images/Baby Section/Pure cotton wraapers.png"
+            "./image1/Baby Section/Purecottonwraaper.jpeg",
         ],
         description: "Soft pure cotton wrappers for newborns. Perfect for swaddling and keeping baby comfortable.",
         features: [
@@ -1826,5 +1800,4 @@ function showCustomerFormForBuyNow() {
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
-
 
