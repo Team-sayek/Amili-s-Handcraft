@@ -1333,8 +1333,8 @@ function addToCart(productId, size = null) {
 
     // Check if size is required but not selected
     if (product.hasSizes && !size && !selectedSize) {
-        sizeError.style.display = 'inline';
-        sizeError.textContent = 'Please select a size';
+        // Show alert for products that require size selection
+        showSizeSelectionAlert(product);
         return;
     }
 
@@ -1365,6 +1365,27 @@ function addToCart(productId, size = null) {
     
     // Reset selected size for next product
     selectedSize = null;
+}
+
+function showSizeSelectionAlert(product) {
+    // Determine which section the product belongs to
+    let sectionName = '';
+    
+    if (product.id >= 201 && product.id <= 299) {
+        sectionName = 'T-Shirt';
+    } else if (product.id >= 401 && product.id <= 499) {
+        sectionName = 'Winter Collection';
+    } else if (product.id >= 701 && product.id <= 799) {
+        sectionName = 'Baby';
+    } else {
+        sectionName = 'this product';
+    }
+    
+    // Show alert message
+    alert(`Please select a size for ${product.name}.\n\nThis ${sectionName} item requires a size selection before adding to cart.\n\nClick on the product to open details and select your size.`);
+    
+    // Also show the product details modal so user can select size
+    showProductDetails(product.id);
 }
 
 function removeFromCart(cartId) {
@@ -1756,8 +1777,8 @@ function buyNowProduct(productId) {
     if (!product) return;
 
     if (product.hasSizes && !selectedSize) {
-        sizeError.style.display = 'inline';
-        sizeError.textContent = 'Please select a size';
+        // Show alert for products that require size selection
+        showSizeSelectionAlert(product);
         return;
     }
 
@@ -1800,4 +1821,3 @@ function showCustomerFormForBuyNow() {
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
-
